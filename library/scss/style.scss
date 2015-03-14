@@ -1,0 +1,44 @@
+/******************************************************************
+Site Name:Dan
+Author: Daniel Davidson
+//
+Stylesheet: Main Stylesheet
+******************************************************************/
+
+// normalize is in the css folder and is enqueued independently
+@import '../../node_modules/jeet/scss/jeet/index.scss';
+@import "base/jeet-settings";
+
+@import "helpers/mixins";
+@import "helpers/variables";
+@import "helpers/functions";
+
+@import "base/typography";
+
+@import "layout/header";
+@import "layout/navigation";
+@import "layout/pagination";
+@import "layout/comments";
+@import "layout/sidebars";
+@import "layout/footer";
+
+@import "components/alerts";
+@import "components/buttons";
+@import "components/forms";
+@import "components/announcement";
+
+// styles in base.scss
+@import "base/base";
+
+@import "pages/posts";
+@import "pages/home";
+
+
+/*********************
+PRINT STYLESHEET
+*********************/
+@media print {
+	// styles in print.scss
+	@import "helpers/print";
+
+}

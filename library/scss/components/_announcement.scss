@@ -1,0 +1,98 @@
+.announce-overlay {
+    background-color: #000;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+    background-color: rgba(0,0,0,.4);
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: none;
+    z-index: 10000;
+}
+.announce-overlay.active {
+  display:block;
+}
+.announce-alert {
+    background-color: #fff;
+    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    width: 478px;
+    padding: 17px;
+    border-radius: 5px;
+    text-align: center;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-left: -256px;
+    margin-top: -200px;
+    overflow: hidden;
+    display: block;
+    z-index: 99999;
+}
+
+@media all and (max-width:540px) {
+    .announce-alert {
+        width: auto;
+        margin-left: 0;
+        margin-right: 0;
+        left: 15px;
+        right: 15px;
+    }
+}
+.announce-title h2 {
+    color: #575757;
+    font-size: 30px;
+    text-align: center;
+    font-weight: 600;
+    text-transform: none;
+    position: relative;
+    margin: 25px 0;
+    padding: 0;
+    line-height: 40px;
+    display: block;
+}
+.announce-content p {
+    color: #797979;
+    font-size: 16px;
+    font-weight: 300;
+    position: relative;
+    text-align: inherit;
+    float: none;
+    margin: 0;
+    padding: 0;
+    line-height: normal;
+}
+.announce-alert .close {
+  position:absolute;
+  top:0px;
+  right:0px;
+  background:white;
+  color:$text-color;
+  height: 30px;
+  width: 30px;
+  line-height: 30px;
+  cursor:pointer;
+  margin:0px;
+  &:hover, &:active {
+    background:$primary;
+    color:white;
+  }
+}
+.announce-alert .button {
+    background-color: $primary;
+    color: #fff;
+    border: none;
+    box-shadow: none;
+    font-size: 17px;
+    font-weight: 500;
+    -webkit-border-radius: 4px;
+    border-radius: 5px;
+    padding: 10px 32px;
+    margin: 26px 5px 0;
+    cursor: pointer;
+    display:inline-block;
+}
+
+.announce-alert .button:hover { background-color: $accent; }
+.announce-alert .button:active { background-color: $accent; }
+.announce-alert .button::-moz-focus-inner { border: 0 }
