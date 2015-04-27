@@ -23,4 +23,6 @@ require_once( 'library/php/functions/page-navi.php' ); // page navigation
 require_once( 'library/php/functions/comment-layout.php' ); //comments layout
 require_once( 'library/php/functions/fonts.php' ); // google fonts
 
+// ###### SHORTCODES ###### //
+require_once( 'library/php/shortcodes/shortcodes.php' ); //
 ?>
