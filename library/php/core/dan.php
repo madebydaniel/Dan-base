@@ -209,6 +209,15 @@ function dan_theme_support() {
 
 
 
+function dan_nav_description( $item_output, $item, $depth, $args ) {
+	if ( 'main-nav' == $args->theme_location && $item->description ) {
+		$item_output = str_replace( $args->link_after . '</a>', '<div class="menu-item-description">' . $item->description . '</div>' . $args->link_after . '</a>', $item_output );
+	}
+
+	return $item_output;
+}
+add_filter( 'walker_nav_menu_start_el', 'dan_nav_description', 10, 4 );
+
 
 
 /*********************

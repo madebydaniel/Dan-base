@@ -14,6 +14,7 @@ require_once( 'library/php/core/sidebar-config.php' ); // sidebars
 require_once( 'library/php/metabox/start-cmb2.php' );
 
 // ###### CUSTOM POST-TYPES ###### //
+require_once( 'library/php/functions/flush-rewrite-posttypes.php' );
 require_once( 'library/php/posttypes/custom-post-type.php' );
 require_once( 'library/php/posttypes/cpt-announcement.php' );
 
