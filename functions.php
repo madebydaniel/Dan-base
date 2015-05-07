@@ -4,10 +4,13 @@
 require_once( 'library/php/core/dan.php' );
 
 
-// require_once( 'library/php/core/admin.php' );
+require_once( 'library/php/core/admin.php' );
+
 //require_once( 'library/php/core/oembed-width-options.php' ); // oembed width option
+
 require_once( 'library/php/core/ftrimage-config.php' ); // feature images
 require_once( 'library/php/core/sidebar-config.php' ); // sidebars
+require_once( 'library/php/core/og-property.php'); //Utilizing Open Graph
 // require_once( 'library/php/customizer/theme-customizer.php' ); // theme customizer
 
 // ###### CMB2 METABOXES ###### //
@@ -26,4 +29,6 @@ require_once( 'library/php/functions/fonts.php' ); // google fonts
 
 // ###### SHORTCODES ###### //
 require_once( 'library/php/shortcodes/shortcodes.php' ); //
+
+
 ?>

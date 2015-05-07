@@ -237,13 +237,33 @@ function dan_excerpt_more($more) {
 }
 
 
+// Remove the "the" word from slugs
+add_filter( 'sanitize_title', 'sanitize_title_slug' );
+
+function sanitize_title_slug( $title ) {
+    $title = str_replace( '-the-', '-', $title );
+    $title = preg_replace( '/^the-/', '', $title );
+    return $title;
+}
+
+
+//Remove the Version Parameter from Scripts being loaded (allows files to be cached)
+function script_loader_src( $src ) {
+    return remove_query_arg( 'ver', $src );
+}
+
+add_filter( 'script_loader_src', 'script_loader_src' );
+add_filter( 'style_loader_src', 'script_loader_src' );
+
+// Example source: http://www.wpmayor.com/15-practical-ways-boost-wordpress-speed/
+
+
+
 /*********************
 LAUNCH dan
 *********************/
 
 function dan() {
-	//Allow editor style.
-	add_editor_style( get_stylesheet_directory_uri() . '/library/css/editor-style.css' );
 
 	// let's get language support going, if you need it
 	load_theme_textdomain( 'dantheme', get_template_directory() . '/library/translation' );
@@ -276,9 +296,37 @@ function dan() {
 	// cleaning up excerpt
 	add_filter( 'excerpt_more', 'dan_excerpt_more' );
 
+	//allow shotcodes inside the text widget
+	add_filter( 'widget_text', 'do_shortcode' );
+
 } /* end dan */
 // let's get this party started
 add_action( 'after_setup_theme', 'dan' );
 
+
+
+/*********************
+SECURITY dan
+*********************/
+
+//DISABLE THE FILE EDITOR INSIDE THE ADMIN
+define( 'DISALLOW_FILE_EDIT', true );
+
+//Mark comments with really long usernames as spam
+add_filter( 'pre_comment_approved', 'pre_comment_approved_example', 99, 2 );
+
+function pre_comment_approved_example( $approved, $commentdata ) {
+    return ( strlen( $commentdata['comment_author'] ) > 75 ) ? 'spam' : $approved;
+}
+
+// removing the toolbar for subscribers
+add_action( 'set_current_user', 'set_current_user_example' );
+function set_current_user_example() {
+
+    if ( ! current_user_can( 'edit_posts' ) ) {
+        show_admin_bar( false );
+    }
+
+}
 
 ?>

@@ -6,14 +6,6 @@ dashboard. Updates to this page are coming soon.
 It's turned off by default, but you can call it
 via the functions file.
 
-Developed by: Eddie Machado
-URL: http://themble.com/dan/
-
-Special Thanks for code & inspiration to:
-@jackmcconnell - http://www.voltronik.co.uk/
-Digging into WP - http://digwp.com/2010/10/customize-wordpress-dashboard/
-
-
 	- removing some default WordPress dashboard widgets
 	- an example custom dashboard widget
 	- adding custom login css
@@ -51,58 +43,9 @@ function disable_default_dashboard_widgets() {
 	*/
 }
 
-/*
-Now let's talk about adding your own custom Dashboard widget.
-Sometimes you want to show clients feeds relative to their
-site's content. For example, the NBA.com feed for a sports
-site. Here is an example Dashboard Widget that displays recent
-entries from an RSS Feed.
-
-For more information on creating Dashboard Widgets, view:
-http://digwp.com/2010/10/customize-wordpress-dashboard/
-*/
-
-// RSS Dashboard Widget
-function dan_rss_dashboard_widget() {
-	if ( function_exists( 'fetch_feed' ) ) {
-		// include_once( ABSPATH . WPINC . '/feed.php' );               // include the required file
-		$feed = fetch_feed( 'http://feeds.feedburner.com/wpcandy' );        // specify the source feed
-		if (is_wp_error($feed)) {
-			$limit = 0;
-			$items = 0;
-		} else {
-			$limit = $feed->get_item_quantity(7);                        // specify number of items
-			$items = $feed->get_items(0, $limit);                        // create an array of items
-		}
-	}
-	if ($limit == 0) echo '<div>The RSS Feed is either empty or unavailable.</div>';   // fallback message
-	else foreach ($items as $item) { ?>
-
-	<h4 style="margin-bottom: 0;">
-		<a href="<?php echo $item->get_permalink(); ?>" title="<?php echo mysql2date( __( 'j F Y @ g:i a', 'dantheme' ), $item->get_date( 'Y-m-d H:i:s' ) ); ?>" target="_blank">
-			<?php echo $item->get_title(); ?>
-		</a>
-	</h4>
-	<p style="margin-top: 0.5em;">
-		<?php echo substr($item->get_description(), 0, 200); ?>
-	</p>
-	<?php }
-}
-
-// calling all custom dashboard widgets
-function dan_custom_dashboard_widgets() {
-	wp_add_dashboard_widget( 'dan_rss_dashboard_widget', __( 'Recently on Themble (Customize on admin.php)', 'dantheme' ), 'dan_rss_dashboard_widget' );
-	/*
-	Be sure to drop any other created Dashboard Widgets
-	in this function and they will all load.
-	*/
-}
-
-
 // removing the dashboard widgets
 add_action( 'wp_dashboard_setup', 'disable_default_dashboard_widgets' );
 // adding any custom widgets
-add_action( 'wp_dashboard_setup', 'dan_custom_dashboard_widgets' );
 
 
 /************* CUSTOM LOGIN PAGE *****************/
@@ -138,10 +81,74 @@ you like.
 
 // Custom Backend Footer
 function dan_custom_admin_footer() {
-	_e( '<span id="footer-thankyou">Developed by <a href="http://yoursite.com" target="_blank">Your Site Name</a></span>. Built using <a href="http://themble.com/dan" target="_blank">dan</a>.', 'dantheme' );
+	_e( '<span id="footer-thankyou">Developed by <a href="http://baydan.us" target="_blank">Dan</a></span>.', 'dantheme' );
 }
 
 // adding it to the admin area
 add_filter( 'admin_footer_text', 'dan_custom_admin_footer' );
+
+
+
+// unregister wordpress widgets
+add_action( 'widgets_init', 'widgets_init_example' );
+
+function widgets_init_example() {
+    //unregister_widget( 'WP_Widget_Pages' );
+    //unregister_widget( 'WP_Widget_Calendar' );
+    //unregister_widget( 'WP_Widget_Archives' );
+    //unregister_widget( 'WP_Widget_Links' );
+    //unregister_widget( 'WP_Widget_Meta' );
+    //unregister_widget( 'WP_Widget_Search' );
+    //unregister_widget( 'WP_Widget_Text' );
+    //unregister_widget( 'WP_Widget_Categories' );
+    //unregister_widget( 'WP_Widget_Recent_Posts' );
+    //unregister_widget( 'WP_Widget_Recent_Comments' );
+    //unregister_widget( 'WP_Widget_RSS' );
+    //unregister_widget( 'WP_Widget_Tag_Cloud' );
+}
+
+
+ // remove menu items that clients shouldn't see within the dashboard
+function remove_menus(){
+
+  //remove_menu_page( 'index.php' );                  //Dashboard
+  //remove_menu_page( 'edit.php' );                   //Posts
+  //remove_menu_page( 'upload.php' );                 //Media
+  //remove_menu_page( 'edit.php?post_type=page' );    //Pages
+  //remove_menu_page( 'edit-comments.php' );          //Comments
+  //remove_menu_page( 'themes.php' );                 //Appearance
+  //remove_menu_page( 'plugins.php' );                //Plugins
+  //remove_menu_page( 'users.php' );                  //Users
+  //remove_menu_page( 'tools.php' );                  //Tools
+  //remove_menu_page( 'options-general.php' );        //Settings
+
+}
+
+add_action( 'admin_menu', 'remove_menus' );
+
+
+// Example Source: http://wpsnippy.com/remove-top-level-wordpress-dashboard-menu/
+
+
+
+
+// add a new item to the wp toolbar
+add_action( 'wp_before_admin_bar_render', 'wp_before_admin_bar_render_dan' );
+
+function wp_before_admin_bar_render_dan() {
+    global $wp_admin_bar;
+    $wp_admin_bar->add_node( array(
+        'id'    => 'contact-dan',
+        'title' => 'Contact Dan',
+        'href'  => 'http://bydan.us/contact/',
+        'meta'  => array( 'target' => '_blank' )
+    ) );
+}
+
+
+
+
+// Example Source: http://wpsnipp.com/index.php/functions-php/change-admin-postpage-color-by-status-draft-pending-published-future-private/
+
 
 ?>

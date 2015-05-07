@@ -9,6 +9,10 @@ FOOTER STYLES
 	color: $light-gray;
 }
 
+footer.footer, .push {
+	height: $footerHeight;
+}
+
 	/*
 	if you checked out the link above:
 	http://www.alistapart.com/articles/organizing-mobile/

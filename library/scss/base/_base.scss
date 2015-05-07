@@ -11,9 +11,21 @@ and will be used across all viewports.
 
 ******************************************************************/
 
+/*show jeet grey container boxes*/
+@include edit();
+
 /*********************
 GENERAL STYLES
 *********************/
+html {
+	font-size: 62.5%;
+	height:100%;
+	box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 
 body {
 	font-family: $lato;
@@ -31,7 +43,17 @@ body {
 }
 
 
-@include edit();
+hr {
+	margin:80px auto;
+	border:0;
+	height:0;
+	border-bottom:solid 1px $border-color;
+	display:block;
+	width:100%;
+	clear:both;
+}
+
+
 
 /********************
 WORDPRESS BODY CLASSES
