@@ -1,9 +1,13 @@
-			<?php get_template_part('partials/global', 'footer'); ?>
+<div class="push"></div><!--\used for sticky footer-->
+</div><!--\#body-container-->
+
+<?php get_template_part('partials/globals/footer', 'default'); ?>
 
 		</div><!--\#container-->
 
-		<?php // all js scripts are loaded in library/dan.php ?>
 		<?php wp_footer(); ?>
+
+		<?php get_template_part('partials/globals/footer', 'scripts'); ?>
 
 	</body>
 

@@ -1,7 +1,11 @@
 <?php
 
 // LOAD core/dan.php (if you remove this, the theme will break)
+require_once( 'library/php/core/launch-dan.php' );
 require_once( 'library/php/core/dan.php' );
+require_once( 'library/php/core/theme-support.php' );
+require_once( 'library/php/core/theme-sidebars.php' );
+require_once( 'library/php/core/enqueue-scripts-styles.php' );
 
 
 require_once( 'library/php/core/admin.php' );
@@ -9,12 +13,12 @@ require_once( 'library/php/core/admin.php' );
 //require_once( 'library/php/core/oembed-width-options.php' ); // oembed width option
 
 require_once( 'library/php/core/ftrimage-config.php' ); // feature images
-require_once( 'library/php/core/sidebar-config.php' ); // sidebars
 require_once( 'library/php/core/og-property.php'); //Utilizing Open Graph
-// require_once( 'library/php/customizer/theme-customizer.php' ); // theme customizer
+require_once( 'library/php/customizer/theme-customizer.php' ); // theme customizer
 
 // ###### CMB2 METABOXES ###### //
 require_once( 'library/php/metabox/start-cmb2.php' );
+require_once( 'library/php/metabox/theme-cmb2/front-page-cmb2.php' );
 
 // ###### CUSTOM POST-TYPES ###### //
 require_once( 'library/php/functions/flush-rewrite-posttypes.php' );

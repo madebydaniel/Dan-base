@@ -1,3 +1,71 @@
+/*********************
+FONTS
+**********************/
+
+$sans-serif:        "Roboto", Helvetica, Arial, sans-serif;
+$serif:             "Georgia", Cambria, Times New Roman, Times, serif;
+$mono:              "Lucida Console", Monaco, Courier, monospace;
+
+$heading:           "Oswald", Helvetica, Arial, sans-serif;
+
+@mixin xtra-large-font-size {
+	@include rem(font-size, 3.4rem);
+	@include rem(line-height, 4rem);
+	@include breakpoint(desktop) {
+		@include rem(font-size, 6rem);
+		@include rem(line-height, 6.6rem);
+	}
+}
+
+
+@mixin large-font-size {
+	@include rem(font-size, 2rem);
+	@include rem(line-height, 2.8rem);
+	@include breakpoint(desktop) {
+		@include rem(font-size, 2.6rem);
+		@include rem(line-height, 3.4rem);
+	}
+}
+
+@mixin medium-font-size {
+	@include rem(font-size, 1.8rem);
+	@include rem(line-height, 2.4rem);
+	@include breakpoint(desktop) {
+		@include rem(font-size, 2rem);
+		@include rem(line-height, 2.8rem);
+	}
+}
+
+@mixin small-font-size {
+	@include rem(font-size, 1.6rem);
+	@include rem(line-height, 2.2rem);
+}
+
+
+
+/**************************************
+THEME SPECIFIC TYPOGRAPHY MIXINS
+**************************************/
+@mixin widgettitle {
+	padding:0px;
+	display:block;
+	@include medium-font-size();
+	margin:0px;
+}
+
+@mixin small-section-title {
+	@include widgettitle();
+	font-family:$heading;
+}
+
+@mixin small-section-content {
+	padding:0px;
+	display:block;
+	color:$primary-light;
+	@include small-font-size();
+}
+
+
 /******************************************************************
 H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
@@ -17,46 +85,65 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 }
 
 h1, .h1 {
-	font-size: 2.5em;
-	line-height: 1.333em;
+	@include rem(font-size, 2.4rem);
+	@include rem(line-height, 3rem);
+	@include breakpoint(desktop) {
+		@include rem(font-size, 4.4rem);
+		@include rem(line-height, 5rem);
+		}
 }
 
 h2, .h2 {
-	font-size: 1.75em;
-	line-height: 1.4em;
-	margin-bottom: 0.375em;
+	@include rem(font-size, 2rem);
+	@include rem(line-height, 2.6rem);
+	@include breakpoint(desktop) {
+	@include rem(font-size, 3.8rem);
+	@include rem(line-height, 4.4rem);
+	}
 }
 
 h3, .h3 {
-	font-size: 1.125em;
+	@include rem(font-size, 1.8rem);
+	@include rem(line-height, 2.4rem);
+	@include breakpoint(desktop) {
+		@include rem(font-size, 3.2rem);
+		@include rem(line-height, 3.8rem);
+	}
 }
 
 h4, .h4 {
-	font-size: 1.1em;
-	font-weight: 700;
+	@include rem(font-size, 1.6rem);
+	@include rem(line-height, 2.2rem);
+	font-weight:700;
+	@include breakpoint(desktop) {
+		@include rem(font-size, 2.6rem);
+		@include rem(line-height,3.2rem);
+	}
 }
 
 h5, .h5 {
-	font-size: 0.846em;
-	line-height: 2.09em;
-	text-transform: uppercase;
-	letter-spacing: 2px;
+	@include rem(font-size, 1.4rem);
+	@include rem(line-height, 2rem);
+	@include breakpoint(desktop) {
+		@include rem(font-size, 2.2rem);
+		@include rem(line-height, 2.8rem);
+	}
 }
 
-
-/*
-The following is based of Typebase:
-https://github.com/devinhunt/typebase.css
-I've edited it a bit, but it's a nice starting point.
-*/
-
-
+h6, .h6 {
+	@include rem(font-size, 1.4rem);
+	@include rem(line-height, 2rem);
+	@include breakpoint(desktop) {
+		@include rem(font-size, 1.8rem);
+		@include rem(line-height, 2.4rem);
+	}
+}
 
 /*
 some nice typographical defaults
 more here: http://www.newnet-soft.com/blog/csstypography
 */
-p {
+p, address, ol, ul, div {
   -ms-word-wrap: break-word;
   word-break: break-word; //non-standart css for webkit
   word-wrap: break-word;
@@ -74,6 +161,18 @@ p {
       -ms-font-feature-settings: "liga", "dlig";
        -o-font-feature-settings: "liga", "dlig";
           font-feature-settings: "liga", "dlig";
+					@include medium-font-size();
+	&.large {
+		@include large-font-size();
+	}
+}
+
+table {
+	@include medium-font-size();
+}
+
+address {
+	padding-left:30px;
 }
 
 
@@ -92,7 +191,7 @@ a, a:visited {
 
 	/* on click */
 	&:active {
-
+		color: $link-active;
 	}
 
 	/* mobile tap color */

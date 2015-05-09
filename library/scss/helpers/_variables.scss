@@ -1,18 +1,4 @@
 /*********************
-FONTS
-**********************/
-
-$sans-serif:        "Helvetica Neue", Helvetica, Arial, sans-serif;
-$serif:             "Georgia", Cambria, Times New Roman, Times, serif;
-
-/*
- i imported this one in the functions file so dan would look sweet.
- don't forget to remove it for your site.
-*/
-$lato:              'Lato', $sans-serif;
-
-
-/*********************
 COLORS
 Need help w/ choosing your colors? Try this site out:
 http://0to255.com/
@@ -31,20 +17,27 @@ $gray:              #eaedf2;
 $text-color:        #5c6b80;
 $meta-gray:         #9fa6b4;
 
-$primary:        #f8f9fa;
-$accent:              #eaedf2;
+$primary:           #1d3d63;
+$primary-dark:      #001429;
+$primary-light:     #c5d3de;
+$primary-medium:    lighten($primary, 20%);
 
-$tan:               #eceee5;
+$accent:            #f60;
+$accent-dark:       #bd4c00;
+$accent-light:      #ff924a;
+$accent-medium:    lighten($accent, 20%);
 
-$green:             #7dd667;
+$link-color:        $accent;
+$link-hover:        $accent-light;
+$link-active:       $accent-dark;
 
-$dan-pink:        #f01d4f;
-$blue:              #2980b9;
+$r-link-color:      $primary-light;
+$r-link-hover:      $white;
+$r-link-active:     darken($primary-light, 10%);
 
-$link-color:        $dan-pink;
-$link-hover:        darken($link-color, 9%);
+$border-color:      #e5e5e5;
+$r-border-color:    #21293d;
 
-$border-color:      #ccc;
 $disabled-gray:     #cfcfcf;
 
 

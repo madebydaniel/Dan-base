@@ -6,8 +6,8 @@ Stylesheet: Main Stylesheet
 ******************************************************************/
 
 // normalize is in the css folder and is enqueued independently
-@import '../../node_modules/jeet/scss/jeet/index.scss';
-@import "base/jeet-settings";
+//@import '../../node_modules/jeet/scss/jeet/index.scss';
+//@import "base/jeet-settings";
 
 @import "helpers/mixins";
 @import "helpers/variables";

@@ -60,7 +60,7 @@ gulp.task('watch', function(){
   ], ['mainJs']);
 
   browserSync({
-      proxy: "http://dan.dev"
+      proxy: "http://starter.dev"
   });
 
   gulp.watch('library/css/style.css').on('change', reload);

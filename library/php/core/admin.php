@@ -148,7 +148,12 @@ function wp_before_admin_bar_render_dan() {
 
 
 
-// Example Source: http://wpsnipp.com/index.php/functions-php/change-admin-postpage-color-by-status-draft-pending-published-future-private/
-
+//remove the post editor from page that is set to be the static front page
+add_action( 'add_meta_boxes_page', 'dan_remove_editor' );
+function dan_remove_editor( $post )
+{
+    if ( $post->ID == get_option( 'page_on_front' ) )
+        remove_post_type_support( 'page', 'editor' );
+}
 
 ?>
