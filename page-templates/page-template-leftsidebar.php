@@ -1,8 +1,16 @@
+<?php
+/*
+Template Name: Page - Left Sidebar
+*/
+?>
+
 <?php get_header(); ?>
 
 	<div id="content">
 
 		<div id="inner-content" class="wrap">
+
+			<?php get_sidebar(); ?>
 
 				<main id="main" class="main" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
@@ -24,7 +32,7 @@
 
 				</main>
 
-				<?php get_sidebar(); ?>
+
 
 		</div><!--\#inner-content-->
 

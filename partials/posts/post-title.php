@@ -1,5 +1,5 @@
 <h1 class="entry-title single-title" itemprop="headline" rel="bookmark">
-<?php if (is_single() ) : ?>
+<?php if (is_single() || is_page() ) : ?>
       <?php the_title(); ?>
 
 <?php else : ?>

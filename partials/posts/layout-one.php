@@ -4,7 +4,7 @@
 
   <?php get_template_part('partials/posts/post', 'title'); ?>
 
-  <?php get_template_part('partials/posts/post', 'author'); ?>
+  <?php the_author_posts_link(); ?> 
 
   <?php get_template_part('partials/posts/post', 'category'); ?>
 
@@ -31,5 +31,5 @@
   </footer>
 
   <?php comments_template(); ?>
-  
+
 <?php endif; ?>

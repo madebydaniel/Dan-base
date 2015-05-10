@@ -8,7 +8,7 @@
 
 							<?php get_template_part('partials/archive', 'page-titles'); ?>
 
-						<?php get_template_part('partials/article', 'excerpt'); ?>
+							<?php get_template_part('partials/posts/post', 'excerpt'); ?>
 
 						</main>
 

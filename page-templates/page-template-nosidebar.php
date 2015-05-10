@@ -1,3 +1,9 @@
+<?php
+/*
+Template Name: Page - No Sidebar
+*/
+?>
+
 <?php get_header(); ?>
 
 	<div id="content">
@@ -24,7 +30,7 @@
 
 				</main>
 
-				<?php get_sidebar(); ?>
+
 
 		</div><!--\#inner-content-->
 
