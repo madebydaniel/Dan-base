@@ -21,22 +21,13 @@ POSTS & CONTENT STYLES
 */
 
 .hentry {
-	background-color: $white;
-	border-radius: 3px;
-	margin-bottom: 1.5em;
-	border: 1px solid $border-color;
 
 	header {
-		border-bottom: 1px solid $light-gray;
-		padding: 1.5em;
 	}
 
 	footer {
-		padding: 1.5em;
-		border-top: 1px solid $light-gray;
 
 		p {
-			margin: 0;
 		}
 	}
 
@@ -77,10 +68,8 @@ POSTS & CONTENT STYLES
 
 	/* entry content */
 	.entry-content {
-		padding: 1.5em 1.5em 0;
 
 		p {
-			margin: 0 0 1.5em;
 		}
 
 

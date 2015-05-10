@@ -1,15 +1,21 @@
 <?php get_header(); ?>
 
-			<div id="content">
+	<div id="content">
 
-				<div id="inner-content" class="wrap">
+		<div id="inner-content" class="wrap">
 
-					<?php get_template_part('partials/content', 'blog'); ?>
-					<?php get_sidebar(); ?>
+			<main id="main" class="" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
-				</div>
+				<?php get_template_part('partials/posts/post', 'excerpt'); ?>
 
-			</div>
+			</main>
+
+
+			<?php get_sidebar(); ?>
+
+		</div>
+
+	</div>
 
 
 <?php get_footer(); ?>
