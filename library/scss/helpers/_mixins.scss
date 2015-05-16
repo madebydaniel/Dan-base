@@ -80,3 +80,16 @@ UTILITIES
 	-ms-box-sizing:     $type;
 	box-sizing:         $type;
 }
+
+
+@mixin border-top($spacing: 40px) {
+  margin-top:$spacing;
+	padding-top:$spacing;
+	border-top:solid 1px $border-color;
+}
+
+@mixin border-bottom($spacing: 40px) {
+  margin-bottom:$spacing;
+	padding-bottom:$spacing;
+	border-bottom:solid 1px $border-color;
+}

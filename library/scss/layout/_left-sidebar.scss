@@ -1,0 +1,22 @@
+/****************************
+LEFT SIDEBAR PAGE LAYOUT STYLES
+*****************************/
+.left-sidebar-page-layout {
+  margin:40px auto;
+  .sidebar-container {
+    display:none;
+  }
+  .article-container {
+
+  }
+  @include stack();
+  @include breakpoint(desktop) {
+    .sidebar-container {
+      @include column (1/6);
+      display:block;
+    }
+    .article-container {
+      @include column (5/6);
+    }
+  }
+}

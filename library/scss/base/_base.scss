@@ -39,8 +39,13 @@ body {
 }
 
 .wrap {
-	width: 96%;
+	@include clearfix();
+	@include breakpoint(desktop) {
+		width: 95%;
+	}
+	max-width:1240px;
 	margin: 0 auto;
+  position:relative;
 }
 
 
@@ -55,6 +60,48 @@ hr {
 }
 
 
+.divider {
+  margin:80px auto;
+  color:$meta-gray;
+  text-transform:uppercase;
+  @include medium-font-size();
+  font-family: $heading;
+}
+
+.center {
+	margin:0px auto;
+	display:block;
+}
+
+.tcenter {
+	text-align:center;
+}
+
+.row {
+	@include clearfix();
+}
+
+.p-ls-group {
+  p.large {
+    margin-bottom:30px;
+  }
+}
+
+.clearfix, .cf {
+  @include clearfix();
+}
+
+img {
+  max-width:100%;
+  height:auto;
+}
+
+.noBottom {
+  margin-bottom:0px;
+}
+/*
+@include edit();
+*/
 
 /********************
 WORDPRESS BODY CLASSES

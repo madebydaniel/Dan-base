@@ -113,4 +113,13 @@ function dan_nav_description( $item_output, $item, $depth, $args ) {
 }
 add_filter( 'walker_nav_menu_start_el', 'dan_nav_description', 10, 4 );
 
+
+
+/*******************  SVG SUPPORT   ***************************/
+function cc_mime_types($mimes) {
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
+}
+add_filter('upload_mimes', 'cc_mime_types');
+
 ?>
