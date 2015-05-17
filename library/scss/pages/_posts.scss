@@ -28,6 +28,7 @@ POSTS & CONTENT STYLES
 
 	/* post meta */
 	.byline {
+		@include small-font-size();
 		color: $meta-gray;
 		font-style: italic;
 		margin: 0;
@@ -40,7 +41,7 @@ POSTS & CONTENT STYLES
 		padding: 1.5em 0 0;
 
 		p {
-			margin: 0 0 1.5em;
+
 		}
 
 
@@ -68,10 +69,10 @@ POSTS & CONTENT STYLES
 			width: 100%;
 			border: 1px solid $gray;
 			margin-bottom: 1.5em;
-
+			@include small-font-size();
 			caption {
+				@include xtra-small-font-size();
 				margin: 0 0 7px;
-				font-size: 0.75em;
 				color: $meta-gray;
 				text-transform: uppercase;
 				letter-spacing: 1px;
@@ -81,7 +82,7 @@ POSTS & CONTENT STYLES
 		tr {
 			border-bottom: 1px solid $gray;
 
-			&:nth-child(even) {
+			&:nth-child(odd) {
 				background-color: $light-gray;
 			}
 		}
@@ -99,31 +100,36 @@ POSTS & CONTENT STYLES
 			background-color: $light-gray;
 			border-bottom: 1px solid $gray;
 			border-right: 1px solid $gray;
-
+			padding:15px 7px;
 			&:last-child {
 				border-right: 0;
 			}
 		}
 
-		blockquote {
+		blockquote, q {
 			margin: 0 0 1.5em 0.75em;
 			padding: 0 0 0 0.75em;
 			border-left: 3px solid $accent;
 			font-style: italic;
 			color: $meta-gray;
-
+			cite {
+				@include xtra-small-font-size();
+				margin-top:20px;
+			}
 			&:before {}
 
 		}
 
 		dl {}
 
-		dt {}
+		dt {
+			font-style:italic;
+			color: lighten($text-color, 20%);
+		}
 
 		dd {
 			margin-left: 0;
 			font-size: 0.9em;
-			color: #787878;
 			margin-bottom: 1.5em;
 		}
 
@@ -155,18 +161,25 @@ POSTS & CONTENT STYLES
 		pre {
 			background: $black;
 			color: $light-gray;
-			font-size: 0.9em;
+			@include small-font-size();
 			padding: 1.5em;
 			margin: 0 0 1.5em;
 			border-radius: 3px;
+		}
+
+		code, var, tt {
+			font-family:$mono;
+			@include small-font-size();
+			background:$light-gray;
 		}
 
 	} /* end .entry-content */
 
 .wp-caption {
 	max-width: 100%;
-	background: #eee;
+	background: transparent;
 	padding: 5px;
+	border:solid 1px $light-border-color;
 
 	/* images inside wp-caption */
 	img {
@@ -176,12 +189,13 @@ POSTS & CONTENT STYLES
 	}
 
 	p.wp-caption-text {
-		font-size: 0.85em;
+		@include xtra-small-font-size();
 		margin: 4px 0 7px;
 		text-align: center;
 	}
 
 } /* end .wp-caption */
+
 
 /* image gallery styles */
 .gallery {
@@ -212,3 +226,8 @@ POSTS & CONTENT STYLES
 .tags {
 	margin: 0;
 }
+
+
+.alignright, img.alignright { float: right; margin: 0 0 1em 1em; }
+.alignleft, img.alignleft { float: left; margin: 0 1em 1em 0; }
+.aligncenter, img.aligncenter { display: block; margin-left: auto; margin-right: auto; }

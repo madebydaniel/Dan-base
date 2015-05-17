@@ -1,7 +1,5 @@
 <?php get_header(); ?>
 
-	<div id="content">
-
 		<div id="inner-content" class="wrap no-sidebar">
 
 				<main class="dan-page-content" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/WebPage">
