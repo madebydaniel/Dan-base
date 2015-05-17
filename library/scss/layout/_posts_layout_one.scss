@@ -1,0 +1,34 @@
+.layout-one {
+	.article-container {
+		@include border-bottom();
+		&:last-of-type {
+
+		}
+	}
+
+	.dan-banner {
+		width:100%;
+		height: 300px;
+		overflow:hidden;
+		img {
+			width:100%;
+			height:auto;
+		}
+	}
+
+	.dan-title {
+
+	}
+	.dan-date {
+		@include small-font-size();
+	}
+	.dan-category {
+
+	}
+	.dan-comment-count {
+
+	}
+	.dan-tag {
+
+	}
+}

@@ -66,6 +66,12 @@ a.button, .button {
 
 } // end blue button
 
+.small-button {
+  @extend .button;
+  @include small-font-size();
+  padding:5px 10px;
+}
+
 a.ghost, .ghost {
   @extend .button; // here we load the btn defaults
   background-color: transparent;

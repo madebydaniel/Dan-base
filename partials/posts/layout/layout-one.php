@@ -27,7 +27,7 @@
            else:
 
              get_template_part('partials/posts/post', 'date');
-
+             
              if(has_post_thumbnail()){
               get_template_part('partials/posts/post', 'banner');
             }
@@ -35,8 +35,6 @@
              get_template_part('partials/posts/post', 'title');
 
              get_template_part('partials/posts/post', 'author');
-
-             get_template_part('partials/posts/post', 'category');
 
            endif;
           ?>

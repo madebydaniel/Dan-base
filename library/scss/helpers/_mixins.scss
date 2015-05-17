@@ -102,3 +102,9 @@ UTILITIES
 	padding-bottom:$spacing;
 	border-bottom:solid 1px $border-color;
 }
+
+@mixin title-border-bottom($spacing: 20px) {
+  margin-bottom:$spacing;
+	padding-bottom:$spacing/2;
+	border-bottom:solid 1px $border-color;
+}
