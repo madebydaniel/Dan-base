@@ -2,8 +2,11 @@
 
 	<?php if ( is_active_sidebar( 'blog-sidebar' ) ) : ?>
 
-		<?php dynamic_sidebar( 'blog-sidebar' ); ?>
-
+		<?php if(is_home() || is_single())  : ?>
+			<?php dynamic_sidebar( 'blog-sidebar' ); ?>
+		<?php elseif(is_page()) : ?>
+			<?php dynamic_sidebar( 'page-sidebar' ); ?>
+		<?php endif ?>
 	<?php else : ?>
 
 		<?php
