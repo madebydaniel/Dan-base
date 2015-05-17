@@ -15,12 +15,8 @@ TRANSITION
 USAGE: @include transition(all 0.2s ease-in-out);
 */
 
-@mixin transition($transition...) {
-  // defining prefixes so we can use them in mixins below
-  $prefixes:      ("-webkit-", "" );
-  @each $prefix in $prefixes {
-    #{$prefix}transition: $transition;
-  }
+@mixin transition($transition: all) {
+  transition: $transition 0.3s ease;
 }
 
 /*********************
@@ -81,6 +77,19 @@ UTILITIES
 	box-sizing:         $type;
 }
 
+@mixin margin-bottom() {
+  margin-bottom:$margin-space;
+}
+
+@mixin margin-top() {
+  margin-top:$margin-space;
+}
+
+@mixin content-container() {
+  padding:20px;
+  background:$white;
+  border:solid 1px darken($light-gray, 10%);
+}
 
 @mixin border-top($spacing: 40px) {
   margin-top:$spacing;

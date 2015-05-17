@@ -1,4 +1,4 @@
-<h1 class="entry-title single-title" itemprop="headline" rel="bookmark">
+<h1 class="entry-title single-title dan-title" itemprop="headline" rel="bookmark">
 <?php if (is_single() || is_page() ) : ?>
       <?php the_title(); ?>
 

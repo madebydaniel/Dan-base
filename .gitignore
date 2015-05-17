@@ -91,3 +91,5 @@ temp/
 *.codekit
 *.scssc
 .sass-cache
+
+node_modules

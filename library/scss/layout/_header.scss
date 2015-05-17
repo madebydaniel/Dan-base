@@ -3,13 +3,49 @@ HEADER STYLES
 *********************/
 
 .header {
-	background-color: $primary-light;
-}
-
+	background-color: $white;
 	#logo {
-		margin: 0.75em 0;
-
+		margin:0 auto;
+		text-align:center;
 		a {
-			color: $white;
+			color: $accent-dark;
 		}
 	}
+	.top-level-nav {
+		text-align:center;
+	}
+	@include stack();
+	@include breakpoint(desktop){
+		#logo {
+			@include column(1/6);
+			text-align:left;
+		}
+		.top-level-nav {
+			@include column(5/6);
+			text-align:right;
+		}
+	}
+}
+
+
+.dan-hero {
+	background:$primary-dark;
+	text-align:center;
+	padding:80px 0px;
+	@include margin-bottom();
+	.hero-content {
+		h1, h2, p {
+			color:$white;
+		}
+		h1.archive-title {
+			span {
+				display:block;
+				@include medium-font-size();
+				font-weight:300;
+			}
+		}
+		.hero-cta {
+			margin-top:40px;
+		}
+	}
+}

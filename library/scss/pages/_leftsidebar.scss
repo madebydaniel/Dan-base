@@ -1,0 +1,17 @@
+.left-sidebar {
+	.dan-blogroll, .dan-page-content {
+		@include content-container();
+	}
+	.dan-sidebar {
+
+	}
+	@include stack();
+	@include breakpoint(desktop) {
+		.dan-sidebar {
+			@include column(1/5);
+		}
+		.dan-blogroll, .dan-page-content {
+			@include column(4/5);
+		}
+	}
+}

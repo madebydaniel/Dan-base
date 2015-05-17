@@ -30,6 +30,7 @@ require_once( 'library/php/functions/related-posts.php' ); // related posts
 require_once( 'library/php/functions/page-navi.php' ); // page navigation
 require_once( 'library/php/functions/comment-layout.php' ); //comments layout
 require_once( 'library/php/functions/fonts.php' ); // google fonts
+require_once( 'library/php/functions/dan-blogposts.php' ); // dan-blogposts blog teaser
 
 // ###### SHORTCODES ###### //
 require_once( 'library/php/shortcodes/shortcodes.php' ); //

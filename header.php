@@ -49,7 +49,7 @@
 
 	</head>
 
-	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
+	<body <?php body_class(); ?>>
 
 		<?php get_template_part('partials/globals/header', 'default'); ?>
 

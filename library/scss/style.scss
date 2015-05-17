@@ -6,8 +6,8 @@ Stylesheet: Main Stylesheet
 ******************************************************************/
 
 // normalize is in the css folder and is enqueued independently
-//@import '../../node_modules/jeet/scss/jeet/index.scss';
-//@import "base/jeet-settings";
+@import '../../node_modules/jeet/scss/jeet/index.scss';
+@import "base/jeet-settings";
 
 @import "helpers/mixins";
 @import "helpers/variables";
@@ -21,10 +21,13 @@ Stylesheet: Main Stylesheet
 @import "layout/comments";
 @import "layout/sidebars";
 @import "layout/footer";
+//@import "layout/left-sidebar";
+@import "layout/sections";
 
 @import "components/alerts";
 @import "components/buttons";
 @import "components/forms";
+@import "components/tabs";
 @import "components/announcement";
 
 // styles in base.scss
@@ -32,6 +35,9 @@ Stylesheet: Main Stylesheet
 
 @import "pages/posts";
 @import "pages/home";
+@import "pages/leftsidebar";
+@import "pages/rightsidebar";
+@import "pages/nosidebar";
 
 
 /*********************

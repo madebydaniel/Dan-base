@@ -33,29 +33,34 @@
 
 </header>
 
-<section class="article-header site-header">
+<section class="article-header dan-hero">
   <div class="wrap">
+    <div class="hero-content">
+      <?php if(is_front_page()) {
 
-    <?php if(is_front_page()) {
+        $home_hero_one = get_post_meta( $post->ID, 'dan_home_hero_one', true );
+      	$home_hero_two = get_post_meta( $post->ID, 'dan_home_hero_two', true );
+      	$home_cta_url_one = get_post_meta( $post->ID, 'dan_home_cta_url_one', true );
+      	$home_cta_btn_one = get_post_meta( $post->ID, 'dan_home_cta_btn_one', true );
 
-      $home_hero_one = get_post_meta( $post->ID, 'dan_home_hero_one', true );
-    	$home_hero_two = get_post_meta( $post->ID, 'dan_home_hero_two', true );
-    	$home_cta_url_one = get_post_meta( $post->ID, 'dan_home_cta_url_one', true );
-    	$home_cta_btn_one = get_post_meta( $post->ID, 'dan_home_cta_btn_one', true );
+      ?>
 
-    ?>
-      <div id="hero-content">
-        <hgroup>
-          <h1><?php echo $home_hero_one; ?></h1>
-          <h2><?php echo $home_hero_two; ?></h2>
-        </hgroup>
-        <div id="hero-button-group">
-          <a class="button primary" href="<?php echo $home_cta_url_one; ?>">
-            <?php echo $home_cta_btn_one; ?>
-          </a>
-        </div>
-      </div><!--\hero-content-->
-    <?php } ?>
+          <hgroup>
+            <h1><?php echo $home_hero_one; ?></h1>
+            <h2><?php echo $home_hero_two; ?></h2>
+          </hgroup>
+          <div class="hero-cta">
+            <a class="button primary ghost" href="<?php echo $home_cta_url_one; ?>">
+              <?php echo $home_cta_btn_one; ?>
+            </a>
+          </div>
+      <?php } elseif(is_archive()){
 
+        get_template_part('partials/posts/archive', 'page-titles');
+
+      } else { ?>
+        <h1><?php the_title(); ?></h1>
+      <?php } ?>
+    </div><!--\hero-content-->
   </div><!--\wrap-->
 </section>

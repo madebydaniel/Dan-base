@@ -87,20 +87,49 @@ function front_page_metabox() {
 
 
 
+  $cmb_home_pitch = new_cmb2_box( array(
+    'id'            => $prefix . 'home_pitch',
+    'title'         => __( 'Main Pitch Panel', 'cmb2' ),
+    'object_types'  => array( 'page', ), // Post type
+    'show_on' => array( 'key' => 'front-page', 'value' => '' ),
+    'context'       => 'normal',
+    'priority'      => 'high',
+    'show_names'    => true, // Show field names on the left
+  ) );
+  $cmb_home_pitch->add_field( array(
+    'name'       => __( 'First Line', 'cmb2' ),
+    //'desc'       => __( 'field description (optional)', 'cmb2' ),
+    'id'         => $prefix . 'home_pitch_title',
+    'type'       => 'text',
+    //'show_on_cb' => 'yourprefix_hide_if_no_cats', // function should return a bool value
+    // 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
+    // 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter
+    // 'on_front'        => false, // Optionally designate a field to wp-admin only
+    // 'repeatable'      => true,
+  ) );
+  $cmb_home_pitch->add_field( array(
+    'name'       => __( 'Second Line', 'cmb2' ),
+    'id'         => $prefix . 'home_pitch_content',
+    'type'       => 'textarea_small',
+  ) );
 
-  $cmb_home_client_list = new_cmb2_box( array(
+
+
+
+
+  $cmb_home_trust_symbols = new_cmb2_box( array(
 		'id'            => $prefix . 'home_client_cmb',
-		'title'         => __( 'Featured Clients', 'cmb2' ),
+		'title'         => __( 'Trust Symbols', 'cmb2' ),
 		'object_types'  => array( 'page', ), // Post type
     'show_on' => array( 'key' => 'front-page', 'value' => '' ),
 		'context'       => 'normal',
 		'priority'      => 'high',
 		'show_names'    => true, // Show field names on the left
 	) );
-	$cmb_home_client_list->add_field( array(
+	$cmb_home_trust_symbols->add_field( array(
 		'name'       => __( 'Client Logo', 'cmb2' ),
-		'desc'       => __( 'Upload a client logo: recommended size is ???x???', 'cmb2' ),
-		'id'         => $prefix . 'home_client',
+		'desc'       => __( 'Upload logos as trust symbols: recommended size is ???x???', 'cmb2' ),
+		'id'         => $prefix . 'trust_symbols',
 		'type'       => 'file_list',
 	) );
 

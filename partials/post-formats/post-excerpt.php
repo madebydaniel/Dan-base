@@ -2,7 +2,7 @@
 
   <article id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?> role="article">
 
-    <?php get_template_part('partials/posts/layout', 'one'); ?>
+    <?php get_template_part('partials/posts/layout/layout', 'one'); ?>
 
   </article>
 

@@ -25,10 +25,11 @@ NAVIGATION STYLES
 				color:$primary;
 				font-weight:600;
 				text-align:center;
+				@include transition(color);
 				@include rem(font-size, 1.8rem);
 				@include rem(line-height, 2.4rem);
 					&:hover, &:focus {
-					color: $primary-dark;
+					color: $accent-dark;
 					}
 
 			}/*EO - a */

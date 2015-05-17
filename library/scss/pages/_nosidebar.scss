@@ -1,0 +1,15 @@
+.no-sidebar {
+	.dan-blogroll, .dan-page-content {
+		@include content-container();
+	}
+	.dan-sidebar {
+
+	}
+	@include stack();
+	@include breakpoint(desktop) {
+		.dan-blogroll, .dan-page-content {
+		}
+		.dan-sidebar {
+		}
+	}
+}

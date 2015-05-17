@@ -1,4 +1,4 @@
-<footer class="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+<footer class="site-footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
 
   <div id="footer-logo">
     <div class="wrap">

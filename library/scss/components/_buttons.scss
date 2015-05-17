@@ -17,8 +17,7 @@ Stylesheet: Button Styles
   border-radius: 4px;
   border: 0;
   cursor: pointer;
-  @include transition(background-color 0.14s ease-in-out);
-
+  @include transition();
   // hovering on the btn
   &:hover, &:focus {
     color: $white;
@@ -73,14 +72,14 @@ a.ghost, .ghost {
   border:solid 1px $white;
   &:hover,
   &:focus {
-    color:$primary-medium;
-    border-color:$primary-medium;
+    color:$accent;
+    border-color:$accent;
     background-color: transparent;
   } // end hover
 
   &:active {
-    color:$primary-light;
-    border-color:$primary-light;
+    color:$accent-light;
+    border-color:$accent-light;
     background-color: transparent;
   } // end active
   &:visited {

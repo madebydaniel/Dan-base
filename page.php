@@ -2,12 +2,12 @@
 
 	<div id="content">
 
-		<div id="inner-content" class="wrap">
+		<div id="inner-content" class="wrap no-sidebar">
 
-				<main id="main" class="main" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+				<main class="dan-page-content" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/WebPage">
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-					  <article id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?> role="article" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
+					  <article id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?> role="article" itemscope itemprop="blogPost" itemtype="http://schema.org/WebPageElement">
 
 						  <?php get_template_part('partials/posts/post', 'title'); ?>
 
@@ -24,10 +24,7 @@
 
 				</main>
 
-				<?php get_sidebar(); ?>
-
 		</div><!--\#inner-content-->
 
-	</div><!--\#content-->
 
 <?php get_footer(); ?>

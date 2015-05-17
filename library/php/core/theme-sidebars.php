@@ -14,6 +14,28 @@ function dan_register_sidebars() {
 		'after_title' => '</h4>',
 	));
 
+	register_sidebar(array(
+		'id' => 'blog-sidebar',
+		'name' => __( 'Blog Sidebar Widgets', 'dantheme' ),
+		'description' => __( 'Widget Area for the blog and archive pages.', 'dantheme' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widgettitle">',
+		'after_title' => '</h4>',
+	));
+
+
+	register_sidebar(array(
+		'id' => 'page-sidebar',
+		'name' => __( 'Page Sidebar Widgets', 'dantheme' ),
+		'description' => __( 'Widget Area for the general pages.', 'dantheme' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widgettitle">',
+		'after_title' => '</h4>',
+	));
+
+
 }
 
 ?>
