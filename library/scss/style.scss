@@ -33,6 +33,7 @@ Stylesheet: Main Stylesheet
 // styles in base.scss
 @import "base/base";
 
+@import "pages/page_base";
 @import "pages/posts";
 @import "pages/home";
 @import "pages/leftsidebar";
@@ -40,6 +41,7 @@ Stylesheet: Main Stylesheet
 @import "pages/nosidebar";
 
 @import "layout/posts_layout_one";
+@import "layout/posts_layout_two";
 
 
 /*********************

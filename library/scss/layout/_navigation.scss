@@ -8,6 +8,9 @@ NAVIGATION STYLES
 	text-transform:uppercase;
 	position:relative;
 	width:100%;
+	nav {
+
+	}
 	ul {
 		display:block;
 		position:relative;
@@ -26,12 +29,14 @@ NAVIGATION STYLES
 				font-weight:600;
 				text-align:center;
 				@include transition(color);
-				@include rem(font-size, 1.8rem);
-				@include rem(line-height, 2.4rem);
+				@include small-font-size();
 					&:hover, &:focus {
 					color: $accent-dark;
 					}
-
+					.menu-item-description {
+						@include xtra-small-font-size();
+						font-weight:normal;
+					}
 			}/*EO - a */
 			ul {
 				display:none;
@@ -56,24 +61,25 @@ NAVIGATION STYLES
 		}/*EO - li */
 	}/*EO - .main-nav ul */
 	@include breakpoint(desktop) {
+		nav {
+			display:block;
+			float:right;
+		}
 		ul {
 			display:block;
-			margin:0px auto;
-			float:left;
+			margin:0;
+			padding:0;
 			li {
 				display:inline-block;
 				vertical-align:top;
 				a {
-					float:left;
-					margin:7px 10px 0px;
-					padding:5px;
+					padding:5px 10px;
+					display:block;
 					text-align:left;
-					@include rem(font-size, 1.5rem);
-					@include rem(line-height, 1.5rem);
+					@include small-font-size();
 				}/*EO - a */
 				&:first-of-type a {
 					padding-left:0px;
-					margin-left:0px;
 				}
 				ul {
 					display:none;
@@ -98,15 +104,14 @@ NAVIGATION STYLES
 							color: $primary;
 							transition:all 0.2s ease;
 							box-shadow:0px 3px 5px black(0.2);
-							@include rem(font-size, 1.3rem);
 							&:hover, &:active {
-								background:$primary-light;
+								background:$accent-dark;
 							}
 						}/*EO - a */
-						&.current-menu-item {
+						&.current-menu-item, &.current_page_item {
 							a {
-								background:#D2E1EF;
-								color:$primary-dark;
+								background:$accent-dark;
+								color:$white;
 							}/*EO - a */
 						}/*EO - current-menu-item */
 					}/*EO - li */
