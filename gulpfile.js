@@ -48,7 +48,7 @@ gulp.task('loginStyles', function(){
 gulp.task('watch', function(){
   gulp.watch([
     'library/scss/style.scss',
-    'library/scss/**/*.scss'
+    'library/scss/**/**/*.scss'
   ], ['mainStyles']);
 
   gulp.watch([

@@ -1,0 +1,41 @@
+.article-excerpt-layout  {
+	@include border-bottom();
+	@include clearfix();
+	.a-excerpt {
+		.a-header {
+
+		}
+		.a-meta {
+			margin-top:0px;
+		}
+		.a-date {
+			@include small-font-size();
+			margin:0px;
+			padding:0px;
+		}
+		.a-title-link {
+			text-decoration:none;
+			&:hover .a-title, &:active .a-title{
+				color:$accent;
+			}
+		}
+		.a-title {
+			transition:color 0.4s ease;
+			margin:0px;
+			padding:0px;
+			@include large-font-size();
+		}
+		.a-content {
+
+		}
+		.a-action {
+			margin-top:10px;
+		}
+	}
+	&:last-of-type {
+		border:none;
+		padding-bottom:0px;
+	}
+}
+
+

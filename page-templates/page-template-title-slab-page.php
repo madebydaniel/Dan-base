@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Posts - Layout 1
+Template Name: Titles and Slabs
 */
 ?>
 

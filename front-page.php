@@ -12,7 +12,7 @@
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix' ); ?> role="article" itemscope itemtype="http://schema.org/WebPage">
 
-		<section class="dan-section">
+		<section class="title-group">
 			<div class="wrap">
 				<h2 class="dan-title">
 					<?php echo $home_pitch_title; ?>

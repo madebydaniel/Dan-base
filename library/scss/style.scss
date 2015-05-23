@@ -15,20 +15,32 @@ Stylesheet: Main Stylesheet
 
 @import "base/typography";
 
-@import "layout/header";
-@import "layout/navigation";
-@import "layout/pagination";
-@import "layout/comments";
-@import "layout/sidebars";
-@import "layout/footer";
-//@import "layout/left-sidebar";
-@import "layout/sections";
+@import "layout/template-parts/header";
+@import "layout/template-parts/navigation";
+@import "layout/template-parts/pagination";
+@import "layout/template-parts/comments";
+@import "layout/template-parts/sidebars";
+@import "layout/template-parts/footer";
+//@import "layout/template-parts/left-sidebar";
+
+@import "layout/collections/posts_layout_one";
+@import "layout/collections/posts_layout_two";
+
+@import "layout/patterns/articles";
+@import "layout/patterns/blocks";
+@import "layout/patterns/cards";
+@import "layout/patterns/gallery";
+@import "layout/patterns/slabs";
+@import "layout/patterns/titlegroups";
 
 @import "components/alerts";
 @import "components/buttons";
 @import "components/forms";
 @import "components/tabs";
 @import "components/announcement";
+@import "components/carousel";
+
+@import "layout/utilities/grid_helpers";
 
 // styles in base.scss
 @import "base/base";
@@ -40,8 +52,7 @@ Stylesheet: Main Stylesheet
 @import "pages/rightsidebar";
 @import "pages/nosidebar";
 
-@import "layout/posts_layout_one";
-@import "layout/posts_layout_two";
+
 
 
 /*********************

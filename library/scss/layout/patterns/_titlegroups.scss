@@ -1,0 +1,23 @@
+
+
+.title-group {
+  text-align:center;
+  content:'billybob';
+  @include breakpoint(desktop){
+		margin-top:60px;
+    .nine-col {
+      @include column(3/4);
+      text-align:left;
+    }
+    .three-col {
+      @include column(1/4);
+    }
+  }
+	.dan-title {
+		margin-bottom:0px;
+	}
+	.dan-large {
+		margin-top:20px;
+	}
+}
+

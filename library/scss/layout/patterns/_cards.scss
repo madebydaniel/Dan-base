@@ -1,0 +1,53 @@
+.cards {
+	.card {
+		margin-bottom:40px;
+		@include breakpoint(desktop) {
+			@include column(1/3, $cycle:3 );
+		}
+		.c-img, .c-title, .c-content, .c-action {
+			display:block;
+		}
+		.c-img {
+			width:100%;
+			height:200px;
+			border:solid 1px $border-color;
+			padding:5px;
+			margin-bottom:0px;
+			text-align:center;
+			img {
+				@include vertical-align();
+				max-width:50%;
+				max-height:160px;
+				height:auto;
+				width:auto;
+			}
+		}
+		.c-title {
+			padding:10px;
+			border:solid 1px $border-color;
+			border-top:none;
+			background:$light-gray;
+		}
+		.c-content {
+			padding:10px;
+			border:solid 1px $border-color;
+			border-top:none;
+		}
+		.c-action {
+
+		}
+	}
+}
+
+
+.logo-cards {
+	@extend .cards;
+	.card {
+		.c-img {
+			height:120px;
+			img {
+				max-height:100px;
+			}
+		}
+	}
+}

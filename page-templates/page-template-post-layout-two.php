@@ -43,7 +43,7 @@ Template Name: Posts - Layout 2
              ?>
              </div>
           <?php
-             get_template_part('partials/posts/post', 'title');
+             get_template_part('partials/posts/post', 'titlelink');
 
              the_excerpt( '<span class="read-more">' . __( 'Read more &raquo;', 'dantheme' ) . '</span>' );
           ?>

@@ -1,0 +1,20 @@
+.row {
+	margin-bottom:40px;
+	@include clearfix();
+	@include breakpoint(desktop){
+		.six-col {
+			@include column(1/2);
+		}
+	}
+}
+
+.blogroll-6-6 {
+	margin-bottom:40px;
+	@include stack();
+	@include breakpoint(desktop){
+		.six-col {
+			@include column(1/2);
+		}
+	}
+}
+

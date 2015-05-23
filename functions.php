@@ -6,6 +6,7 @@ require_once( 'library/php/core/dan.php' );
 require_once( 'library/php/core/theme-support.php' );
 require_once( 'library/php/core/theme-sidebars.php' );
 require_once( 'library/php/core/enqueue-scripts-styles.php' );
+require_once( 'library/php/core/fonts.php' );
 
 
 require_once( 'library/php/core/admin.php' );
@@ -18,7 +19,11 @@ require_once( 'library/php/customizer/theme-customizer.php' ); // theme customiz
 
 // ###### CMB2 METABOXES ###### //
 require_once( 'library/php/metabox/start-cmb2.php' );
+require_once ('library/php/metabox/cmb-field-select2/cmb-field-select2.php');
+require_once( 'library/php/metabox/cmb2-filelist-output.php' );
+require_once( 'library/php/metabox/cmb2-fontawesome-cb.php' );
 require_once( 'library/php/metabox/theme-cmb2/front-page-cmb2.php' );
+require_once( 'library/php/metabox/theme-cmb2/title-group-cmb2.php' );
 
 // ###### CUSTOM POST-TYPES ###### //
 require_once( 'library/php/functions/flush-rewrite-posttypes.php' );

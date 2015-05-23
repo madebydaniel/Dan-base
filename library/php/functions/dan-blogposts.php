@@ -19,13 +19,13 @@ function dan_blogposts() {
 
   ?>
 
-  <section id="blogroll" class="block-banner-three">
+  <section id="blogroll" class="blocks-three">
 
 	<?php $blogposts = get_posts( $args ); ?>
 
   	<?php foreach ( $blogposts as $post ) : setup_postdata( $post ); ?>
 
-      <div class="dan-item">
+      <div class="block-item">
     		<?php get_template_part('partials/posts/post', 'banner'); ?>
 
     		<?php get_template_part('partials/posts/post', 'titlelink'); ?>
