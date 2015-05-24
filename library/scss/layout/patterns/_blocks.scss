@@ -31,7 +31,7 @@
 }
 
 .blocks-two {
-	margin-bottom:$margin-space;
+	margin-bottom:$half-space;
 	@include clearfix();
 	@include breakpoint(desktop) {
 		.block-item {
@@ -41,7 +41,7 @@
 }
 
 .blocks-three {
-	margin-bottom:$margin-space;
+	margin-bottom:$half-space;
 	@include clearfix();
 	@include breakpoint(desktop) {
 		.block-item {
@@ -51,7 +51,7 @@
 }
 
 .blocks-four {
-	margin-bottom:$margin-space;
+	margin-bottom:$half-space;
 	@include clearfix();
 	@include breakpoint(desktop) {
 		.block-item {

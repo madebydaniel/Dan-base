@@ -6,53 +6,193 @@ Template Name: Titles and Slabs
 
 <?php get_header(); ?>
 
-<div id="" class="wrap left-sidebar">
 
-  <?php get_sidebar('blog-sidebar'); ?>
+  <main class="" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/WebPageElement">
 
-  <main class="dan-blogroll layout-one" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-    <?php
-      $args = array(
-        'posts_per_page' => '10',
-        'orderby' => 'date',
-        'order' => 'DESC',
-        'post_type' => 'post',
-        'post_status' => 'publish',
-      );
+      <?php
 
-      $blogposts = get_posts( $args );
+      $icon = get_post_meta( $post->ID, 'dan_icon', true );
+      $title = get_post_meta( $post->ID, 'dan_title', true );
+      $subtitle = get_post_meta( $post->ID, 'dan_subtitle', true );
+      $content = get_post_meta( $post->ID, 'dan_content', true );
+      $btn = get_post_meta( $post->ID, 'dan_btn', true );
+      $btn_url = get_post_meta( $post->ID, 'dan_btn_url', true );
+      $btn_two = get_post_meta( $post->ID, 'dan_btn_two', true );
+      $btn_url_two = get_post_meta( $post->ID, 'dan_btn_url_two', true );
 
-      foreach ( $blogposts as $post ) : setup_postdata( $post );
-    ?>
 
-      <article class="article-container">
-        <header class="article-header entry-header">
-          <?php
-            get_template_part('partials/posts/post', 'date');
+       ?>
 
-            if(has_post_thumbnail()){
-             get_template_part('partials/posts/post', 'banner');
-           }
+      <article class="title-group center">
+        <div class="wrap">
+          <?php if($icon){ ?>
+            <i class="fa <?php echo $icon; ?>"></i>
+          <?php }?>
 
-            get_template_part('partials/posts/post', 'titlelink');
+          <?php if($title){ ?>
+            <p class="h3 title"><?php echo $title; ?></p>
+          <?php } ?>
 
-            get_template_part('partials/posts/post', 'author');
-          ?>
-        </header>
+          <?php if($subtitle){ ?>
+            <p class="large subtitle"><?php echo $subtitle; ?></p>
+          <?php } ?>
 
-        <section class="entry-content">
-          <?php
-            the_excerpt( '<span class="read-more">' . __( 'Read more &raquo;', 'dantheme' ) . '</span>' );
-          ?>
-        </section>
+          <?php if($content){ ?>
+            <p class="content"><?php echo $content; ?></p>
+          <?php } ?>
+          <div class="buttons">
+            <?php if($btn){ ?>
+              <a href="<?php echo $btn_url; ?>" class="button primary">
+              <?php echo $btn; ?>
+            </a>
+            <?php } ?>
+            <?php if($btn_two) { ?>
 
+            <a href="<?php echo $btn_url_two; ?>" class="button secondary">
+              <?php echo $btn_two; ?>
+            </a>
+            <?php } ?>
+        </div><!--\wrap-->
        </article>
 
-     <?php endforeach; wp_reset_postdata();?>
+       <article class="title-group center slab">
+         <div class="wrap">
+           <?php if($icon){ ?>
+             <i class="fa <?php echo $icon; ?>"></i>
+           <?php }?>
+
+           <?php if($title){ ?>
+             <p class="h3 title"><?php echo $title; ?></p>
+           <?php } ?>
+
+           <?php if($subtitle){ ?>
+             <p class="large subtitle"><?php echo $subtitle; ?></p>
+           <?php } ?>
+
+           <?php if($content){ ?>
+             <p class="content"><?php echo $content; ?></p>
+           <?php } ?>
+
+           <div class="buttons">
+             <?php if($btn){ ?>
+               <a href="<?php echo $btn_url; ?>" class="button primary light">
+               <?php echo $btn; ?>
+             </a>
+             <?php } ?>
+
+             <?php if($btn_two) { ?>
+             <a href="<?php echo $btn_url_two; ?>" class="button ghost light">
+               <?php echo $btn_two; ?>
+             </a>
+             <?php } ?>
+         </div><!--\wrap-->
+        </article>
+
+        <article class="title-group">
+          <div class="wrap">
+            <?php if($icon){ ?>
+              <i class="fa <?php echo $icon; ?>"></i>
+            <?php }?>
+
+            <?php if($title){ ?>
+              <p class="h3 title"><?php echo $title; ?></p>
+            <?php } ?>
+
+            <?php if($subtitle){ ?>
+              <p class="large subtitle"><?php echo $subtitle; ?></p>
+            <?php } ?>
+
+            <?php if($content){ ?>
+              <p class="content"><?php echo $content; ?></p>
+            <?php } ?>
+
+            <div class="buttons">
+              <?php if($btn){ ?>
+                <a href="<?php echo $btn_url; ?>" class="button primary">
+                <?php echo $btn; ?>
+              </a>
+              <?php } ?>
+
+              <?php if($btn_two) { ?>
+              <a href="<?php echo $btn_url_two; ?>" class="button secondary">
+                <?php echo $btn_two; ?>
+              </a>
+              <?php } ?>
+          </div><!--\wrap-->
+         </article>
+
+         <article class="title-group slab dark">
+           <div class="wrap">
+             <?php if($icon){ ?>
+               <i class="fa <?php echo $icon; ?>"></i>
+             <?php }?>
+
+             <?php if($title){ ?>
+               <p class="h3 title"><?php echo $title; ?></p>
+             <?php } ?>
+
+             <?php if($subtitle){ ?>
+               <p class="large subtitle"><?php echo $subtitle; ?></p>
+             <?php } ?>
+
+             <?php if($content){ ?>
+               <p class="content"><?php echo $content; ?></p>
+             <?php } ?>
+
+             <div class="buttons">
+               <?php if($btn){ ?>
+                 <a href="<?php echo $btn_url; ?>" class="button primary light">
+                 <?php echo $btn; ?>
+               </a>
+               <?php } ?>
+
+               <?php if($btn_two) { ?>
+               <a href="<?php echo $btn_url_two; ?>" class="button secondary light">
+                 <?php echo $btn_two; ?>
+               </a>
+               <?php } ?>
+           </div><!--\wrap-->
+          </article>
+
+          <article class="title-group slab light">
+            <div class="wrap">
+              <?php if($icon){ ?>
+                <i class="fa <?php echo $icon; ?>"></i>
+              <?php }?>
+
+              <?php if($title){ ?>
+                <p class="h3 title"><?php echo $title; ?></p>
+              <?php } ?>
+
+              <?php if($subtitle){ ?>
+                <p class="large subtitle"><?php echo $subtitle; ?></p>
+              <?php } ?>
+
+              <?php if($content){ ?>
+                <p class="content"><?php echo $content; ?></p>
+              <?php } ?>
+
+              <div class="buttons">
+                <?php if($btn){ ?>
+                  <a href="<?php echo $btn_url; ?>" class="button primary">
+                  <?php echo $btn; ?>
+                </a>
+                <?php } ?>
+
+                <?php if($btn_two) { ?>
+                <a href="<?php echo $btn_url_two; ?>" class="button secondary">
+                  <?php echo $btn_two; ?>
+                </a>
+                <?php } ?>
+            </div><!--\wrap-->
+           </article>
+
+
+     <?php endwhile; endif;?>
 
   </main>
 
-</div>
 
 <?php get_footer(); ?>

@@ -1,23 +1,63 @@
-
-
 .title-group {
-  text-align:center;
-  content:'billybob';
-  @include breakpoint(desktop){
-		margin-top:60px;
-    .nine-col {
-      @include column(3/4);
-      text-align:left;
+  text-align:left;
+  padding:$space 0px;
+  i.fa {
+    margin:0 auto $fourth-space;
+    padding:0;
+  }
+  p {
+    margin:0 auto 10px;
+    padding:0;
+  }
+  p.title {
+    margin:0 auto $fourth-space;
+  }
+  p.subtitle {
+
+  }
+  p.content {
+
+  }
+  .buttons {
+    margin-top:$half-space;
+    a.button.primary {
+
     }
-    .three-col {
-      @include column(1/4);
+    a.button.secondary {
+
     }
   }
-	.dan-title {
-		margin-bottom:0px;
-	}
-	.dan-large {
-		margin-top:20px;
-	}
+
+}/* EO - title-group */
+
+
+.title-group.center {
+  text-align:center;
 }
 
+.slab {
+  background:$primary;
+  i.fa {
+    color:lighten($primary, 25%);
+  }
+  p,a {
+    color:$white;
+  }
+}
+
+.slab.dark {
+  background:$primary-dark;
+  i.fa {
+    color:lighten($primary-dark, 35%);
+  }
+}
+
+.slab.light {
+  background:$light-gray;
+  i.fa {
+    color:darken($text-color, 15%);
+  }
+  p,a {
+    color:$text-color;
+  }
+}
