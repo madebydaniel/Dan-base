@@ -1,4 +1,4 @@
-<div id="post-sidebar" class="dan-sidebar" role="complementary">
+<div id="post-sidebar" class="dan-sidebar <?php if(is_page_template('page-templates/page-template-tk-pin-page.php')) { ?>pin<?php } ?>" role="complementary">
 
 	<?php if ( is_active_sidebar( 'blog-sidebar' ) ) : ?>
 
@@ -6,6 +6,8 @@
 			<?php dynamic_sidebar( 'blog-sidebar' ); ?>
 		<?php elseif(is_page()) : ?>
 			<?php dynamic_sidebar( 'page-sidebar' ); ?>
+		<?php elseif(is_page()) : ?>
+			<?php dynamic_sidebar( 'page-tkpin-example-sidebar' ); ?>
 		<?php endif ?>
 	<?php else : ?>
 

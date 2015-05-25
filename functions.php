@@ -27,6 +27,7 @@ require_once( 'library/php/metabox/theme-cmb2/title-group-cmb2.php' );
 require_once( 'library/php/metabox/theme-cmb2/boxes-cmb2.php' );
 require_once( 'library/php/metabox/theme-cmb2/slat-cmb2.php' );
 require_once( 'library/php/metabox/theme-cmb2/tabs-cmb2.php' );
+require_once( 'library/php/metabox/theme-cmb2/stalker-cmb2.php' );
 
 // ###### CUSTOM POST-TYPES ###### //
 require_once( 'library/php/functions/flush-rewrite-posttypes.php' );

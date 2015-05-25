@@ -6,8 +6,8 @@ Template Name: Page - Right Sidebar
 
 <?php get_header(); ?>
 
-	<div id="" class="wrap right-sidebar">
-
+	<div id="" class="right-sidebar">
+		<div class="wrap">
 		<main class="dan-page-content" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/WebPage">
 
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -27,7 +27,7 @@ Template Name: Page - Right Sidebar
 		</main>
 
 		<?php get_sidebar('page-sidebar'); ?>
-
+	</div><!--\wrap-->
 	</div><!--\#inner-content-->
 
 

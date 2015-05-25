@@ -18,3 +18,27 @@
   })(jQuery);
   </script>
 <?php } ?>
+
+<?php if((is_page_template('page-templates/page-template-tk-pin-page.php')) || (is_page_template('page-templates/page-template-tk-stalker-page.php'))) { ?>
+  <script>
+  (function($){
+    $('.pin').pin({
+      //animation: 'slide',
+      location: 'left',
+      fixed: true
+    });
+  })(jQuery);
+  </script>
+<?php } ?>
+
+
+<?php if(is_page_template('page-templates/page-template-tk-stalker-page.php')) { ?>
+  <script>
+    (function($){
+      $('body').stalker({
+        target: '#stalker-nav li a',
+        marker: '#stalker-articles article'
+      });
+    })(jQuery);
+  </script>
+<?php } ?>

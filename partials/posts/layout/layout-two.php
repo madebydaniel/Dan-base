@@ -1,5 +1,5 @@
-<div id="" class="wrap left-sidebar">
-
+<div id="" class="left-sidebar">
+<div class="wrap">
   <?php get_sidebar('blog-sidebar'); ?>
 
   <main class="dan-blogroll layout-two" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
@@ -99,5 +99,5 @@
     <?php endif; ?>
 
   </main>
-
+</div><!--\wrap-->
 </div>

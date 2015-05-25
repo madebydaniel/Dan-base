@@ -6,8 +6,8 @@ Template Name: Page - Left Sidebar
 
 <?php get_header(); ?>
 
-	<div id="" class="wrap left-sidebar">
-
+	<div id="" class="left-sidebar">
+		<div class="wrap">
 		<?php get_sidebar('page-sidebar'); ?>
 
 		<main class="dan-page-content" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/WebPage">
@@ -27,7 +27,7 @@ Template Name: Page - Left Sidebar
 			  <?php get_template_part('partials/content', 'post-not-found'); ?>
 			<?php endif; ?>
 		</main>
-
+	</div><!--\wrap-->
 	</div><!--\#inner-content-->
 
 

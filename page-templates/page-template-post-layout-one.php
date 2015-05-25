@@ -6,8 +6,8 @@ Template Name: Posts - Layout 1
 
 <?php get_header(); ?>
 
-<div id="" class="wrap left-sidebar">
-
+<div id="" class="left-sidebar">
+<div class="wrap">
   <?php get_sidebar('blog-sidebar'); ?>
 
   <main class="dan-blogroll layout-one" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
@@ -52,7 +52,7 @@ Template Name: Posts - Layout 1
      <?php endforeach; wp_reset_postdata();?>
 
   </main>
-
+</div><!--\wrap-->
 </div>
 
 <?php get_footer(); ?>

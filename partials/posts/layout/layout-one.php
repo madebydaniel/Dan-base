@@ -1,5 +1,5 @@
-<div id="" class="wrap left-sidebar">
-
+<div id="" class="left-sidebar">
+<div class="wrap">
   <?php get_sidebar('blog-sidebar'); ?>
 
   <main class="dan-blogroll layout-one" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
@@ -27,7 +27,7 @@
            else:
 
              get_template_part('partials/posts/post', 'date');
-             
+
              if(has_post_thumbnail()){
               get_template_part('partials/posts/post', 'banner');
             }
@@ -84,5 +84,5 @@
     <?php endif; ?>
 
   </main>
-
+</div><!--\wrap-->
 </div>

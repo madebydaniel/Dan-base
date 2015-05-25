@@ -7,48 +7,30 @@ Template Name: TK Pin
 <?php get_header(); ?>
 
 
-  <main class="" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/WebPageElement">
-    <div class="wrap ">
+<div id="" class="left-sidebar pin-content-container">
+  <div class="wrap">
+
+    <?php get_sidebar('page-tkpin-example-sidebar'); ?>
+
+  <main class="dan-page-content" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/WebPage">
 
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+      <article id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?> role="article" itemscope itemprop="blogPost" itemtype="http://schema.org/WebPageElement">
 
-      <?php
+        <section class="entry-content" itemprop="articleBody">
+          <?php the_content();  ?>
+        </section>
 
-      $icon = get_post_meta( $post->ID, 'dan_icon', true );
+      </article>
 
-       ?>
-
-       <span class="divider center">Pin</span>
-
-       <?php if($icon){ ?>
-         <i class="fa <?php echo $icon; ?>"></i>
-       <?php }?>
-
-
-        <div class="tabs" data-tab>
-          <nav class="tab-nav" data-tab-nav>
-              <ul>
-                  <li><a href="#one">First</a></li>
-                  <li><a href="#two">Second</a></li>
-                  <li><a href="#three">Third</a></li>
-              </ul>
-          </nav>
-
-          <section class="tab-section" data-tab-section>...</section>
-          <section class="tab-section" data-tab-section>...</section>
-          <section class="tab-section" data-tab-section>...</section>
-        </div>
-
-
-
-
-
-
-
-
-     <?php endwhile; endif;?>
-   </div><!--\wrap-->
+    <?php endwhile; else : ?>
+      <?php get_template_part('partials/content', 'post-not-found'); ?>
+    <?php endif; ?>
   </main>
+
+</div><!--\wrap-->
+</div><!--\#left-sidebar-->
+
 
 
 <?php get_footer(); ?>
