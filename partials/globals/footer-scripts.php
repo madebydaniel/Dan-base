@@ -10,3 +10,11 @@
   })(jQuery);
   </script>
 <?php } ?>
+
+<?php if(is_page_template('page-templates/page-template-tk-tabs-page.php')) { ?>
+  <script>
+  (function($){
+    $('.tabs').tab();
+  })(jQuery);
+  </script>
+<?php } ?>
