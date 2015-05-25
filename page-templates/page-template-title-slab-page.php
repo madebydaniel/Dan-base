@@ -54,6 +54,7 @@ Template Name: Titles and Slabs
               <?php echo $btn_two; ?>
             </a>
             <?php } ?>
+          </div><!--\buttons-->
         </div><!--\wrap-->
        </article>
 
@@ -87,10 +88,11 @@ Template Name: Titles and Slabs
                <?php echo $btn_two; ?>
              </a>
              <?php } ?>
+           </div><!--\buttons-->
          </div><!--\wrap-->
         </article>
 
-        <article class="title-group">
+        <article class="title-group slab dark">
           <div class="wrap">
             <?php if($icon){ ?>
               <i class="fa <?php echo $icon; ?>"></i>
@@ -110,20 +112,21 @@ Template Name: Titles and Slabs
 
             <div class="buttons">
               <?php if($btn){ ?>
-                <a href="<?php echo $btn_url; ?>" class="button primary">
+                <a href="<?php echo $btn_url; ?>" class="button primary light">
                 <?php echo $btn; ?>
               </a>
               <?php } ?>
 
               <?php if($btn_two) { ?>
-              <a href="<?php echo $btn_url_two; ?>" class="button secondary">
+              <a href="<?php echo $btn_url_two; ?>" class="button secondary light">
                 <?php echo $btn_two; ?>
               </a>
               <?php } ?>
+            </div><!--\buttons-->
           </div><!--\wrap-->
          </article>
 
-         <article class="title-group slab dark">
+         <article class="title-group">
            <div class="wrap">
              <?php if($icon){ ?>
                <i class="fa <?php echo $icon; ?>"></i>
@@ -143,16 +146,17 @@ Template Name: Titles and Slabs
 
              <div class="buttons">
                <?php if($btn){ ?>
-                 <a href="<?php echo $btn_url; ?>" class="button primary light">
+                 <a href="<?php echo $btn_url; ?>" class="button primary">
                  <?php echo $btn; ?>
                </a>
                <?php } ?>
 
                <?php if($btn_two) { ?>
-               <a href="<?php echo $btn_url_two; ?>" class="button secondary light">
+               <a href="<?php echo $btn_url_two; ?>" class="button secondary">
                  <?php echo $btn_two; ?>
                </a>
                <?php } ?>
+             </div><!--\buttons-->
            </div><!--\wrap-->
           </article>
 
@@ -186,6 +190,7 @@ Template Name: Titles and Slabs
                   <?php echo $btn_two; ?>
                 </a>
                 <?php } ?>
+              </div><!--\buttons-->
             </div><!--\wrap-->
            </article>
 

@@ -171,9 +171,9 @@ p, address, ol, ul, div {
       -ms-font-feature-settings: "liga", "dlig";
        -o-font-feature-settings: "liga", "dlig";
           font-feature-settings: "liga", "dlig";
-					@include medium-font-size();
+					@include small-font-size();
 	&.large {
-		@include large-font-size();
+		@include medium-font-size();
 	}
 }
 
