@@ -78,11 +78,11 @@ UTILITIES
 }
 
 @mixin margin-bottom() {
-  margin-bottom:$margin-space;
+  margin-bottom:$half-space;
 }
 
 @mixin margin-top() {
-  margin-top:$margin-space;
+  margin-top:$half-space;
 }
 
 @mixin content-container() {

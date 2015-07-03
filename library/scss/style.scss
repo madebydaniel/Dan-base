@@ -30,8 +30,8 @@ Stylesheet: Main Stylesheet
 @import "layout/patterns/blocks";
 @import "layout/patterns/cards";
 @import "layout/patterns/gallery";
-@import "layout/patterns/slabs";
 @import "layout/patterns/titlegroups";
+@import "layout/patterns/slats";
 
 @import "components/alerts";
 @import "components/buttons";
@@ -39,6 +39,8 @@ Stylesheet: Main Stylesheet
 @import "components/tabs";
 @import "components/announcement";
 @import "components/carousel";
+@import "components/pins";
+@import "components/stalker";
 
 @import "layout/utilities/grid_helpers";
 

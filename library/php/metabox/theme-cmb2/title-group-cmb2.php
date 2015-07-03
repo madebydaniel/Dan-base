@@ -10,7 +10,7 @@ function title_group_metabox() {
 		'id'            => $prefix . 'title_group',
 		'title'         => __( 'Title Group', 'cmb2' ),
 		'object_types'  => array( 'page', ), // Post type
-		'show_on' => array( 'key' => 'page-templates', 'value' => 'page-template-title-slab-page.php' ),
+		'show_on' => array( 'key' => 'page-template', 'value' => 'page-templates/page-template-title-slab-page.php' ),
 		'context'       => 'normal',
 		'priority'      => 'high',
 		'show_names'    => true, // Show field names on the left

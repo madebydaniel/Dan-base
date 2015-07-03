@@ -20,7 +20,6 @@ FOOTER STYLES
 
 
 .site-footer {
-	@include margin-top();
 	clear: both;
 	background-color: $primary-dark;
 	color: $light-gray;

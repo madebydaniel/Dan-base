@@ -1,0 +1,101 @@
+.slat, .simple-slat, .simple-slat-cta {
+  text-align:left;
+  @include border-bottom();
+  @include border-top();
+  @include clearfix();
+  i.fa {
+    display:block;
+    height:50px;
+    width:50px;
+    @include xtra-large-font-size();
+  }
+  .details {
+    p {
+      margin:0;
+      padding:0;
+    }
+    .title {
+    }
+    .subtitle {
+
+    }
+    .content {
+
+    }
+  }
+  .buttons {
+    a.button.primary {
+
+    }
+    a.button.secondary {
+
+    }
+  }/* EO - buttons */
+}/* EO - slat */
+
+
+.slat {
+  @include breakpoint(desktop){
+    .icon {
+      @include column(1/12);
+    }
+    .details {
+      @include column(7/12);
+      .title {
+
+      }
+      .subtitle {
+
+      }
+      .content {
+
+      }
+    }
+    .buttons {
+      @include column(4/12);
+      text-align:right;
+    }/* EO - buttons */
+  }/* EO - breakpoint */
+}/* EO - slat */
+
+.simple-slat {
+  @include breakpoint(desktop){
+    .icon {
+      @include column(1/12);
+    }
+    .details {
+      @include column(11/12);
+      .subtitle {
+
+      }
+      .content {
+
+      }
+    }
+  }/* EO - breakpoint */
+}/* EO - slat */
+
+
+.simple-slat-cta {
+  @include breakpoint(desktop){
+    .icon {
+      @include column(1/12);
+    }
+    .details {
+      @include column(9/12);
+      .title {
+
+      }
+      .subtitle {
+
+      }
+      .content {
+
+      }
+    }
+    .buttons {
+      @include column(2/12);
+      text-align:right;
+    }/* EO - buttons */
+  }/* EO - breakpoint */
+}/* EO - slat */

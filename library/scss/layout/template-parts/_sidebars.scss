@@ -2,7 +2,9 @@
 SIDEBARS & ASIDES
 *********************/
 
-.sidebar {}
+.sidebar, .dan-sidebar {
+	@include clearfix();
+}
 
 .widgettitle {
 	@include title-border-bottom();

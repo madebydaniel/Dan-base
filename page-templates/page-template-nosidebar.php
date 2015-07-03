@@ -6,7 +6,8 @@ Template Name: Page - No Sidebar
 
 <?php get_header(); ?>
 
-	<div id="inner-content" class="no-sidebar wrap">
+	<div id="inner-content" class="no-sidebar">
+		<div class="wrap">
 
 		<main class="dan-page-content" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/WebPage">
 
@@ -26,7 +27,7 @@ Template Name: Page - No Sidebar
 			<?php endif; ?>
 
 		</main>
-
+	</div><!--\wrap-->
 	</div><!--\#inner-content-->
 
 

@@ -32,7 +32,6 @@ HEADER STYLES
 	background:$primary-dark;
 	text-align:center;
 	padding:80px 0px;
-	@include margin-bottom();
 	.hero-content {
 		h1, h2, p {
 			color:$white;
