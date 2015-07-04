@@ -14,6 +14,20 @@ Template Name: TK Pin
 
   <main class="dan-page-content" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/WebPage">
 
+<pre>
+&lt;script&gt;
+(function($){
+  $('.pin').pin({
+    //animation: 'slide',
+    location: 'left',
+    fixed: true
+  });
+})(jQuery);
+&lt;/script&gt;
+
+Pinned element, such as the sidebar needs a class of "pin"
+</pre>
+
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
       <article id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?> role="article" itemscope itemprop="blogPost" itemtype="http://schema.org/WebPageElement">
 

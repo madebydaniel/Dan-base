@@ -11,7 +11,34 @@ Template Name: Posts - Layout 2
   <?php get_sidebar('blog-sidebar'); ?>
 
   <main class="dan-blogroll layout-two" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+<pre>
+&lt;main class="dan-blogroll layout-two" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog"&gt;
+//loop starts here
+  &lt;article class="article-container"&gt;
+    &lt;?php
+       if(has_post_thumbnail()){
+        get_template_part('partials/posts/post', 'banner');
+      } else { ?&gt;
+        &lt;span class="dan-banner missing-banner"&gt;&lt;/span&gt;
+      &lt;?php } ?&gt;
+    &lt;div class="dan-excerpt-container"&gt;
+      &lt;div class="dan-meta"&gt;
+      &lt;?php
+         get_template_part('partials/posts/post', 'date');
 
+         get_template_part('partials/posts/post', 'author');
+       ?&gt;
+       &lt;/div&gt;
+    &lt;?php
+       get_template_part('partials/posts/post', 'titlelink');
+
+       the_excerpt( '&lt;span class="read-more"&gt;' . __( 'Read more &raquo;', 'dantheme' ) . '&lt;/span&gt;' );
+    ?&gt;
+   &lt;/div&gt;
+  &lt;/article&gt;
+//loop ends here
+&lt;/main&gt;
+</pre>
     <?php
       $args = array(
         'posts_per_page' => '10',

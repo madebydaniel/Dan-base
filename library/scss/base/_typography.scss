@@ -186,6 +186,11 @@ address {
 }
 
 
+pre {
+	@include xtra-small-font-size();
+	margin:40px auto;
+}
+
 
 /*********************
 LINK STYLES
