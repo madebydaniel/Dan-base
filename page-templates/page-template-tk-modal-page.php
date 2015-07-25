@@ -39,14 +39,9 @@ Template Name: TK Modal
           <section class="tab-section" data-tab-section>...</section>
         </div>
 
-
-
-
-
-
-
-
      <?php endwhile; endif;?>
+
+
    </div><!--\wrap-->
   </main>
 

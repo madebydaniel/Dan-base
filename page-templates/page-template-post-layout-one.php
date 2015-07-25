@@ -12,6 +12,33 @@ Template Name: Posts - Layout 1
 
   <main class="dan-blogroll layout-one" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
+<pre>
+&lt;main class="dan-blogroll layout-one" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog"&gt;
+//loop goes here
+  &lt;article class="article-container"&gt;
+    &lt;header class="article-header entry-header"&gt;
+      &lt;?php
+        get_template_part('partials/posts/post', 'date');
+
+        if(has_post_thumbnail()){
+         get_template_part('partials/posts/post', 'banner');
+       }
+
+        get_template_part('partials/posts/post', 'titlelink');
+
+        get_template_part('partials/posts/post', 'author');
+      ?&gt;
+    &lt;/header&gt;
+
+    &lt;section class="entry-content"&gt;
+      &lt;?php
+        the_excerpt( '&lt;span class="read-more"&gt;' . __( 'Read more &raquo;', 'dantheme' ) . '&lt;/span&gt;' );
+      ?&gt;
+    &lt;/section&gt;
+ &lt;/article&gt;
+//loop ends here
+&lt;/main&gt;
+</pre>
     <?php
       $args = array(
         'posts_per_page' => '10',
