@@ -13,75 +13,75 @@ Template Name: Boxes
 
 <pre>
   function boxes_metabox() {
-  	// Start with an underscore to hide fields from custom fields list
-  	$prefix = 'dan_';
-  	/**
-  	 * Sample metabox to demonstrate each field type included
-  	 */
+    // Start with an underscore to hide fields from custom fields list
+    $prefix = 'dan_';
+    /**
+     * Sample metabox to demonstrate each field type included
+     */
 
-  	$cmb_group = new_cmb2_box( array(
-  			'id'           => $prefix . 'add_boxes',
-  			'title'        => __( 'Repeating Box Group', 'cmb2' ),
-  			'object_types' => array( 'page', ),
-  			'show_on' => array( 'key' => 'page-template', 'value' => 'page-templates/page-template-boxes-page.php' ),
-  		) );
+    $cmb_group = new_cmb2_box( array(
+        'id'           => $prefix . 'add_boxes',
+        'title'        => __( 'Repeating Box Group', 'cmb2' ),
+        'object_types' => array( 'page', ),
+        'show_on' => array( 'key' => 'page-template', 'value' => 'page-templates/page-template-boxes-page.php' ),
+      ) );
 
-  		$cmb_add_boxes = $cmb_group->add_field( array(
-  	      'id'          => $prefix . 'add_box_group',
-  	      'type'        => 'group',
-  	      'description' => __( 'Create as many additional boxes as desired', 'cmb2' ),
-  	      'options'     => array(
-  	          'group_title'   => __( 'Box {#}', 'cmb2' ),
-  	          'add_button'    => __( 'Add Another Box', 'cmb2' ),
-  	          'remove_button' => __( 'Remove Box', 'cmb2' ),
-  	          'sortable'      => true, // beta
-  	      ),
-  	  ) );
+      $cmb_add_boxes = $cmb_group->add_field( array(
+          'id'          => $prefix . 'add_box_group',
+          'type'        => 'group',
+          'description' => __( 'Create as many additional boxes as desired', 'cmb2' ),
+          'options'     => array(
+              'group_title'   => __( 'Box {#}', 'cmb2' ),
+              'add_button'    => __( 'Add Another Box', 'cmb2' ),
+              'remove_button' => __( 'Remove Box', 'cmb2' ),
+              'sortable'      => true, // beta
+          ),
+      ) );
 
-  	$cmb_group->add_group_field( $cmb_add_boxes, array(
-  		'name'       => __( 'Icon', 'cmb2' ),
-  		'id'         => $prefix . 'icon',
-  		'desc'		 => 'Select an icon to use.',
-  		'type'		 => 'pw_select',
-  		'options'    => 'show_icons'
-  	) );
-  	$cmb_group->add_group_field( $cmb_add_boxes, array(
-  		'name'       => __( 'Image', 'cmb2' ),
-  		'id'         => $prefix . 'image',
-  		'type'       => 'file',
-  	) );
-  	$cmb_group->add_group_field( $cmb_add_boxes, array(
-  		'name'       => __( 'Title', 'cmb2' ),
-  		'id'         => $prefix . 'title',
-  		'type'       => 'text',
-  	) );
-  	$cmb_group->add_group_field( $cmb_add_boxes, array(
-  		'name'       => __( 'Subtitle', 'cmb2' ),
-  		'id'         => $prefix . 'subtitle',
-  		'type'       => 'text',
-  	) );
-  	$cmb_group->add_group_field( $cmb_add_boxes, array(
-  	    'name'       => __( 'Content', 'cmb2' ),
-  	    'id'         => $prefix . 'content',
-  	    'type'       => 'textarea_small',
-  	) );
-  	$cmb_group->add_group_field( $cmb_add_boxes, array(
-  		'name'       => __( 'CTA Button Copy', 'cmb2' ),
-  		'id'         => $prefix . 'btn',
-  		'type'       => 'text_medium',
-  	) );
-  	$cmb_group->add_group_field( $cmb_add_boxes, array(
-  		'name'       => __( 'CTA Button URL', 'cmb2' ),
-  		'id'         => $prefix . 'btn_url',
-  		'type'       => 'text_url',
-  	) );
+    $cmb_group->add_group_field( $cmb_add_boxes, array(
+      'name'       => __( 'Icon', 'cmb2' ),
+      'id'         => $prefix . 'icon',
+      'desc'     => 'Select an icon to use.',
+      'type'     => 'pw_select',
+      'options'    => 'show_icons'
+    ) );
+    $cmb_group->add_group_field( $cmb_add_boxes, array(
+      'name'       => __( 'Image', 'cmb2' ),
+      'id'         => $prefix . 'image',
+      'type'       => 'file',
+    ) );
+    $cmb_group->add_group_field( $cmb_add_boxes, array(
+      'name'       => __( 'Title', 'cmb2' ),
+      'id'         => $prefix . 'title',
+      'type'       => 'text',
+    ) );
+    $cmb_group->add_group_field( $cmb_add_boxes, array(
+      'name'       => __( 'Subtitle', 'cmb2' ),
+      'id'         => $prefix . 'subtitle',
+      'type'       => 'text',
+    ) );
+    $cmb_group->add_group_field( $cmb_add_boxes, array(
+        'name'       => __( 'Content', 'cmb2' ),
+        'id'         => $prefix . 'content',
+        'type'       => 'textarea_small',
+    ) );
+    $cmb_group->add_group_field( $cmb_add_boxes, array(
+      'name'       => __( 'CTA Button Copy', 'cmb2' ),
+      'id'         => $prefix . 'btn',
+      'type'       => 'text_medium',
+    ) );
+    $cmb_group->add_group_field( $cmb_add_boxes, array(
+      'name'       => __( 'CTA Button URL', 'cmb2' ),
+      'id'         => $prefix . 'btn_url',
+      'type'       => 'text_url',
+    ) );
 
   }
 
   add_action( 'cmb2_init', 'boxes_metabox' );
 </pre>
 <pre>
-&lt;article class="blocks two-blocks (three-blocks four-blocks five-blocks six-blocks)"&gt;
+&lt;article class="blocks row"&gt;
   &lt;div class="wrap"&gt;
 
   &lt;?php
@@ -101,7 +101,7 @@ Template Name: Boxes
     if ( isset( $entry['dan_btn_url'] ) ) { $btn_url = esc_html( $entry['dan_btn_url'] ); }
   ?&gt;
 
-    &lt;div class="block"&gt;
+    &lt;div class="block six-col (four-col/three-col/two-col)"&gt;
       &lt;div class="banner"&gt;
         &lt;img src="&lt;?php echo $img; ?&gt;" /&gt;
       &lt;/div&gt;
@@ -123,7 +123,7 @@ Template Name: Boxes
 
       <span class="divider center">Two Boxes</span>
 
-      <article class="blocks two-blocks">
+      <article class="blocks row">
         <div class="wrap">
 
         <?php
@@ -144,7 +144,7 @@ Template Name: Boxes
 
         ?>
 
-      		<div class="block">
+          <div class="block six-col">
             <div class="banner">
               <img src="<?php echo $img; ?>" />
             </div>
@@ -153,7 +153,7 @@ Template Name: Boxes
             <p class="subtitle large"><?php echo $subtitle; ?></p>
             <p class="content"><?php echo $content; ?></p>
             <a class="button" href="<?php echo $btn_url; ?>"><?php echo $btn; ?></a>
-      		</div>
+          </div>
 
         <?php if($i++ == 2) break; } ?>
 
@@ -164,7 +164,7 @@ Template Name: Boxes
 
     <span class="divider center">Three Boxes</span>
 
-    <article class="blocks three-blocks">
+    <article class="blocks row">
       <div class="wrap">
 
       <?php
@@ -185,7 +185,7 @@ Template Name: Boxes
 
       ?>
 
-        <div class="block">
+        <div class="block four-col">
           <i class="fa <?php echo $icon; ?>"></i>
           <div class="banner">
             <img src="<?php echo $img; ?>" />
@@ -206,7 +206,7 @@ Template Name: Boxes
 
   <span class="divider center">Four Boxes</span>
 
-  <article class="blocks four-blocks">
+  <article class="blocks row">
     <div class="wrap">
 
     <?php
@@ -226,14 +226,16 @@ Template Name: Boxes
         if ( isset( $entry['dan_btn_url'] ) ) { $btn_url = esc_html( $entry['dan_btn_url'] ); }
     ?>
 
-      <div class="block center">
-        <div class="banner">
+      <div class="block center three-col">
+        <div class="banner center">
           <img src="<?php echo $img; ?>" />
         </div>
 
-        <h4 class="title"><?php echo $title; ?></h4>
-        <p class="content"><?php echo $content; ?></p>
-        <a class="button small" href="<?php echo $btn_url; ?>"><?php echo $btn; ?></a>
+        <h4 class="title center"><?php echo $title; ?></h4>
+        <p class="content center"><?php echo $content; ?></p>
+        <div class="center">
+          <a class="button small" href="<?php echo $btn_url; ?>"><?php echo $btn; ?></a>
+        </div>
       </div>
 
     <?php if($i++ == 4) break; } ?>
@@ -243,48 +245,9 @@ Template Name: Boxes
 </article>
 
 
-<span class="divider center">Five Boxes</span>
-
-<article class="blocks five-blocks">
-  <div class="wrap">
-
-  <?php
-    $entries = get_post_meta( get_the_ID(), 'dan_add_box_group', true );
-
-    $i = 1;
-    foreach ( (array) $entries as $key => $entry ) {
-
-      $icon = $img = $title = $subtitle = $content = $btn = $btn_url = '';
-
-      if ( isset( $entry['dan_icon'] ) ) { $icon = $entry['dan_icon']; }
-      if ( isset( $entry['dan_image'] ) ) { $img = esc_html( $entry['dan_image']); }
-      if ( isset( $entry['dan_title'] ) ) { $title = esc_html( $entry['dan_title'] ); }
-      if ( isset( $entry['dan_subtitle'] ) ) { $subtitle = esc_html( $entry['dan_subtitle'] ); }
-      if ( isset( $entry['dan_content'] ) ) { $content = esc_html( $entry['dan_content'] ); }
-      if ( isset( $entry['dan_btn'] ) ) { $btn = esc_html( $entry['dan_btn'] ); }
-      if ( isset( $entry['dan_btn_url'] ) ) { $btn_url = esc_html( $entry['dan_btn_url'] ); }
-  ?>
-
-    <div class="block">
-      <div class="banner">
-        <img src="<?php echo $img; ?>" />
-      </div>
-
-      <h4 class="title"><?php echo $title; ?></h4>
-      <p class="content"><?php echo $content; ?></p>
-    </div>
-
-  <?php if($i++ == 5) break; } ?>
-
-
-</div><!--\wrap-->
-</article>
-
-
-
 <span class="divider center">Six Boxes</span>
 
-<article class="blocks six-blocks">
+<article class="blocks row">
   <div class="wrap">
 
   <?php
@@ -303,11 +266,11 @@ Template Name: Boxes
       if ( isset( $entry['dan_btn_url'] ) ) { $btn_url = esc_html( $entry['dan_btn_url'] ); }
   ?>
 
-    <div class="block center">
-      <i class="fa <?php echo $icon; ?>"></i>
+    <div class="block two-col">
+      <i class="fa <?php echo $icon; ?> center"></i>
 
-      <h4 class="title"><?php echo $title; ?></h4>
-      <p class="content"><?php echo $content; ?></p>
+      <h4 class="center title"><?php echo $title; ?></h4>
+      <p class="center content"><?php echo $content; ?></p>
     </div>
 
   <?php if($i++ == 6) break; } ?>

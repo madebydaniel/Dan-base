@@ -25,7 +25,8 @@
     $('.pin').pin({
       //animation: 'slide',
       location: 'left',
-      fixed: true
+      fixed: true,
+      context: '.dan-sidebar'
     });
   })(jQuery);
   </script>
@@ -42,3 +43,18 @@
     })(jQuery);
   </script>
 <?php } ?>
+
+
+<script>
+
+(function($) {
+
+    $('.off-canvas').offCanvas({
+        animation: 'on-top',
+        swipe: true,
+        stopScroll: true
+    });
+
+})(jQuery);
+
+</script>

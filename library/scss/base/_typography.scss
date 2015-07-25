@@ -5,8 +5,14 @@ FONTS
 $sans-serif:        "Roboto", Helvetica, Arial, sans-serif;
 $serif:             "Georgia", Cambria, Times New Roman, Times, serif;
 $mono:              "Lucida Console", Monaco, Courier, monospace;
-
 $heading:           "Oswald", Helvetica, Arial, sans-serif;
+
+$base-font-family: $sans-serif;
+$base-font-weight: normal;
+
+$base-font-color: 		#5c6b80;;
+$heading-font-color:	$primary;
+
 
 @mixin hero-large-font-size {
 	@include rem(font-size, 3.4rem);
@@ -46,14 +52,23 @@ $heading:           "Oswald", Helvetica, Arial, sans-serif;
 	}
 }
 
+@mixin base-font-size {
+	@include rem(font-size, 1.4rem);
+	@include rem(line-height, 2.0rem);
+	@include breakpoint(desktop) {
+		@include rem(font-size, 1.6rem);
+		@include rem(line-height, 2.2rem);
+	}
+}
+
 @mixin small-font-size {
-	@include rem(font-size, 1.6rem);
-	@include rem(line-height, 2.2rem);
+	@include rem(font-size, 1.4rem);
+	@include rem(line-height, 2rem);
 }
 
 @mixin xtra-small-font-size {
-	@include rem(font-size, 1.4rem);
-	@include rem(line-height, 2rem);
+	@include rem(font-size, 1.1rem);
+	@include rem(line-height, 1.6rem);
 }
 
 
@@ -149,6 +164,38 @@ h6, .h6 {
 	}
 }
 
+.commentlist {
+	h1, .h1 {
+		@include rem(font-size, 2.4rem);
+		@include rem(line-height, 3rem);
+	}
+
+	h2, .h2 {
+		@include rem(font-size, 2rem);
+		@include rem(line-height, 2.6rem);
+	}
+
+	h3, .h3 {
+		@include rem(font-size, 1.8rem);
+		@include rem(line-height, 2.4rem);
+	}
+
+	h4, .h4 {
+		@include rem(font-size, 1.6rem);
+		@include rem(line-height, 2.2rem);
+	}
+
+	h5, .h5 {
+		@include rem(font-size, 1.4rem);
+		@include rem(line-height, 2rem);
+	}
+
+	h6, .h6 {
+		@include rem(font-size, 1.4rem);
+		@include rem(line-height, 2rem);
+	}
+}
+
 /*
 some nice typographical defaults
 more here: http://www.newnet-soft.com/blog/csstypography
@@ -181,16 +228,6 @@ table {
 	@include medium-font-size();
 }
 
-address {
-	padding-left:30px;
-}
-
-
-pre {
-	@include xtra-small-font-size();
-	margin:40px auto;
-}
-
 
 /*********************
 LINK STYLES
@@ -219,3 +256,29 @@ a, a:visited {
 		-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
 	}
 }
+
+
+
+/*************************
+SPECIAL TAGS
+*************************/
+pre {
+	background: $dark-gray;
+	color: $light-gray;
+	@include small-font-size();
+	padding: $space-third;
+	margin: $space-third auto;
+	border-radius: 3px;
+}
+
+code, var, tt {
+	font-family:$mono;
+	@include small-font-size();
+	background:$light-gray;
+}
+
+address {
+	padding-left:30px;
+}
+
+

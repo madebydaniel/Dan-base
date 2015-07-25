@@ -1,4 +1,7 @@
-<div id="post-sidebar" class="dan-sidebar <?php if(is_page_template('page-templates/page-template-tk-pin-page.php')) { ?>pin<?php } ?>" role="complementary">
+<div id="post-sidebar" class="dan-sidebar" role="complementary">
+	
+	<?php if(is_page_template('page-templates/page-template-tk-pin-page.php')) { ?>
+		<div class="pin"><?php } ?>
 
 	<?php if ( is_active_sidebar( 'blog-sidebar' ) ) : ?>
 
@@ -22,5 +25,8 @@
 		</div>
 
 	<?php endif; ?>
+	
 
+	<?php if(is_page_template('page-templates/page-template-tk-pin-page.php')) { ?>
+		</div><!--\.pin--><?php } ?>
 </div>

@@ -3,6 +3,7 @@ var gulp = require('gulp'),
     browserSync = require('browser-sync'),
     reload = browserSync.reload;
     sass = require('gulp-ruby-sass'),
+    sourcemaps = require('gulp-sourcemaps'),
     prefix = require('gulp-autoprefixer');
 
 
@@ -26,8 +27,10 @@ gulp.task('mainStyles', function(){
     style: 'compressed',
     container: 'gulp-ruby-sass-main'
   })
+  .pipe(sourcemaps.init())
   .on('error', errorLog)
   .pipe(prefix('last 2 versions'))
+  .pipe(sourcemaps.write())
   .pipe(gulp.dest('library/css/'));
 });
 

@@ -47,11 +47,11 @@ PAGE NAVI STYLES
 
     .current{
     	cursor: default;
-    	color: $text-color;
+    	color: $base-font-color;
 
     	&:hover, &:focus {
     		background-color: $white;
-    		color: $text-color;
+    		color: $base-font-color;
     	}
     }
 
