@@ -64,79 +64,136 @@ NAVIGATION STYLES
 		nav {
 			display:block;
 			float:right;
+			position:relative;
+			z-index:9999;
 		}
-		ul {
+		nav > ul.menu {
 			display:block;
 			margin:0;
 			padding:0;
-			li {
-				display:inline-block;
+			vertical-align:top;
+			display:inline-block;
+			& > li {
+				float:left;
 				vertical-align:top;
 				position:relative;
 				a {
 					padding:5px 10px;
 					display:block;
 					text-align:left;
+					position:relative;
 					@include small-font-size();
 				}/*EO - a */
-				&:first-of-type a {
-					padding-left:0px;
-				}
-				ul {
-					display:none;
-				}
-				&:hover > ul {
-					display:block;
-					position:absolute;
-					top:35px;
-					left:0px;
-					z-index:999;
-					padding-top:0px;
-					background:$white;
-					li {
-						display:block;
-						text-align:left;
-						white-space: nowrap;
-						a{
-							display:block;
-							width:100%;
-							white-space:nowrap;
-							background:$white;
-							padding:10px 15px;
-							margin:0px;
-							color: $primary;
-							transition:all 0.2s ease;
-							box-shadow:0px 3px 5px black(0.2);
-							&:hover, &:active {
-								background:$accent-dark;
-							}
-						}/*EO - a */
-						&.current-menu-item, &.current_page_item {
-							a {
-								background:$accent-dark;
-								color:$white;
-							}/*EO - a */
-						}/*EO - current-menu-item */
-						ul {
-							position:relative;
-							top:0;
-							left:10px;
-							background:$white;
-							a {
-								@include small-font-size();
-								box-shadow:none;
-								padding:4px 0px;
-							}
-						}
-					}/*EO - li */
-				}/*EO - :hover ul */
 			}/*EO - li */
-		}/*EO - .main-nav ul */
+			& > li:first-of-type > a {
+				padding-left:0px;
+			}
+		}/*EO - ul */
+
+
+		/* SUBMENUS */
+		ul.menu > li ul {
+			height:0;
+			overflow:hidden;
+		}
+		
+		/* SUBMENU #1 */
+		ul.menu > li > ul {
+			background:white;
+			border:solid 1px $border-color;
+			box-shadow:0px 3px 5px black(0.2);
+			display:block;
+			top:0px;
+			min-width:$dropdown-menu-width;
+			margin:0px;
+			position:absolute;
+			opacity:0;
+			@include transition();
+		}
+
+		ul.menu > li:hover > ul {
+			top:35px;
+			left:0;
+			opacity:1;
+			height:auto;
+			overflow:initial;
+			z-index:5;
+		}
+
+		ul.menu > li.edge:hover > ul {
+			right:0;
+			left:auto;
+		}
+
+		ul.menu > li > ul li {
+			display:block;
+			width:100%;
+		}
+
+		ul.menu > li > ul li a {
+			padding: 10px;
+			margin:0;
+		}
+		
+
+		/* SUBMENU #2 */
+		ul.menu > li > ul li ul {
+			background:white;
+			border:solid 1px $border-color;
+			box-shadow:0px 3px 5px black(0.2);
+			display:block;
+			left:0;
+			top:-9999px;
+			min-width:$dropdown-menu-width;
+			position:absolute;
+			opacity:0;
+			@include transition();
+			z-index:10;
+		}
+
+		ul.menu > li > ul > li:hover > ul {
+			left:$dropdown-menu-width;
+			top:0px;
+			opacity:1;
+			height:auto;
+			overflow:initial;
+		}
+
+		ul.menu > li > ul > li.edge:hover > ul {
+			right:$dropdown-menu-width;
+			left:auto;
+			top:0px;
+			opacity:1;
+			height:auto;
+			overflow:initial;
+		}
+
+
+		
+		/* SUBMENU #3 */
+		ul.menu > li > ul > li > ul li:hover > ul {
+			left:$dropdown-menu-width;
+			top:0px;
+			opacity:1;
+			height:auto;
+			overflow:initial;
+			z-index:15;
+		}
+
+		ul.menu > li > ul > li > ul li.edge:hover > ul {
+			right:$dropdown-menu-width;
+			left:auto;
+			top:0px;
+			opacity:1;
+			height:auto;
+			overflow:initial;
+		}
+
+		
+
+		
+
 	}/*EO - breakpoint desktop */
-	@include breakpoint(large) {
-		ul {
-		}/*EO - .main-nav ul */
-	}/*EO - breakpoint large */
 }/*EO - top-levle-nav */
 
 

@@ -55,6 +55,35 @@
         stopScroll: true
     });
 
+
+
+    $("li.menu-item-has-children").on('mouseenter mouseleave', function (e) {
+
+      var ulTest = $('ul', this);
+        if (ulTest.length) {
+            var elm = $('ul:first', this);
+            var off = elm.offset();
+            var l = off.left;
+            var w = elm.width();
+            var docW = $(window).width();
+
+            var isEntirelyVisible = (l + w + 140);
+
+            console.log(ulTest);
+            console.log("one"+isEntirelyVisible);
+            console.log("one"+docW);
+
+            if (isEntirelyVisible < docW) {
+            } else {
+                $(this).addClass('edge');
+            }
+        }
+    });
+
+
 })(jQuery);
+
+
+
 
 </script>
