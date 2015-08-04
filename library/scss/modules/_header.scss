@@ -5,24 +5,26 @@ HEADER STYLES
 .header {
 	background-color: $white;
 	#logo {
-		margin:0 auto;
+		margin:$space-fourth auto;
 		text-align:center;
 		a {
 			color: $accent-dark;
 		}
 	}
 	.top-level-nav {
-		text-align:center;
+		display:none;
 	}
 	@include stack();
 	@include breakpoint(desktop){
 		#logo {
-			@include column(1/6);
+			@include column(1/4);
 			text-align:left;
 		}
 		.top-level-nav {
-			@include column(5/6);
+			margin:$space-fourth auto;
+			@include column(3/4);
 			text-align:right;
+			display:block;
 		}
 	}
 }

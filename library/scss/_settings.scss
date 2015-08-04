@@ -1,0 +1,56 @@
+/*********************
+COLORS
+Need help w/ choosing your colors? Try this site out:
+http://0to255.com/
+*********************/
+
+$alert-yellow:      	#ebe16f;
+$alert-red:         	#fbe3e4;
+$alert-green:       	#e6efc2;
+$alert-blue:        	#d5edf8;
+
+$black:             	#000;
+$white:             	#fff;
+
+$light-gray:        	#f5f5f5;
+$gray:              	#e5e5e5;
+$meta-gray:         	#9fa6b4;
+$dark-gray:				#323944;
+
+$primary:           	midnightblue;
+$primary-dark:      	darken($primary, 20%);
+$primary-light:     	lighten($primary, 30%);
+$primary-medium:    	lighten($primary, 10%);
+
+$accent:            	powderblue;
+$accent-dark:       	darken($accent, 20%);
+$accent-light:      	lighten($accent, 30%);
+$accent-medium:     	lighten($accent, 10%);
+
+$link-color:        	$primary-dark;
+$link-hover:        	$accent-dark;
+$link-active:       	$accent;
+
+
+/* "r" = reversed */
+$r-link-color:      	$primary-light;
+$r-link-hover:      	$white;
+$r-link-active:     	darken($primary-light, 10%);
+
+$light-border-color:	#e5e5e5;
+$border-color:      	$meta-gray;
+$r-border-color:    	#21293d;
+
+$disabled-gray:     	#cfcfcf;
+
+
+$space:          		80px;
+$space-half:     		$space/2;
+$space-third:     		$space/3;
+$space-fourth:     		$space/4;
+
+
+$dropdown-menu-width: 	200px;
+
+
+

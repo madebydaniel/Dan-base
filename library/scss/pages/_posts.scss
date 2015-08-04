@@ -124,7 +124,7 @@ POSTS & CONTENT STYLES
 
 		dt {
 			font-style:italic;
-			color: lighten($text-color, 20%);
+			color: lighten($base-font-color, 20%);
 		}
 
 		dd {
@@ -156,21 +156,6 @@ POSTS & CONTENT STYLES
 		.size-thumbnail {
 			max-width: 100%;
 			height: auto;
-		}
-
-		pre {
-			background: $black;
-			color: $light-gray;
-			@include small-font-size();
-			padding: 1.5em;
-			margin: 0 0 1.5em;
-			border-radius: 3px;
-		}
-
-		code, var, tt {
-			font-family:$mono;
-			@include small-font-size();
-			background:$light-gray;
 		}
 
 	} /* end .entry-content */

@@ -7,45 +7,40 @@ Stylesheet: Main Stylesheet
 
 // normalize is in the css folder and is enqueued independently
 @import '../../node_modules/jeet/scss/jeet/index.scss';
-@import "base/jeet-settings";
+@import "vendor/jeet-settings";
 
-@import "helpers/mixins";
-@import "helpers/variables";
-@import "helpers/functions";
+@import "settings";
 
+@import "base/mixins";
+@import "base/functions";
 @import "base/typography";
+@import "base/utilities";
 
-@import "layout/template-parts/header";
-@import "layout/template-parts/navigation";
-@import "layout/template-parts/pagination";
-@import "layout/template-parts/comments";
-@import "layout/template-parts/sidebars";
-@import "layout/template-parts/footer";
-//@import "layout/template-parts/left-sidebar";
-
-@import "layout/collections/posts_layout_one";
-@import "layout/collections/posts_layout_two";
-
-@import "layout/patterns/articles";
-@import "layout/patterns/blocks";
-@import "layout/patterns/cards";
-@import "layout/patterns/gallery";
-@import "layout/patterns/titlegroups";
-@import "layout/patterns/slats";
 
 @import "components/alerts";
 @import "components/buttons";
 @import "components/forms";
-@import "components/tabs";
-@import "components/announcement";
-@import "components/carousel";
-@import "components/pins";
-@import "components/stalker";
 
-@import "layout/utilities/grid_helpers";
+@import "modules/header";
+@import "modules/navigation";
+@import "modules/pagination";
+@import "modules/comments";
+@import "modules/sidebars";
+@import "modules/footer";
+@import "modules/left-sidebar";
+@import "modules/articles";
+@import "modules/blocks";
+@import "modules/cards";
+@import "modules/gallery";
+@import "modules/titlegroups";
+@import "modules/slats";
+@import "modules/tabs";
+@import "modules/carousel";
+@import "modules/pins";
+@import "modules/stalker";
+@import "modules/widgets_calendar";
 
-// styles in base.scss
-@import "base/base";
+@import "layout/grid_helpers";
 
 @import "pages/page_base";
 @import "pages/posts";
@@ -55,13 +50,16 @@ Stylesheet: Main Stylesheet
 @import "pages/nosidebar";
 
 
+@import "layout/collections/posts_layout_one";
+@import "layout/collections/posts_layout_two";
 
+//Theme specific styles should go inside the theme dir and imported here
 
 /*********************
 PRINT STYLESHEET
 *********************/
 @media print {
 	// styles in print.scss
-	@import "helpers/print";
+	@import "base/print";
 
 }

@@ -1,0 +1,35 @@
+.block {
+	i.fa {
+		margin-bottom:$space-fourth;
+	}
+	.banner {
+		width:100%;
+		height:200px;
+		display:block;
+		overflow:hidden;
+		margin-bottom:$space-fourth;
+		img {
+			width:100%;
+			height:auto;
+			@include vertical-align();
+		}
+	}
+	.title {
+
+	}
+	p.subtitle {
+
+	}
+	p.content {
+
+	}
+	a.button {
+		margin-top:$space-fourth;
+	}
+}
+
+
+.block {
+	margin:$space-fourth auto $space-half;
+}
+

@@ -27,7 +27,7 @@ SIDEBARS & ASIDES
 
 			a {
 				text-decoration:none;
-				color:$text-color;
+				color:$base-font-color;
 				display:block;
 				&:hover, &:active {
 					color:$accent;
@@ -47,7 +47,7 @@ SIDEBARS & ASIDES
 		padding:5px 0px;
 		@include small-font-size();
 		@include clearfix();
-		color:lighten($text-color, 30%);
+		color:lighten($base-font-color, 30%);
 		a {
 			width:100%;
 			position:absolute;
@@ -92,7 +92,7 @@ SIDEBARS & ASIDES
 
 	li.recentcomments {
 		@include small-font-size();
-		color:lighten($text-color, 30%);
+		color:lighten($base-font-color, 30%);
 		border-bottom:solid 1px $border-color;
 		margin-bottom:5px;
 		padding-bottom:5px;
@@ -115,7 +115,7 @@ SIDEBARS & ASIDES
 
 	.tagcloud {
 		a {
-			color:$text-color;
+			color:$base-font-color;
 			text-decoration:none;
 		}
 	}
