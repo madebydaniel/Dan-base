@@ -15,6 +15,7 @@ Stylesheet: Main Stylesheet
 @import "base/functions";
 @import "base/typography";
 @import "base/utilities";
+@import "base/base_globals";
 
 
 @import "components/alerts";
@@ -39,6 +40,7 @@ Stylesheet: Main Stylesheet
 @import "modules/pins";
 @import "modules/stalker";
 @import "modules/widgets_calendar";
+@import "modules/panels";
 
 @import "layout/grid_helpers";
 

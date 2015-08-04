@@ -1,0 +1,45 @@
+.panel {
+  
+}
+
+.panel.panel-dark {
+  background:$primary-dark;
+  i.fa {
+    color:lighten($primary-dark, 35%);
+  }
+  h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+    color:$primary-light;
+  }
+  p {
+    color:white;
+  }
+  a {
+    color:$accent;
+  }
+}
+
+.panel.panel-accent {
+  background:$accent;
+  i.fa {
+    color:$accent-dark;
+  }
+  h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+    color:darken($accent-dark, 15%);
+  }
+  p {
+    color:white;
+  }
+  a {
+    color:$accent;
+  }
+}
+
+.panel.panel-light {
+  background:$light-gray;
+  i.fa {
+    color:darken($base-font-color, 15%);
+  }
+  p,a {
+    color:$base-font-color;
+  }
+}
