@@ -35,29 +35,3 @@
   text-align:center;
 }
 
-.slab {
-  background:$primary;
-  i.fa {
-    color:lighten($primary, 25%);
-  }
-  p,a {
-    color:$white;
-  }
-}
-
-.slab.dark {
-  background:$primary-dark;
-  i.fa {
-    color:lighten($primary-dark, 35%);
-  }
-}
-
-.slab.light {
-  background:$light-gray;
-  i.fa {
-    color:darken($base-font-color, 15%);
-  }
-  p,a {
-    color:$base-font-color;
-  }
-}

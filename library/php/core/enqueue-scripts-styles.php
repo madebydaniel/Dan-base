@@ -17,9 +17,6 @@ function dan_scripts_and_styles() {
 		// normalize css
 		wp_register_style( 'dan-normalize', get_stylesheet_directory_uri() . '/library/css/normalize.min.css', array(), '', 'all' );
 
-		// toolkit framework css
-		wp_register_style( 'dan-toolkit-css', get_stylesheet_directory_uri() . '/library/css/toolkit.min.css', array(), '', 'all' );
-
 		// register main stylesheet
 		wp_register_style( 'dan-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), '', 'all' );
 
@@ -34,13 +31,9 @@ function dan_scripts_and_styles() {
 		//adding scripts file in the footer
 		wp_register_script( 'dan-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true );
 
-		// toolkit framework js
-		wp_register_script( 'dan-toolkit-js', get_stylesheet_directory_uri() . '/library/js/libs/toolkit.min.js', array('jquery'), '', true );
-
 		// enqueue styles and scripts
 		wp_enqueue_script( 'dan-modernizr' );
 		wp_enqueue_style( 'dan-normalize' );
-		wp_enqueue_style( 'dan-toolkit-css' );
 		wp_enqueue_style( 'dan-stylesheet' );
 		wp_enqueue_style( 'dan-ie-only' );
 
@@ -52,7 +45,6 @@ function dan_scripts_and_styles() {
 		and your site will load faster.
 		*/
 		wp_enqueue_script( 'jquery' );
-		wp_enqueue_script( 'dan-toolkit-js' );
 		wp_enqueue_script( 'dan-js' );
 
 	}

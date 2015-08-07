@@ -78,7 +78,8 @@ NAVIGATION STYLES
 				vertical-align:top;
 				position:relative;
 				a {
-					padding:5px 10px;
+					padding:25px 10px;
+					margin:0;
 					display:block;
 					text-align:left;
 					position:relative;
@@ -100,10 +101,10 @@ NAVIGATION STYLES
 		/* SUBMENU #1 */
 		ul.menu > li > ul {
 			background:white;
-			border:solid 1px $border-color;
+			/*border:solid 1px $border-color;*/
 			box-shadow:0px 3px 5px black(0.2);
 			display:block;
-			top:0px;
+			top:300px;
 			min-width:$dropdown-menu-width;
 			margin:0px;
 			position:absolute;
@@ -112,12 +113,15 @@ NAVIGATION STYLES
 		}
 
 		ul.menu > li:hover > ul {
-			top:35px;
+			top:70px;
 			left:0;
 			opacity:1;
 			height:auto;
 			overflow:initial;
 			z-index:5;
+		}
+		ul.menu > li:hover > a {
+			color:$accent-dark;
 		}
 
 		ul.menu > li.edge:hover > ul {
@@ -139,11 +143,11 @@ NAVIGATION STYLES
 		/* SUBMENU #2 */
 		ul.menu > li > ul li ul {
 			background:white;
-			border:solid 1px $border-color;
-			box-shadow:0px 3px 5px black(0.2);
+			/*border:solid 1px $border-color;*/
+			box-shadow:0px 0px 6px black(0.2);
 			display:block;
 			left:0;
-			top:-9999px;
+			top:9999px;
 			min-width:$dropdown-menu-width;
 			position:absolute;
 			opacity:0;
@@ -157,6 +161,10 @@ NAVIGATION STYLES
 			opacity:1;
 			height:auto;
 			overflow:initial;
+		}
+
+		ul.menu > li > ul> li:hover > a {
+			color:$accent-dark;
 		}
 
 		ul.menu > li > ul > li.edge:hover > ul {
@@ -189,6 +197,14 @@ NAVIGATION STYLES
 			overflow:initial;
 		}
 
+		ul.menu > li > ul> li > ul > li:hover > a {
+			color:$accent-dark;
+		}
+
+		ul.menu > li > ul> li > ul > li > ul > li:hover > a {
+			color:$accent-dark;
+		}
+
 		
 
 		
@@ -198,20 +214,28 @@ NAVIGATION STYLES
 
 
 
-.off-canvas {
-	.menu-title {
-		color:$accent;
-		font-family:$serif;
-		font-style:italic;
-		border-bottom:solid 1px $accent;
-		padding:0px 0px 10px 0px;
-		margin:40px 40px 0px 40px;
-		display:block;
-	}
-}
-.main-menu {
+/* toolkit offcanvas menu overrides */
+.mobile-menu-panel.is-visible {
+    transform: translate3d(0, 0, 0);
+    transition-delay: 0s;
+    box-shadow:-20px 0px 20px rgba(0,0,0,0.2);
+  }
+
+.mobile-menu-panel {
 	background:$primary;
-	box-shadow:-20px 0px 20px rgba(0,0,0,0.2);
+	box-shadow:0px 0px 0px rgba(0,0,0,0.0);
+	position: fixed;
+	width: 80%;
+	height: 100%;
+	top: 0;
+	right: 0;
+	overflow-y:scroll;
+	-webkit-overflow-scrolling:touch;
+	transition-property: transform, box-shadow;
+	transition-duration: 0.3s;
+	transition-delay: 0.3s;
+	transform: translate3d(100%, 0, 0);
+	z-index:9999;
 	ul {
 		margin:0;
 		padding:0px 0px 0px 10px;
@@ -244,15 +268,7 @@ NAVIGATION STYLES
 	}
 }
 
-/* toolkit offcanvas menu overrides */
-.canvas.push-down.move-left .on-canvas, .canvas.push-reveal.move-left .on-canvas, .canvas.push.move-left .on-canvas, .canvas.reveal.move-left .on-canvas, .canvas.reverse-push.move-left .on-canvas {
-    -webkit-transform: translate3d(-80%,0,0);
-    transform: translate3d(-80%,0,0);
-  }
 
-.off-canvas--right {
-    width: 80%;
-}
 
 
 
@@ -261,9 +277,9 @@ NAVIGATION STYLES
 * MENU ICON
 ********************************/
 
-.menu-icon {
+.mobile-menu-icon {
 	position:absolute;
-	top:20px;
+	top:10px;
 	padding:0;
 	margin:0;
 	right:40px;

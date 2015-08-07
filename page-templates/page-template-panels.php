@@ -56,28 +56,28 @@ Template Name: Panels
       <img src="http://fillmurray.com/400/300" />
       <h5 class="title space-fourth-m-t">This is a heading</h5>
       <p>Cras mollis, tortor nec aliquet ornare, sem nulla ultricies ex, in aliquet nulla nisi at est.</p>
-      <a class="button space-fourth-m-t" href="#">A Button</a>
+      <a class="button ghost-r space-fourth-m-t" href="#">A Button</a>
     </div>
 
     <div class="three-col center">
       <img src="http://fillmurray.com/400/300" />
       <h5 class="title space-fourth-m-t">This is a heading</h5>
       <p>Cras mollis, tortor nec aliquet ornare, sem nulla ultricies ex, in aliquet nulla nisi at est.</p>
-      <a class="button space-fourth-m-t" href="#">A Button</a>
+      <a class="button ghost-r space-fourth-m-t" href="#">A Button</a>
     </div>
 
     <div class="three-col center">
       <img src="http://fillmurray.com/400/300" />
       <h5 class="title space-fourth-m-t">This is a heading</h5>
       <p>Cras mollis, tortor nec aliquet ornare, sem nulla ultricies ex, in aliquet nulla nisi at est.</p>
-      <a class="button space-fourth-m-t" href="#">A Button</a>
+      <a class="button ghost-r space-fourth-m-t" href="#">A Button</a>
     </div>
 
     <div class="three-col center">
       <img src="http://fillmurray.com/400/300" />
       <h5 class="title space-fourth-m-t">This is a heading</h5>
       <p>Cras mollis, tortor nec aliquet ornare, sem nulla ultricies ex, in aliquet nulla nisi at est.</p>
-      <a class="button space-fourth-m-t" href="#">A Button</a>
+      <a class="button ghost-r space-fourth-m-t" href="#">A Button</a>
     </div>
   
   </div><!--\row-->
@@ -92,28 +92,28 @@ Template Name: Panels
       <img src="http://fillmurray.com/400/300" />
       <h5 class="title space-fourth-m-t">This is a heading</h5>
       <p>Cras mollis, tortor nec aliquet ornare, sem nulla ultricies ex, in aliquet nulla nisi at est.</p>
-      <a class="button space-fourth-m-t" href="#">A Button</a>
+      <a class="button-alt space-fourth-m-t" href="#">A Button</a>
     </div>
 
     <div class="three-col center">
       <img src="http://fillmurray.com/400/300" />
       <h5 class="title space-fourth-m-t">This is a heading</h5>
       <p>Cras mollis, tortor nec aliquet ornare, sem nulla ultricies ex, in aliquet nulla nisi at est.</p>
-      <a class="button space-fourth-m-t" href="#">A Button</a>
+      <a class="button-alt space-fourth-m-t" href="#">A Button</a>
     </div>
 
     <div class="three-col center">
       <img src="http://fillmurray.com/400/300" />
       <h5 class="title space-fourth-m-t">This is a heading</h5>
       <p>Cras mollis, tortor nec aliquet ornare, sem nulla ultricies ex, in aliquet nulla nisi at est.</p>
-      <a class="button space-fourth-m-t" href="#">A Button</a>
+      <a class="button-alt space-fourth-m-t" href="#">A Button</a>
     </div>
 
     <div class="three-col center">
       <img src="http://fillmurray.com/400/300" />
       <h5 class="title space-fourth-m-t">This is a heading</h5>
       <p>Cras mollis, tortor nec aliquet ornare, sem nulla ultricies ex, in aliquet nulla nisi at est.</p>
-      <a class="button space-fourth-m-t" href="#">A Button</a>
+      <a class="button-alt space-fourth-m-t" href="#">A Button</a>
     </div>
   
   </div><!--\row-->

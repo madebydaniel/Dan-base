@@ -40,6 +40,9 @@ require_once( 'library/php/functions/page-navi.php' ); // page navigation
 require_once( 'library/php/functions/comment-layout.php' ); //comments layout
 require_once( 'library/php/functions/fonts.php' ); // google fonts
 require_once( 'library/php/functions/dan-blogposts.php' ); // dan-blogposts blog teaser
+require_once( 'library/php/functions/custom-menu/custom-walker.php');
+require_once( 'library/php/functions/custom-menu/menu-field-function.php');
+require_once( 'library/php/functions/custom-menu/edit-custom-walker.php');
 
 // ###### SHORTCODES ###### //
 require_once( 'library/php/shortcodes/shortcodes.php' ); //

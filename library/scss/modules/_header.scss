@@ -7,6 +7,7 @@ HEADER STYLES
 	#logo {
 		margin:$space-fourth auto;
 		text-align:center;
+		@include medium-font-size();
 		a {
 			color: $accent-dark;
 		}
@@ -21,7 +22,6 @@ HEADER STYLES
 			text-align:left;
 		}
 		.top-level-nav {
-			margin:$space-fourth auto;
 			@include column(3/4);
 			text-align:right;
 			display:block;

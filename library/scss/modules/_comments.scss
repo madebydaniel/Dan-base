@@ -201,7 +201,7 @@ COMMENT STYLES
 	/* comment reply link */
 	.comment-reply-link {
 		text-decoration:none;
-		@extend .small-button;
+		@extend .button-small;
 		float: right;
 		&:hover,
 		&:focus {

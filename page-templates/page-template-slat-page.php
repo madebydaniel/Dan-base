@@ -169,13 +169,13 @@ $btn_url_two = get_post_meta( $post->ID, 'dan_btn_url_two', true );
 
           <div class="buttons">
             <?php if($btn){ ?>
-              <a href="<?php echo $btn_url; ?>" class="button primary">
+              <a href="<?php echo $btn_url; ?>" class="button ghost">
               <?php echo $btn; ?>
             </a>
             <?php } ?>
             <?php if($btn_two) { ?>
 
-            <a href="<?php echo $btn_url_two; ?>" class="button secondary">
+            <a href="<?php echo $btn_url_two; ?>" class="button">
               <?php echo $btn_two; ?>
             </a>
             <?php } ?>

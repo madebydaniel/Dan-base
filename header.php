@@ -51,8 +51,7 @@
 
 <body <?php body_class(); ?>>
 
-	<div class="canvas" data-offcanvas >
-		<main class="on-canvas" data-offcanvas-content>
+		<main class="site-container">
 		<?php get_template_part('partials/globals/header', 'default'); ?>
 
 			<div id="body-container">

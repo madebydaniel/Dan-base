@@ -13,9 +13,7 @@
   p {
     color:white;
   }
-  a {
-    color:$accent;
-  }
+
 }
 
 .panel.panel-accent {
@@ -29,9 +27,7 @@
   p {
     color:white;
   }
-  a {
-    color:$accent;
-  }
+
 }
 
 .panel.panel-light {
@@ -39,7 +35,5 @@
   i.fa {
     color:darken($base-font-color, 15%);
   }
-  p,a {
-    color:$base-font-color;
-  }
+
 }

@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: TK Tabs
+Template Name: Tabs
 */
 ?>
 
@@ -67,60 +67,55 @@ Template Name: TK Tabs
   add_action( 'cmb2_init', 'tabs_metabox' );
 </pre>
 <pre>
-&lt;script&gt;
-(function($){
-  $('.tabs').tab();
-})(jQuery);
-&lt;/script&gt;
 
-&lt;div class="tabs" data-tab&gt;
- &lt;nav class="tab-nav" data-tab-nav&gt;
-   &lt;ul&gt;
+ &lt;ul class="tabs" data-tabgroup="first-tab-group"&gt;
 
-   &lt;?php
-     $entries = get_post_meta( get_the_ID(), 'dan_add_tab_group', true );
+     &lt;?php
+       $entries = get_post_meta( get_the_ID(), 'dan_add_tab_group', true );
+       $i=0;
+       foreach ( (array) $entries as $key =&gt; $entry ) {
+        $i++;
+       $tab_title = '';
 
-     foreach ( (array) $entries as $key =&gt; $entry ) {
+       if ( isset( $entry['dan_tab_title'] ) ) { $tab_title = esc_html( $entry['dan_tab_title']); }
 
-     $tab_title = '';
+     ?&gt;
 
-     if ( isset( $entry['dan_tab_title'] ) ) { $tab_title = esc_html( $entry['dan_tab_title']); }
+        &lt;li&gt;
+          &lt;a href="#tab&lt;?php echo $i; ?&gt;" class="active"&gt;
+            &lt;?php echo $tab_title; ?&gt;
+          &lt;/a&gt;
+        &lt;/li&gt;
 
-   ?&gt;
+     &lt;?php } ?&gt;
 
-      &lt;li&gt;
-        &lt;a href="#&lt;?php echo $tab_title; ?&gt;"&gt;
-          &lt;?php echo $tab_title; ?&gt;
-        &lt;/a&gt;
-      &lt;/li&gt;
+     &lt;/ul&gt;
+    
+    &lt;section id="first-tab-group" class="tabgroup"&gt;
+     &lt;?php
+       $entries = get_post_meta( get_the_ID(), 'dan_add_tab_group', true );
+       $x=0;
+       foreach ( (array) $entries as $key =&gt; $entry ) {
+        $x++;
+       $content_title = $subtitle = $content ='';
 
-   &lt;?php } ?&gt;
+       if ( isset( $entry['dan_content_title'] ) ) { $content_title = esc_html( $entry['dan_content_title']); }
 
-   &lt;/ul&gt;
- &lt;/nav&gt;
+       if ( isset( $entry['dan_subtitle'] ) ) { $subtitle = esc_html( $entry['dan_subtitle']); }
 
- &lt;?php
-   $entries = get_post_meta( get_the_ID(), 'dan_add_tab_group', true );
+       if ( isset( $entry['dan_content'] ) ) { $content = esc_html( $entry['dan_content']); }
 
-   foreach ( (array) $entries as $key =&gt; $entry ) {
+     ?&gt;
 
-   $content_title = $subtitle = $content ='';
+      &lt;div id="tab&lt;?php echo $x; ?&gt;" class="tabbed-content"&gt;
+        &lt;h4 class="title"&gt;&lt;?php echo $content_title; ?&gt;&lt;/h4&gt;
+        &lt;p class="large subtitle"&gt;&lt;?php echo $subtitle; ?&gt;&lt;/p&gt;
+        &lt;p class="content"&gt;&lt;?php echo $content; ?&gt;&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;?php } ?&gt;
 
-   if ( isset( $entry['dan_content_title'] ) ) { $content_title = esc_html( $entry['dan_content_title']); }
-
-   if ( isset( $entry['dan_subtitle'] ) ) { $subtitle = esc_html( $entry['dan_subtitle']); }
-
-   if ( isset( $entry['dan_content'] ) ) { $content = esc_html( $entry['dan_content']); }
-
- ?&gt;
-
-  &lt;section class="tab-section" data-tab-section&gt;
-    &lt;h4 class="title"&gt;&lt;?php echo $content_title; ?&gt;&lt;/h4&gt;
-    &lt;p class="large subtitle"&gt;&lt;?php echo $subtitle; ?&gt;&lt;/p&gt;
-    &lt;p class="content"&gt;&lt;?php echo $content; ?&gt;&lt;/p&gt;
-  &lt;/section&gt;
-  &lt;?php } ?&gt;
-&lt;/div&gt;
+   &lt;?php endwhile; endif;?&gt;
+   &lt;/section&gt;
 </pre>
 
 
@@ -128,15 +123,13 @@ Template Name: TK Tabs
 
        <span class="divider center">Tabs</span>
 
- <div class="tabs" data-tab>
-   <nav class="tab-nav" data-tab-nav>
-     <ul>
+     <ul class="tabs" data-tabgroup="first-tab-group">
 
      <?php
        $entries = get_post_meta( get_the_ID(), 'dan_add_tab_group', true );
-
+       $i=0;
        foreach ( (array) $entries as $key => $entry ) {
-
+        $i++;
        $tab_title = '';
 
        if ( isset( $entry['dan_tab_title'] ) ) { $tab_title = esc_html( $entry['dan_tab_title']); }
@@ -144,7 +137,7 @@ Template Name: TK Tabs
      ?>
 
         <li>
-          <a href="#<?php echo $tab_title; ?>">
+          <a href="#tab<?php echo $i; ?>" class="">
             <?php echo $tab_title; ?>
           </a>
         </li>
@@ -152,32 +145,33 @@ Template Name: TK Tabs
      <?php } ?>
 
      </ul>
-   </nav>
+    
+    <section id="first-tab-group" class="tabgroup space-m-b">
+     <?php
+       $entries = get_post_meta( get_the_ID(), 'dan_add_tab_group', true );
+       $x=0;
+       foreach ( (array) $entries as $key => $entry ) {
+        $x++;
+       $content_title = $subtitle = $content ='';
 
-   <?php
-     $entries = get_post_meta( get_the_ID(), 'dan_add_tab_group', true );
+       if ( isset( $entry['dan_content_title'] ) ) { $content_title = esc_html( $entry['dan_content_title']); }
 
-     foreach ( (array) $entries as $key => $entry ) {
+       if ( isset( $entry['dan_subtitle'] ) ) { $subtitle = esc_html( $entry['dan_subtitle']); }
 
-     $content_title = $subtitle = $content ='';
+       if ( isset( $entry['dan_content'] ) ) { $content = esc_html( $entry['dan_content']); }
 
-     if ( isset( $entry['dan_content_title'] ) ) { $content_title = esc_html( $entry['dan_content_title']); }
+     ?>
 
-     if ( isset( $entry['dan_subtitle'] ) ) { $subtitle = esc_html( $entry['dan_subtitle']); }
+      <div id="tab<?php echo $x; ?>" class="tabbed-content">
+        <h4 class="title"><?php echo $content_title; ?></h4>
+        <p class="large subtitle"><?php echo $subtitle; ?></p>
+        <p class="content"><?php echo $content; ?></p>
+      </div>
+      <?php } ?>
 
-     if ( isset( $entry['dan_content'] ) ) { $content = esc_html( $entry['dan_content']); }
+   <?php endwhile; endif;?>
+   </section>
 
-   ?>
-
-    <section class="tab-section" data-tab-section>
-      <h4 class="title"><?php echo $content_title; ?></h4>
-      <p class="large subtitle"><?php echo $subtitle; ?></p>
-      <p class="content"><?php echo $content; ?></p>
-    </section>
-    <?php } ?>
-  </div>
-
- <?php endwhile; endif;?>
    </div><!--\wrap-->
   </main>
 

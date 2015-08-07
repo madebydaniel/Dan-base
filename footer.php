@@ -4,8 +4,10 @@
 
 	</main><!--\.on-canvas-->
 
-	<aside class="off-canvas off-canvas--right hide main-menu" id="sidebar-1" data-offcanvas-selector=".js-canvas-right" data-offcanvas-sidebar="right" role="complementary" aria-hidden="false">
-		<p class="menu-title large">Menu</p>
+	<aside class="mobile-menu-panel">
+		<header>
+			<p class="menu-title large">Menu</p>
+		</header>
 		<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 			<?php
 				wp_nav_menu( array(
@@ -15,9 +17,8 @@
 		</nav>
 	</aside><!--\.off-canvas-->
 
-	</div><!--\.canvas-->
 
-	<button id="mobile-menu-icon" type="button" class="js-canvas-right menu-icon tcon tcon-menu--xbutterfly closed" aria-label="toggle menu">
+	<button class="mobile-menu-icon menu-icon tcon tcon-menu--xbutterfly">
 	  <span class="tcon-menu__lines" aria-hidden="true"></span>
 	  <span class="tcon-visuallyhidden">toggle menu</span>
 	</button>

@@ -1,3 +1,9 @@
+/*********************************************
+*
+* Use -webkit-overflow-scrolling:touch; whenever overflow:scroll is used
+*
+**********************************************/
+
 /*********************
 GENERAL STYLES
 *********************/
@@ -67,3 +73,20 @@ hr {
 .bkgrd-primary {
 	background-color:$primary;
 }
+
+.site-container {
+	display:flex;
+	flex-direction:column;
+	min-height:100vh;
+	header.header,
+	.dan-hero,
+	footer.site-footer {
+		flex:0;
+	}
+	#body-container {
+		flex:1;
+}
+
+
+}
+

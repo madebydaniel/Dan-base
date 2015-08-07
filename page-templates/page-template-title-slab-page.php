@@ -156,13 +156,13 @@ $btn_url_two = get_post_meta( $post->ID, 'dan_btn_url_two', true );
           <?php } ?>
           <div class="buttons">
             <?php if($btn){ ?>
-              <a href="<?php echo $btn_url; ?>" class="button primary">
+              <a href="<?php echo $btn_url; ?>" class="button">
               <?php echo $btn; ?>
             </a>
             <?php } ?>
             <?php if($btn_two) { ?>
 
-            <a href="<?php echo $btn_url_two; ?>" class="button secondary">
+            <a href="<?php echo $btn_url_two; ?>" class="button-alt">
               <?php echo $btn_two; ?>
             </a>
             <?php } ?>
@@ -189,14 +189,8 @@ $btn_url_two = get_post_meta( $post->ID, 'dan_btn_url_two', true );
            <?php } ?>
 
            <div class="buttons">
-             <?php if($btn){ ?>
-               <a href="<?php echo $btn_url; ?>" class="button primary light">
-               <?php echo $btn; ?>
-             </a>
-             <?php } ?>
-
              <?php if($btn_two) { ?>
-             <a href="<?php echo $btn_url_two; ?>" class="button ghost light">
+             <a href="<?php echo $btn_url_two; ?>" class="button ghost-r">
                <?php echo $btn_two; ?>
              </a>
              <?php } ?>
@@ -224,13 +218,13 @@ $btn_url_two = get_post_meta( $post->ID, 'dan_btn_url_two', true );
 
             <div class="buttons">
               <?php if($btn){ ?>
-                <a href="<?php echo $btn_url; ?>" class="button primary light">
+                <a href="<?php echo $btn_url; ?>" class="button ghost-r">
                 <?php echo $btn; ?>
               </a>
               <?php } ?>
 
               <?php if($btn_two) { ?>
-              <a href="<?php echo $btn_url_two; ?>" class="button secondary light">
+              <a href="<?php echo $btn_url_two; ?>" class="button ghost-r">
                 <?php echo $btn_two; ?>
               </a>
               <?php } ?>
@@ -258,13 +252,13 @@ $btn_url_two = get_post_meta( $post->ID, 'dan_btn_url_two', true );
 
              <div class="buttons">
                <?php if($btn){ ?>
-                 <a href="<?php echo $btn_url; ?>" class="button primary">
+                 <a href="<?php echo $btn_url; ?>" class="button">
                  <?php echo $btn; ?>
                </a>
                <?php } ?>
 
                <?php if($btn_two) { ?>
-               <a href="<?php echo $btn_url_two; ?>" class="button secondary">
+               <a href="<?php echo $btn_url_two; ?>" class="button ghost">
                  <?php echo $btn_two; ?>
                </a>
                <?php } ?>
@@ -292,13 +286,13 @@ $btn_url_two = get_post_meta( $post->ID, 'dan_btn_url_two', true );
 
               <div class="buttons">
                 <?php if($btn){ ?>
-                  <a href="<?php echo $btn_url; ?>" class="button primary">
+                  <a href="<?php echo $btn_url; ?>" class="button">
                   <?php echo $btn; ?>
                 </a>
                 <?php } ?>
 
                 <?php if($btn_two) { ?>
-                <a href="<?php echo $btn_url_two; ?>" class="button secondary">
+                <a href="<?php echo $btn_url_two; ?>" class="button">
                   <?php echo $btn_two; ?>
                 </a>
                 <?php } ?>

@@ -39,6 +39,7 @@ Stylesheet: Main Stylesheet
 @import "modules/carousel";
 @import "modules/pins";
 @import "modules/stalker";
+@import "modules/slabs";
 @import "modules/widgets_calendar";
 @import "modules/panels";
 
@@ -54,6 +55,8 @@ Stylesheet: Main Stylesheet
 
 @import "layout/collections/posts_layout_one";
 @import "layout/collections/posts_layout_two";
+
+@import "vendor/wp-mediaelement-override";
 
 //Theme specific styles should go inside the theme dir and imported here
 

@@ -1,4 +1,5 @@
 var gulp = require('gulp'),
+    concat = require('gulp-concat');
     uglify = require('gulp-uglify');
     browserSync = require('browser-sync'),
     reload = browserSync.reload;
@@ -12,6 +13,13 @@ function errorLog(error) {
   this.emit('end');
 }
 
+//concat js
+gulp.task('concatJs', function() {
+  return gulp.src('library/js/functions/*.js')
+    .pipe(concat('scripts.js'))
+    .pipe(gulp.dest('library/js/'));
+});
+
 //uglify js
 gulp.task('mainJs', function(){
   gulp.src('library/js/functions/scripts.js')
@@ -21,13 +29,12 @@ gulp.task('mainJs', function(){
 });
 
 
-//main stylesheet
 gulp.task('mainStyles', function(){
   sass('library/scss/style.scss', {
     style: 'compressed',
-    container: 'gulp-ruby-sass-main'
+    sourcemap: true,
+    //container: 'gulp-ruby-sass-main'
   })
-  .pipe(sourcemaps.init())
   .on('error', errorLog)
   .pipe(prefix('last 2 versions'))
   .pipe(sourcemaps.write())
@@ -57,6 +64,10 @@ gulp.task('watch', function(){
   gulp.watch([
     'library/scss/login.scss'
   ], ['loginStyles']);
+
+   gulp.watch([
+    'library/js/functions/*.js'
+  ], ['concatJs']);
 
   gulp.watch([
     'library/js/functions/scripts.js'

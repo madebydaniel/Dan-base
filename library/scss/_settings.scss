@@ -24,18 +24,39 @@ $primary-medium:    	lighten($primary, 10%);
 
 $accent:            	powderblue;
 $accent-dark:       	darken($accent, 20%);
-$accent-light:      	lighten($accent, 30%);
+$accent-light:      	lighten($accent, 10%);
 $accent-medium:     	lighten($accent, 10%);
 
 $link-color:        	$primary-dark;
 $link-hover:        	$accent-dark;
 $link-active:       	$accent;
 
-
-/* "r" = reversed */
 $r-link-color:      	$primary-light;
 $r-link-hover:      	$white;
 $r-link-active:     	darken($primary-light, 10%);
+
+$button-bkgrd:			$accent;
+$button-bkgrd-h:		$accent-dark;
+$button-bkgrd-a:		$accent-light;
+$button-color:			white;
+$button-color-h:		white;
+$button-color-a:		white;
+
+$button-alt-bkgrd:		$primary;
+$button-alt-bkgrd-h:	$primary-dark;
+$button-alt-bkgrd-a:	$primary-light;
+$button-alt-color:		white;
+$button-alt-color-h:	white;
+$button-alt-color-a:	white;
+
+$button-ghost:			$primary;
+$button-ghost-h:		$primary-light;
+$button-ghost-a:		$primary-medium;
+
+$r-button-ghost:		$primary-light;
+$r-button-ghost-h:		white;
+$r-button-ghost-a:		white;
+
 
 $light-border-color:	#e5e5e5;
 $border-color:      	$meta-gray;
@@ -53,4 +74,18 @@ $space-fourth:     		$space/4;
 $dropdown-menu-width: 	200px;
 
 
+$sans-serif:        "Roboto", Helvetica, Arial, sans-serif;
+$serif:             "Georgia", Cambria, Times New Roman, Times, serif;
+$mono:              "Lucida Console", Monaco, Courier, monospace;
+$heading:           "Oswald", Helvetica, Arial, sans-serif;
+
+$base-font-family: $sans-serif;
+$base-font-weight: normal;
+
+$base-font-color: 		#5c6b80;;
+$heading-font-color:	$primary;
+
+/* "r" = reversed */
+$r-base-font-color:	white;
+$r-heading-font-color:	$primary-light;
 

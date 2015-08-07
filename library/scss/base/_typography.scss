@@ -2,18 +2,6 @@
 FONTS
 **********************/
 
-$sans-serif:        "Roboto", Helvetica, Arial, sans-serif;
-$serif:             "Georgia", Cambria, Times New Roman, Times, serif;
-$mono:              "Lucida Console", Monaco, Courier, monospace;
-$heading:           "Oswald", Helvetica, Arial, sans-serif;
-
-$base-font-family: $sans-serif;
-$base-font-weight: normal;
-
-$base-font-color: 		#5c6b80;;
-$heading-font-color:	$primary;
-
-
 @mixin hero-large-font-size {
 	@include rem(font-size, 3.4rem);
 	@include rem(line-height, 4rem);

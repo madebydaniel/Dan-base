@@ -50,7 +50,7 @@
             <h2><?php echo $home_hero_two; ?></h2>
           </hgroup>
           <div class="hero-cta">
-            <a class="button primary ghost" href="<?php echo $home_cta_url_one; ?>">
+            <a class="button ghost-r" href="<?php echo $home_cta_url_one; ?>">
               <?php echo $home_cta_btn_one; ?>
             </a>
           </div>

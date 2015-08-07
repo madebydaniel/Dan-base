@@ -231,10 +231,10 @@ Template Name: Boxes
           <img src="<?php echo $img; ?>" />
         </div>
 
-        <h4 class="title center"><?php echo $title; ?></h4>
+        <h5 class="title center"><?php echo $title; ?></h5>
         <p class="content center"><?php echo $content; ?></p>
         <div class="center">
-          <a class="button small" href="<?php echo $btn_url; ?>"><?php echo $btn; ?></a>
+          <a class="button-small space-fourth-m-t " href="<?php echo $btn_url; ?>"><?php echo $btn; ?></a>
         </div>
       </div>
 
@@ -269,7 +269,7 @@ Template Name: Boxes
     <div class="block two-col">
       <i class="fa <?php echo $icon; ?> center"></i>
 
-      <h4 class="center title"><?php echo $title; ?></h4>
+      <h6 class="center title"><?php echo $title; ?></h6>
       <p class="center content"><?php echo $content; ?></p>
     </div>
 
