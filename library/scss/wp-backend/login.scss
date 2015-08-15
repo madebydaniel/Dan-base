@@ -73,6 +73,14 @@ but since we're referencing the id, it should be easy.
 	} /* login button*/
 
 .login {
+	.message {
+		padding:30px;
+		background:rgba(255,255,255,0.7);
+		margin-bottom:1px;
+		text-align:center;
+		border-left: 4px solid $accent;
+		border-right: 4px solid $accent;
+	}
 	p#nav, p#backtoblog {
 		width:100%;
 		padding:0px;
