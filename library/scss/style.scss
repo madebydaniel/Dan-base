@@ -22,26 +22,27 @@ Stylesheet: Main Stylesheet
 @import "components/buttons";
 @import "components/forms";
 
-@import "modules/header";
-@import "modules/navigation";
-@import "modules/pagination";
-@import "modules/comments";
-@import "modules/sidebars";
-@import "modules/footer";
-@import "modules/left-sidebar";
 @import "modules/articles";
 @import "modules/blocks";
 @import "modules/cards";
-@import "modules/gallery";
-@import "modules/titlegroups";
-@import "modules/slats";
-@import "modules/tabs";
 @import "modules/carousel";
+@import "modules/comments";
+@import "modules/footer";
+@import "modules/gallery";
+@import "modules/header";
+@import "modules/left-sidebar";
+@import "modules/modal";
+@import "modules/navigation";
+@import "modules/pagination";
+@import "modules/panels";
 @import "modules/pins";
+@import "modules/sidebars";
+@import "modules/slats";
 @import "modules/stalker";
 @import "modules/slabs";
+@import "modules/tabs";
+@import "modules/titlegroups";
 @import "modules/widgets_calendar";
-@import "modules/panels";
 
 @import "layout/grid_helpers";
 

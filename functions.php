@@ -43,6 +43,7 @@ require_once( 'library/php/functions/dan-blogposts.php' ); // dan-blogposts blog
 require_once( 'library/php/functions/custom-menu/custom-walker.php');
 require_once( 'library/php/functions/custom-menu/menu-field-function.php');
 require_once( 'library/php/functions/custom-menu/edit-custom-walker.php');
+require_once( 'library/php/functions/wp-mediaplayer-addclass.php');
 
 // ###### SHORTCODES ###### //
 require_once( 'library/php/shortcodes/shortcodes.php' ); //

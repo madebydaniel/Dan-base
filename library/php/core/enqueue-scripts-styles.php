@@ -28,6 +28,13 @@ function dan_scripts_and_styles() {
 		  wp_enqueue_script( 'comment-reply' );
     }
 
+		
+
+		//adding gsap library files
+
+		wp_register_script( 'gsap-tweenmax', 'http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js', array( 'jquery' ), '', true );
+
+
 		//adding scripts file in the footer
 		wp_register_script( 'dan-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true );
 
@@ -45,6 +52,7 @@ function dan_scripts_and_styles() {
 		and your site will load faster.
 		*/
 		wp_enqueue_script( 'jquery' );
+		wp_enqueue_script( 'gsap-tweenmax' );
 		wp_enqueue_script( 'dan-js' );
 
 	}

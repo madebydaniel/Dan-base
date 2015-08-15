@@ -119,5 +119,6 @@ Template Name: Panels
   </div><!--\row-->
   </div>
 </div>
+</main>
 
 <?php get_footer(); ?>
