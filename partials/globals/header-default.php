@@ -22,9 +22,11 @@
     <div class="top-level-nav">
       <nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
         <?php
+          $walker = new My_Walker_Nav_Menu;
           wp_nav_menu( array(
             'theme_location' => 'main-nav',
-            'container' => 'false' ) );
+            'container' => false,
+            'walker' => $walker ) );
         ?>
       </nav>
     </div>

@@ -37,6 +37,9 @@ NAVIGATION STYLES
 						@include xtra-small-font-size();
 						font-weight:normal;
 					}
+				.fa {
+					padding:0px 5px 0px 15px;
+				}
 			}/*EO - a */
 			ul {
 				display:none;
@@ -65,7 +68,7 @@ NAVIGATION STYLES
 			display:block;
 			float:right;
 			position:relative;
-			z-index:9999;
+			z-index:10;
 		}
 		nav > ul.menu {
 			display:block;
@@ -235,7 +238,7 @@ NAVIGATION STYLES
 	transition-duration: 0.3s;
 	transition-delay: 0.3s;
 	transform: translate3d(100%, 0, 0);
-	z-index:9999;
+	z-index:8888;
 	.menu-title {
 		padding:20px;
 		margin:0 0 20px;
@@ -390,7 +393,7 @@ NAVIGATION STYLES
 	padding:0;
 	margin:0;
 	right:40px;
-	z-index:9999;
+	z-index:8889;
 	@include breakpoint(desktop){
 		display:none !important;
 	}

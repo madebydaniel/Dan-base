@@ -54,6 +54,21 @@
 })(jQuery);
 
 
+<?php if(is_page_template('page-templates/page-template-carousel.php')){ ?>
 
+  (function($){
+     $('.carousel').find('ul').slick({
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        arrows:false,
+        centerMode: true,
+        variableWidth: true
+    });
+  })(jQuery);
+
+
+<?php } ?>
 
 </script>

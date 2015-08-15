@@ -1,17 +1,10 @@
-.dan-logo-carousel {
-	.carousel-items {
-		height:200px;
-		line-height:200px;
-		padding-bottom:0px;
-		ul {
-			@include clearfix();
-			@include vertical-align();
-			}/* EO ul */
+
+.carousel {
+	ul.slick-slider {
+		margin:$space auto;
+		padding:0;
 		li {
-			img {
-			width:100%;
-			line-height:200px;
-			}
-		}/* EO li */
-	}/* EO carousel-items */
+			margin:0 20px;
+		}
+	}
 }

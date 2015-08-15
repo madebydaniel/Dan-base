@@ -1,136 +1,110 @@
-.morphing-modal-trigger {
-  position: relative;
+.modal-trigger {
   .button {
-    width: 12.5em;
-    height: 4em;
-    background-color: #123758;
-    border-radius: 5em;
-    transition: color 0.2s 0.3s, width 0.3s 0s;
-    &.to-circle {
-      width: 4em;
-      color: transparent;
-      transition: color 0.2s 0s, width 0.3s 0.2s;
-    }
-  }
-  .modal-bkgrd {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-2em);
-    width: 4em;
-    height: 4em;
-    background-color: #123758;
-    border-radius: 50%;
-    opacity: 0;
-    visibility: hidden;
-    transition: visibility 0s 0.5s;
-    &.is-visible {
-      opacity: 1;
-      visibility: visible;
-    }
+    
   }
 }
 
-.modal-close {
+.modal-container {
   position: fixed;
-  z-index: 1;
-  top: 20px;
-  right: 5%;
-
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  
-  background: rgba(#000, .3) url(../img/cd-icon-close.svg) no-repeat center center;
-  
-  /* image replacement */
-  overflow: hidden;
-  text-indent: 100%;
-  white-space: nowrap;
-
-  visibility: hidden;
-  opacity: 0;
-
-  .no-touch &:hover {
-    background-color: rgba(#000, .5);
-  }
-
-  @include breakpoint(desktop) {
-    top: 70px;
-  }
-}
-
-.morphing-modal-container {
-  position: fixed;
-  top: 0;
+  display:flex;
+  top: -100%;
   left: 0;
   width: 100%;
-  height: 100%;
-
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
-
-
-
-  &::after {
-    /* gradient overlay at bottom of modal window */
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 60px;
-    pointer-events: none;
-    background: transparent;
- 
-
+  height: 0;
+  z-index:9999;
+  align-items:center;
+  justify-content:center;
+  overflow:scroll;
   .modal-content {
-    height: 100%;
-    width: 100%;
-    padding: 3em 5%;
-    text-align: left;
-    overflow-y: auto; 
-  }
-
-  p {
-    line-height: 1.6;
-    margin: 2em 0;
-  }
-
- 
-  @include breakpoint(desktop) {
-
-    .cd-modal-content { 
-      padding: 4em 10%;
+    width: 80%;
+    position:relative;
+    z-index:9995;
+    overflow:scroll;
+    background:white;
+    padding:30px;
+    max-height:90vh;
+    .modal-scroll-100 {
+      height:100%;
+      .modal-scroll-container {
+        height:100%;
+        overflow:scroll;
+      }
     }
   }
 
-  @include breakpoint(large) {
-
-    .cd-modal-content { 
-      padding: 6em 20%;
-    }
-
-    p {
-      font-size: 2rem;
-      line-height: 2;
-    }
-  }
-}}
-
- .modal-is-visible {
   .modal-close {
-     visibility: visible;
-    opacity: 1;
-  }
-  .morphing-modal-container {
-    z-index: 1;
-    visibility: visible;
-    opacity: 1;
-    pointer-events: auto;
-    .modal-content {
-      -webkit-overflow-scrolling: touch;
+    position: absolute;
+    z-index: 9999;
+    top: 15px;
+    right: 15px;
+    height: 35px;
+    width: 35px;
+    font-size:2rem;
+    line-height:35px;
+    @include breakpoint(desktop) {
+      top: 25px;
+      right: 25px;
+      height: 50px;
+      width: 50px;
+      font-size:2.5rem;
+      line-height:50px;
+    }
+    padding:0;
+    margin:0;
+    color:$accent;
+    border-radius: 50%;
+    cursor:pointer;
+    background: white;
+    text-align:center;
+    text-decoration:none;
+    transition:all 0.2s ease;
+    &:hover {
+      color:$accent-dark;
+      top: 10px;
+      right: 10px;
+      height: 45px;
+      width: 45px;
+      font-size:2.3rem;
+      line-height:45px;
+       @include breakpoint(desktop) {
+        top: 20px;
+        right: 20px;
+        height: 60px;
+        width: 60px;
+        font-size:2.9rem;
+        line-height:60px;
+      }
+    }
+    &:active {
+      top: 15px;
+      right: 15px;
+      height: 35px;
+      width: 35px;
+      font-size:2rem;
+      line-height:35px;
+      @include breakpoint(desktop) {
+        top: 25px;
+        right: 25px;
+        height: 50px;
+        width: 50px;
+        font-size:2.5rem;
+        line-height:50px;
+      }
     }
   }
+  
+  .modal-bkgrd {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: $primary-dark;
+    opacity: 0;
+    z-index:9990;
+  }
+
 }
+
+
+

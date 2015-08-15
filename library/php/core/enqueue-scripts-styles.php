@@ -17,6 +17,9 @@ function dan_scripts_and_styles() {
 		// normalize css
 		wp_register_style( 'dan-normalize', get_stylesheet_directory_uri() . '/library/css/normalize.min.css', array(), '', 'all' );
 
+		// register slick slider stylesheet
+		wp_register_style( 'slick-stylesheet', get_stylesheet_directory_uri() . '/library/js/libs/slick-slider/slick.css', array(), '', 'all' );
+
 		// register main stylesheet
 		wp_register_style( 'dan-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), '', 'all' );
 
@@ -35,12 +38,17 @@ function dan_scripts_and_styles() {
 		wp_register_script( 'gsap-tweenmax', 'http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js', array( 'jquery' ), '', true );
 
 
+		//adding slick.js carousel file in the footer
+		wp_register_script( 'slick-js', get_stylesheet_directory_uri() . '/library/js/libs/slick-slider/slick.min.js', array( 'jquery' ), '', true );
+
+
 		//adding scripts file in the footer
 		wp_register_script( 'dan-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true );
 
 		// enqueue styles and scripts
 		wp_enqueue_script( 'dan-modernizr' );
 		wp_enqueue_style( 'dan-normalize' );
+		wp_enqueue_style( 'slick-stylesheet' );
 		wp_enqueue_style( 'dan-stylesheet' );
 		wp_enqueue_style( 'dan-ie-only' );
 
@@ -53,6 +61,7 @@ function dan_scripts_and_styles() {
 		*/
 		wp_enqueue_script( 'jquery' );
 		wp_enqueue_script( 'gsap-tweenmax' );
+		wp_enqueue_script( 'slick-js' );
 		wp_enqueue_script( 'dan-js' );
 
 	}
