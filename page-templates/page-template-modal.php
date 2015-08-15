@@ -9,8 +9,8 @@ Template Name: Modal
 
   <main class="" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/WebPageElement">
 
-    
-  <div class="wrap space-m">
+  
+  <div class="wrap space-p">
     <h5 class="title space-fourth-m-t">This is a sample morphing modal</h5>
     <p>This example is found at <a href="http://codyhouse.co/gem/modal-window/">codyhouse.co/gem/modal-window/</a></p>
 

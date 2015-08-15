@@ -22,6 +22,7 @@ require_once( 'library/php/metabox/start-cmb2.php' );
 require_once ('library/php/metabox/cmb-field-select2/cmb-field-select2.php');
 require_once( 'library/php/metabox/cmb2-filelist-output.php' );
 require_once( 'library/php/metabox/cmb2-fontawesome-cb.php' );
+require_once( 'library/php/metabox/theme-cmb2/theme-options.php' );
 require_once( 'library/php/metabox/theme-cmb2/front-page-cmb2.php' );
 require_once( 'library/php/metabox/theme-cmb2/title-group-cmb2.php' );
 require_once( 'library/php/metabox/theme-cmb2/boxes-cmb2.php' );

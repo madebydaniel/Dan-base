@@ -10,6 +10,10 @@ HEADER STYLES
 		@include medium-font-size();
 		a {
 			color: $accent-dark;
+			img {
+				max-height:40px;
+				width: auto;
+			}
 		}
 	}
 	.top-level-nav {
@@ -20,6 +24,14 @@ HEADER STYLES
 		#logo {
 			@include column(1/4);
 			text-align:left;
+			margin-top:10px;
+			margin-bottom:10px;
+			a {
+				img {
+					max-height:40px;
+					width: auto;
+				}
+			}
 		}
 		.top-level-nav {
 			@include column(3/4);
