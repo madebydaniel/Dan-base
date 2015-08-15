@@ -47,6 +47,10 @@
     });
 
 
+    //fitvids script
+    $(".entry-content").fitVids();
+
+
 })(jQuery);
 
 
