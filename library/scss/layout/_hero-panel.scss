@@ -1,0 +1,58 @@
+.hero {
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	width:100%;
+	min-height:50vh;
+	background-color: $hero-bkgrd;
+	.hero-content {
+		flex:0;
+	}
+	
+
+	h1 {
+		margin:0;
+		padding:0;
+		@include font(5.5, 6.5);
+		color: $hero-h1;
+	}
+
+
+	p.large {
+		margin:0 0 20px;
+		padding:0;
+		color: $hero-p--large;
+		&.bottom {
+			margin:20px 0 0;
+		}
+	}
+
+
+	.button-group {
+		text-align:center;
+		button {
+			
+		}
+	}
+}
+
+.hero-primary { background-color: $clr-primary--dark; }
+.hero-accent { background-color: $clr-accent--dark; }
+.hero-alternate { background-color: $clr-alternate--dark; }
+
+
+/****************************************************
+// HERO ANIMATIONS - https://codyhouse.co/gem/animated-intro-section/
+****************************************************/
+
+.animate-hero-content {
+
+	h1, h1 span, p, .button-group {
+		opacity: 0;
+		animation-duration: .8s;
+		animation-delay:.3s;
+		animation-fill-mode:forwards;
+	}
+
+}
+

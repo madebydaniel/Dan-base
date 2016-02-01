@@ -1,0 +1,98 @@
+
+/* -------------------------------- 
+
+Parallax
+
+-------------------------------- */
+.parallax.animate-hero-content * {
+	/* overwrite default style */
+	opacity: 1;
+}
+
+.parallax.animate-hero-content h1 span, 
+.parallax.animate-hero-content p span {
+	position: relative;
+	display: inline-block;
+	padding: .5em 1em;
+	/* span text is not visible */
+	color: transparent;
+
+	&::before, &::after {
+		position: absolute;
+		left: 0;
+		width: 100%;
+	}
+
+	&::before {
+		/* this is used to create the background colored layer */
+		content: '';
+		height: 100%;
+		top: 0;
+		background-color: lighten($hero-bkgrd, 5%);
+	}
+
+	&::after {
+		/* this is used to create the text */
+		content: attr(data-content);
+		top: .5em;
+	}
+}
+
+.parallax.animate-hero-content h1 {
+
+	span::after {
+		color: $hero-h1;
+	}
+
+}
+
+.parallax.animate-hero-content p span::after {
+	color: $hero-p--large;
+}
+
+
+.parallax.animate-hero-content h1 span::after,
+.parallax.animate-hero-content h1 span::before, 
+.parallax.animate-hero-content p span::after,
+.parallax.animate-hero-content p span::before,
+.parallax.animate-hero-content .button-group {
+	animation-name:cd-slide-up;
+	animation-duration:.4s;
+	animation-fill-mode:backwards;
+}
+
+.parallax.animate-hero-content h1 span::after {
+	animation-delay:.3s;
+}
+
+.parallax.animate-hero-content h1 span::before {
+	animation-delay:.4s;
+}
+
+.parallax.animate-hero-content p span::after {
+	animation-delay:.5s;
+}
+
+.parallax.animate-hero-content p span::before {
+	animation-delay:.6s;
+}
+
+.parallax.animate-hero-content .button-group {
+	animation-delay:.7s;
+}
+
+.parallax.animate-hero-content .button-group.main-action {
+	animation-delay:.8s;
+}
+
+@keyframes cd-slide-up  {
+	0% {
+		opacity: 0;
+		transform:translateY(30vh);
+	}
+
+	100% {
+		opacity: 1;
+		transform:translateY(0);
+	}
+}

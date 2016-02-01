@@ -1,0 +1,53 @@
+.bkgrd-light--xtra {
+	background-color: $clr-gray--light---xtra
+}
+
+.bkgrd-light {
+	background-color: $clr-gray--light
+}
+
+.bkgrd-primary {
+	background-color: $clr-primary
+}
+
+.bkgrd-accent {
+	background-color: $clr-accent
+}
+
+.bkgrd-alternate {
+	background-color: $clr-alternate
+}
+
+.bkgrd-dark {
+	background-color: $clr-gray--dark
+}
+
+
+/* slanted edges here */
+.edge--bottom {
+  @include angle(after);
+}
+
+.edge--bottom--reverse {
+  @include angle(after, true);
+}
+
+.edge--top {
+  @include angle(before);
+}
+
+.edge--top--reverse {
+  @include angle(before, true);
+}
+
+.edge--both {
+  @include angle(both);
+}
+
+.edge--both--reverse {
+  @include angle(both, true);
+}
+
+.section {
+	padding:$space 0;
+}

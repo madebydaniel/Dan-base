@@ -1,0 +1,106 @@
+
+/* -------------------------------- 
+
+Cut
+
+-------------------------------- */
+
+.cut.animate-hero-content h1 {
+	position: relative;
+	/* overwrite default style */
+	opacity: 1;
+	font-weight: 700;
+	color: transparent;
+
+	span {
+		/* 2 span elements are used to create the cut effect */
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: 50%;
+		left: 0;
+		overflow: hidden;
+		color: $hero-h1;
+
+		&:first-of-type {
+			top: 0;
+		}
+
+		&:last-of-type {
+			bottom: 0;
+		}
+	}
+
+	span:first-of-type::before, 
+	span:last-of-type::after {
+		/* span:first-of-type::before - top half of the text */
+		/* span:last-of-type::after - bottom half of the text */
+		content: attr(data-content);
+		position: absolute;
+		width: 100%;
+		left: 0;
+		color: $hero-h1;
+	}
+
+	span:first-of-type::before {
+		top: 0;
+	}
+
+	span:last-of-type::after {
+		bottom: 0;
+	}
+}
+
+.cut.animate-hero-content .button-group {
+	/* overwrite default style */
+	margin-right: 0;
+	border-radius: 0;
+}
+
+.cut.animate-hero-content h1 span,
+.cut.animate-hero-content p,
+.cut.animate-hero-content .button-group {
+	animation-duration:.6s;
+}
+
+.cut.animate-hero-content h1 span,
+.cut.animate-hero-content p {
+	animation-name:cd-slide-left;
+}
+
+.cut.animate-hero-content h1 span:first-of-type {
+	animation-delay:.4s;
+}
+
+.cut.animate-hero-content p {
+	animation-delay:.5s;
+}
+
+.cut.animate-hero-content .button-group {
+	animation-name:cd-slide-left-btn;
+	animation-delay:.55s;
+}
+
+@keyframes cd-slide-left  {
+    0% {
+      opacity: 1;
+      transform:translateX(100vw);
+    }
+
+    100% {
+      opacity: 1;
+      transform:translateX(0);
+    }
+  }
+
+@keyframes cd-slide-left-btn  {
+    0% {
+      opacity: 1;
+      transform:translateX(150vw);
+    }
+
+    100% {
+      opacity: 1;
+      transform:translateX(0);
+    }
+  }

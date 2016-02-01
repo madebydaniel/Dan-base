@@ -1,0 +1,42 @@
+
+/*********************
+FOOTER STYLES
+*********************/
+
+
+@mixin footer-links {
+	display:block;
+	text-decoration:none;
+	padding:6px 0px;
+	@extend .fs-small;
+	&:hover {
+	}
+	&:active {
+	}
+}
+
+
+.site-footer {
+	clear: both;
+	background-color: $clr-primary--dark;
+	color: $clr-gray--light;
+}
+
+
+#footer-logo {
+	text-align:center;
+	padding:40px 0px;
+	img {
+		display:block;
+		margin:0px auto;
+	}
+}
+
+
+#footer-cr {
+	p {
+		@extend .fs-small;
+		color:$clr-primary--light;
+		padding:40px 0px;
+	}
+}

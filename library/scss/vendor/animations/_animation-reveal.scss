@@ -1,0 +1,105 @@
+
+
+/* -------------------------------- 
+
+Reveal
+
+-------------------------------- */
+
+.reveal.animate-hero-content h1 {
+	position: relative;
+	/* overwrite default style */
+	opacity: 1;
+	font-weight: 700;
+	/* <h1> text is not visible - it is used only as a container for the ::after element */
+	color: transparent;
+	overflow: hidden;
+
+	&::after {
+		/* this is the animated text */
+		content: attr(data-content);
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		color: $hero-h1;
+		opacity: 0;
+		animation-name:cd-reveal-up;
+		animation-fill-mode:forwards;
+	}
+}
+
+.reveal.animate-hero-content p {
+	position: relative;
+	margin: 0;
+	padding: 1em;
+	background-color: lighten($hero-bkgrd, 10%);
+	animation-name:cd-reveal-down;
+}
+
+.reveal.animate-hero-content .button-group {
+	animation-delay:1s;
+	animation-name:cd-reveal-down;
+}
+
+.reveal.animate-hero-content h1::after,
+.reveal.animate-hero-content p {
+	animation-duration:.4s;
+	animation-delay:.7s;
+}
+
+.reveal.animate-hero-content .action-wrapper {
+	position: relative;
+	overflow: hidden;
+	
+	&::before {
+		/* this is the loading bar */
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 3px;
+		width: 100%;
+		background-color: lighten($hero-bkgrd, 10%);
+		animation: cd-loading .4s .3s backwards;
+	}
+
+}
+
+
+
+@keyframes cd-reveal-up  {
+    0% {
+      opacity: 1;
+      transform:translateY(100%);
+    }
+
+    100% {
+      opacity: 1;
+      transform:translateY(0);
+    }
+  }
+
+@keyframes cd-reveal-down  {
+    0% {
+      opacity: 1;
+      transform:translateY(-100%);
+    }
+
+    100% {
+      opacity: 1;
+      transform:translateY(0);
+    }
+  }
+
+
+@keyframes(cd-loading) {
+	0% {
+		transform:scaleX(0);
+	}
+
+	100% {
+		transform:scaleX(1);
+	}
+}

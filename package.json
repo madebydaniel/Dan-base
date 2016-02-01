@@ -1,0 +1,26 @@
+{
+  "name": "framework-starter-gulp",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniel Davidson",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^6.0.3",
+    "browser-sync": "^2.10",
+    "csswring": "^4.0.0",
+    "gulp": "^3.9",
+    "gulp-concat": "^2.6.0",
+    "gulp-jshint": "^1.11.2",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-postcss": "^6.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.0.4",
+    "gulp-uglify": "^1.4.2",
+    "jeet": "^6.1.2",
+    "lost": "^6.6.2"
+  },
+  "homepage": "https://github.com/madebydaniel/Dan-base"
+}

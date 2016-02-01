@@ -1,0 +1,40 @@
+/*********************
+HEADER STYLES
+*********************/
+
+.header {
+	background-color: $clr-white;
+	#logo {
+		margin:$space-fourth auto;
+		text-align:center;
+		@extend .fs-medium;
+		a {
+			color: $clr-accent--dark;
+			img {
+				max-height:40px;
+				width: auto;
+			}
+		}
+	}
+	.top-level-nav {
+		display:none;
+	}
+	@include breakpoint(desktop){
+		#logo {
+			text-align:left;
+			margin-top:10px;
+			margin-bottom:10px;
+			position:absolute;
+			a {
+				img {
+					max-height:40px;
+					width: auto;
+				}
+			}
+		}
+		.top-level-nav {
+			text-align:right;
+			display:block;
+		}
+	}
+}
