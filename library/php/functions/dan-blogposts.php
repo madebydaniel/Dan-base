@@ -1,10 +1,10 @@
 <?php
 
 /*********************
-RELATED POSTS FUNCTION
+ POSTS ON PAGES FUNCTION
 *********************/
 
-// Related Posts Function (call using dan_related_posts(); )
+
 function dan_blogposts() {
 
   global $post;

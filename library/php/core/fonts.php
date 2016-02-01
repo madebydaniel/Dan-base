@@ -16,11 +16,11 @@ and be up and running in seconds.
 
 function google_fonts() {
   wp_enqueue_style('googleFonts', 'http://fonts.googleapis.com/css?family=Roboto:400,300,700|Oswald:400,300');
-  wp_enqueue_style('fontAwesome', 'http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css');
+  wp_enqueue_style('fontAwesome', 'http://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
 }
 
 function fontawesome_icons() {
-  wp_enqueue_style('fontAwesome', 'http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+  wp_enqueue_style('fontAwesome', 'http://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
 }
 
 add_action('wp_enqueue_scripts', 'google_fonts');

@@ -1,5 +1,12 @@
 <?php get_header(); ?>
 
-<?php get_template_part('partials/posts/layout/layout', 'one'); ?>
+<div class="wrap">
+
+	<div class="page-content-sidebar-flex-container sidebar-right">
+		
+		<?php get_template_part('partials/layout/post', 'sidebar'); ?>
+
+	</div><!--\.page-content-sidebar-flex-container-->
+</div><!--\wrap-->
 
 <?php get_footer(); ?>

@@ -1,188 +1,108 @@
+html {
+	font-size:62.5%;
+}
+
+body {
+  color: $base-font-color;
+  @include font(1.8, 2.4);
+  font-family: $base-font-family;
+  font-weight: 400;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: $heading-font-family;
+  font-weight: $heading-font-weight;
+  text-rendering: optimizelegibility;
+}
+
+
+.h1 { @include font(4, 4.5); }
+.h2 { @include font(3, 3.5); }
+.h3 { @include font(2, 2.5); }
+.h4 { @include font(1.8, 2.3); }
+.h5 { @include font(1.6, 2.1); }
+
+
+.italic { font-style: italic; }
+.bold   { font-weight: 700; }
+.thin { font-weight: 300; }
+
+.unordered-list { list-style-type: disc; }
+.ordered-list { list-style: decimal; }
+
+
+
+.entry-content {
+  i, em { @extend .italic; }
+  b, strong { @extend .bold; }
+
+  h1, .h1 { @extend .h1; margin: 1em 0 0.5em; }
+  h2, .h2 { @extend .h2; margin: 1em 0 0.5em; }
+  h3, .h3 { @extend .h3; margin: 1em 0 0.5em; }
+  h4, .h4 { @extend .h4; margin: 1em 0 0.5em; }
+  h5, .h5 { @extend .h5; margin: 1em 0 0.5em; }
+  h6, .h6 { @extend .h6; margin: 1em 0 0.5em; }
+
+  p, ul, ol, pre { @extend .block-margins; }
+
+  ul { @extend .unordered-list; }
+  ol { @extend .ordered-list; }
+
+  pre, code { @extend .fixed; }
+}
+
+
+
 /*********************
-FONTS
+FONT SIZES BY CLASS
 **********************/
-
-@mixin hero-large-font-size {
-	@include rem(font-size, 3.4rem);
-	@include rem(line-height, 4rem);
+.fs-large--hero {
+	@include font(3.4, 4);
 	@include breakpoint(desktop) {
-		@include rem(font-size, 6rem);
-		@include rem(line-height, 6.6rem);
+		@include font(6, 6.6);
 	}
 }
 
 
-@mixin xtra-large-font-size {
-	@include rem(font-size, 2.4rem);
-	@include rem(line-height, 3rem);
+.fs-large--xtra {
+	@include font(2.4, 3);
 	@include breakpoint(desktop) {
-		@include rem(font-size, 4.4rem);
-		@include rem(line-height, 5rem);
-		}
+		@include font(4.4, 5);
+	}
 }
 
-
-@mixin large-font-size {
-	@include rem(font-size, 2rem);
-	@include rem(line-height, 2.8rem);
+.fs-large {
+	@include font(2, 2.8);
 	@include breakpoint(desktop) {
-		@include rem(font-size, 2.6rem);
-		@include rem(line-height, 3.4rem);
+		@include font(2.6, 3.4);
 	}
 }
 
-@mixin medium-font-size {
-	@include rem(font-size, 1.8rem);
-	@include rem(line-height, 2.4rem);
+.fs-medium {
+	@include font(1.8, 2.4);
 	@include breakpoint(desktop) {
-		@include rem(font-size, 2rem);
-		@include rem(line-height, 2.8rem);
+		@include font(2, 2.8);
 	}
 }
 
-@mixin base-font-size {
-	@include rem(font-size, 1.4rem);
-	@include rem(line-height, 2.0rem);
+.base-font-size {
+	@include font(1.4, 2);
 	@include breakpoint(desktop) {
-		@include rem(font-size, 1.6rem);
-		@include rem(line-height, 2.2rem);
+		@include font(1.6, 2.2);
 	}
 }
 
-@mixin small-font-size {
-	@include rem(font-size, 1.4rem);
-	@include rem(line-height, 2rem);
+.fs-small {
+	@include font(1.4, 2);
 }
 
-@mixin xtra-small-font-size {
-	@include rem(font-size, 1.1rem);
-	@include rem(line-height, 1.6rem);
-}
-
-
-
-/**************************************
-THEME SPECIFIC TYPOGRAPHY MIXINS
-**************************************/
-@mixin widgettitle {
-	padding:0px;
-	display:block;
-	@include medium-font-size();
-	margin:0px;
-}
-
-@mixin small-section-title {
-	@include widgettitle();
-	font-family:$heading;
-}
-
-@mixin small-section-content {
-	padding:0px;
-	display:block;
-	color:$primary-light;
-	@include small-font-size();
+.fs-small--xtra {
+	@include font(1.1, 1.6);
 }
 
 
-/******************************************************************
-H1, H2, H3, H4, H5 STYLES
-******************************************************************/
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-	text-rendering: optimizelegibility;
-	font-weight: 500;
-	color:$primary;
-	font-family: $heading;
-	a {
-		text-decoration: none;
-	}
-}
 
-h1, .h1 {
-	@include rem(font-size, 2.4rem);
-	@include rem(line-height, 3rem);
-	@include breakpoint(desktop) {
-		@include rem(font-size, 4.4rem);
-		@include rem(line-height, 5rem);
-		}
-}
-
-h2, .h2 {
-	@include rem(font-size, 2rem);
-	@include rem(line-height, 2.6rem);
-	@include breakpoint(desktop) {
-	@include rem(font-size, 3.8rem);
-	@include rem(line-height, 4.4rem);
-	}
-}
-
-h3, .h3 {
-	@include rem(font-size, 1.8rem);
-	@include rem(line-height, 2.4rem);
-	@include breakpoint(desktop) {
-		@include rem(font-size, 3.2rem);
-		@include rem(line-height, 3.8rem);
-	}
-}
-
-h4, .h4 {
-	@include rem(font-size, 1.6rem);
-	@include rem(line-height, 2.2rem);
-	@include breakpoint(desktop) {
-		@include rem(font-size, 2.6rem);
-		@include rem(line-height,3.2rem);
-	}
-}
-
-h5, .h5 {
-	@include rem(font-size, 1.4rem);
-	@include rem(line-height, 2rem);
-	@include breakpoint(desktop) {
-		@include rem(font-size, 2.2rem);
-		@include rem(line-height, 2.8rem);
-	}
-}
-
-h6, .h6 {
-	@include rem(font-size, 1.4rem);
-	@include rem(line-height, 2rem);
-	@include breakpoint(desktop) {
-		@include rem(font-size, 1.8rem);
-		@include rem(line-height, 2.4rem);
-	}
-}
-
-.commentlist {
-	h1, .h1 {
-		@include rem(font-size, 2.4rem);
-		@include rem(line-height, 3rem);
-	}
-
-	h2, .h2 {
-		@include rem(font-size, 2rem);
-		@include rem(line-height, 2.6rem);
-	}
-
-	h3, .h3 {
-		@include rem(font-size, 1.8rem);
-		@include rem(line-height, 2.4rem);
-	}
-
-	h4, .h4 {
-		@include rem(font-size, 1.6rem);
-		@include rem(line-height, 2.2rem);
-	}
-
-	h5, .h5 {
-		@include rem(font-size, 1.4rem);
-		@include rem(line-height, 2rem);
-	}
-
-	h6, .h6 {
-		@include rem(font-size, 1.4rem);
-		@include rem(line-height, 2rem);
-	}
-}
 
 /*
 some nice typographical defaults
@@ -206,14 +126,6 @@ p, address, ol, ul, div {
       -ms-font-feature-settings: "liga", "dlig";
        -o-font-feature-settings: "liga", "dlig";
           font-feature-settings: "liga", "dlig";
-					@include small-font-size();
-	&.large {
-		@include medium-font-size();
-	}
-}
-
-table {
-	@include medium-font-size();
 }
 
 
@@ -222,16 +134,17 @@ LINK STYLES
 *********************/
 
 a, a:visited {
-	color: $link-color;
+	color: $clr-alternate;
+	@include transition(color);
 
 	/* on hover */
 	&:hover, &:focus {
-		color: $link-hover;
+		color: $clr-accent--dark;
 	}
 
 	/* on click */
 	&:active {
-		color: $link-active;
+		color: $clr-accent--dark;
 	}
 
 	/* mobile tap color */
@@ -251,22 +164,43 @@ a, a:visited {
 SPECIAL TAGS
 *************************/
 pre {
-	background: $dark-gray;
-	color: $light-gray;
-	@include small-font-size();
+	background: $clr-gray--dark;
+	color: $clr-gray--light;
+	@extend .fs-small;
 	padding: $space-third;
 	margin: $space-third auto;
 	border-radius: 3px;
 }
 
 code, var, tt {
-	font-family:$mono;
-	@include small-font-size();
-	background:$light-gray;
+	font-family:$mono-font-family;
+	@extend .fs-small;
+	background:$clr-gray--light;
 }
 
 address {
 	padding-left:30px;
 }
 
+
+
+.tc-white { color:$clr-white; }
+
+.tc-gr--light--xtra { color:$clr-gray--light---xtra; }
+.tc-gr--light { color:$clr-gray--light; }
+.tc-gr { color:$clr-gray; }
+.tc-gr--medium { color:$clr-gray--medium; }
+.tc-gr--dark { color:$clr-gray--dark; }
+
+.tc-accent--light { color:$clr-accent--light; }
+.tc-accent { color:$clr-accent; }
+.tc-accent--dark { color:$clr-accent--dark; }
+
+.tc-alternate--light { color:$clr-alternate--light; }
+.tc-alternate { color:$clr-alternate; }
+.tc-alternate--dark { color:$clr-alternate--dark; }
+
+.tc-primary--light { color:$clr-primary--light; }
+.tc-primary { color:$clr-primary; }
+.tc-primary--dark { color:$clr-primary--dark; }
 

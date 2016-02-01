@@ -55,7 +55,7 @@ add_action( 'wp_dashboard_setup', 'disable_default_dashboard_widgets' );
 //Updated to proper 'enqueue' method
 //http://codex.wordpress.org/Plugin_API/Action_Reference/login_enqueue_scripts
 function dan_login_css() {
-	wp_enqueue_style( 'dan_login_css', get_template_directory_uri() . '/library/css/login.css', false );
+	wp_enqueue_style( 'dan_login_css', get_template_directory_uri() . '/library/css/login.min.css', false );
 }
 
 // changing the logo link from wordpress.org to your site

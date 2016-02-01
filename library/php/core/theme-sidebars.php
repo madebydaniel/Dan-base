@@ -10,8 +10,8 @@ function dan_register_sidebars() {
 		'description' => __( 'Widget Area for Menu Section in the Footer', 'dantheme' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '<h4 class="widgettitle">',
-		'after_title' => '</h4>',
+		'before_title' => '<p class="widgettitle h4">',
+		'after_title' => '</p>',
 	));
 
 	register_sidebar(array(
@@ -20,8 +20,8 @@ function dan_register_sidebars() {
 		'description' => __( 'Widget Area for the blog and archive pages.', 'dantheme' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '<h4 class="widgettitle">',
-		'after_title' => '</h4>',
+		'before_title' => '<p class="widgettitle h4">',
+		'after_title' => '</p>',
 	));
 
 
@@ -31,8 +31,8 @@ function dan_register_sidebars() {
 		'description' => __( 'Widget Area for the general pages.', 'dantheme' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '<h4 class="widgettitle">',
-		'after_title' => '</h4>',
+		'before_title' => '<p class="widgettitle h4">',
+		'after_title' => '</p>',
 	));
 
 	register_sidebar(array(
@@ -41,8 +41,8 @@ function dan_register_sidebars() {
 		'description' => __( 'Widget Area for the general pages.', 'dantheme' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '<h4 class="widgettitle">',
-		'after_title' => '</h4>',
+		'before_title' => '<p class="widgettitle h4">',
+		'after_title' => '</p>',
 	));
 
 

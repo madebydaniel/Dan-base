@@ -1,12 +1,12 @@
 .widget_calendar {
 	table#wp-calendar {
 		width:100%;
-		@include small-font-size();
+		@extend .fs-small;
 		thead, tfoot, tbody {
-			border:solid 1px $light-border-color;
+			border:solid 1px $border-color;
 		}
 		thead, tfoot {
-			background:$light-gray;
+			background:$clr-gray--light;
 		}
 		thead {
 		
@@ -22,11 +22,25 @@
 			}
 		}
 		tbody {
-			@include xtra-small-font-size();
+			@extend .fs-small--xtra;
 			td {
 				text-align:center;
+				border:solid 1px $border-color;
 				padding:5px 0px;
-				border:solid 1px $light-border-color;
+				a {
+					display:block;
+					text-decoration:none;
+				}
+			}
+		}
+		tfoot {
+			@extend .fs-small--xtra;
+			td {
+				padding:5px 0px;
+				a {
+					display:block;
+					text-decoration:none;
+				}
 			}
 		}
 	}

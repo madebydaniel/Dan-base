@@ -4,60 +4,67 @@ Author: Daniel Davidson
 //
 Stylesheet: Main Stylesheet
 ******************************************************************/
-
-// normalize is in the css folder and is enqueued independently
-@import '../../node_modules/jeet/scss/jeet/index.scss';
-@import "vendor/jeet-settings";
-
 @import "settings";
 
-@import "base/mixins";
-@import "base/functions";
-@import "base/typography";
-@import "base/utilities";
+@import "utilities/mixins";
+@import "utilities/functions";
+
 @import "base/base_globals";
+@import "base/typography";
 
+@import "utilities/layout_utilities";
+@import "layout/grid";
 
-@import "components/alerts";
+@import "layout/header";
+@import "layout/navigation";
+@import "layout/hero-panel";
+@import "layout/navigation-offscreen";
+@import "layout/sidebar";
+@import "layout/footer";
+@import "layout/comments";
+
+@import "layout/bkgrds";
+
 @import "components/buttons";
 @import "components/forms";
+@import "components/pagination";
 
 @import "modules/articles";
-@import "modules/blocks";
-@import "modules/cards";
+@import "modules/captions";
 @import "modules/carousel";
-@import "modules/comments";
-@import "modules/footer";
-@import "modules/gallery";
-@import "modules/header";
-@import "modules/left-sidebar";
-@import "modules/modal";
-@import "modules/navigation";
-@import "modules/pagination";
-@import "modules/panels";
-@import "modules/pins";
-@import "modules/sidebars";
-@import "modules/slats";
-@import "modules/stalker";
-@import "modules/slabs";
 @import "modules/tabs";
-@import "modules/titlegroups";
+@import "modules/modals";
 @import "modules/widgets_calendar";
 
-@import "layout/grid_helpers";
 
-@import "pages/page_base";
 @import "pages/posts";
-@import "pages/home";
-@import "pages/leftsidebar";
-@import "pages/rightsidebar";
-@import "pages/nosidebar";
 
-
-@import "layout/collections/posts_layout_one";
-@import "layout/collections/posts_layout_two";
 
 @import "vendor/wp-mediaelement-override";
+
+
+/*Hero Panel Animations, delete or comment out what doesn't get used */
+@import "vendor/animations/_animation-cut";
+@import "vendor/animations/_animation-parallax";
+@import "vendor/animations/_animation-reveal";
+@import "vendor/animations/_animation-scale";
+
+
+/*No editing of style should be needed for these files, make style changes in sheets above these imports*/
+@import "vendor/effeckt/_variables";
+@import "vendor/effeckt/_global";
+//@import "vendor/effeckt/modules/buttons";
+@import "vendor/effeckt/modules/captions";
+@import "vendor/effeckt/modules/modal";
+@import "vendor/effeckt/modules/off-screen-nav";
+@import "vendor/effeckt/modules/page-transitions";
+@import "vendor/effeckt/modules/tooltips";
+@import "vendor/effeckt/modules/form-elements";
+@import "vendor/effeckt/modules/tabs";
+@import "vendor/effeckt/modules/positional-modals";
+//@import "vendor/effeckt/modules/lazy-loading";
+
+@import "vendor/hover";
 
 //Theme specific styles should go inside the theme dir and imported here
 

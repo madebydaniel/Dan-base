@@ -1,5 +1,4 @@
 .article-excerpt-layout  {
-	@include border-bottom();
 	@include clearfix();
 	.a-excerpt {
 		.a-header {
@@ -9,21 +8,21 @@
 			margin-top:0px;
 		}
 		.a-date {
-			@include small-font-size();
+			@extend .fs-small;
 			margin:0px;
 			padding:0px;
 		}
 		.a-title-link {
 			text-decoration:none;
 			&:hover .a-title, &:active .a-title{
-				color:$accent;
+				color:$clr-accent;
 			}
 		}
 		.a-title {
 			transition:color 0.4s ease;
 			margin:0px;
 			padding:0px;
-			@include large-font-size();
+			@extend .fs-large;
 		}
 		.a-content {
 

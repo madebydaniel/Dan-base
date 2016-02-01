@@ -2,169 +2,136 @@
 POSTS & CONTENT STYLES
 *********************/
 
-	.single-title,
-	.page-title,
-	.entry-title {
-		margin: 0;
+/*********************
+THEME SPECIFIC
+*********************/
+
+.entry-title {
+	margin: 0;
+	a{
+		text-decoration:none;
+	}
+}
+
+article.post-list {
+	@include border();
+	&:last-of-type {
+		border:none;
+		margin-bottom:0;
+	}
+	.post-banner {
+		margin-top:$space-fourth;
+	}
+}
+
+.post-banner img {
+	width:100%;
+}
+
+article.post-single {
+	
+}
+
+/*********************
+BASIC
+*********************/
+
+
+/* post meta */
+.byline {
+	@extend .fs-small;
+	color: $clr-gray;
+	font-style: italic;
+	margin: 0;
+}
+
+/* entry content */
+.entry-content {
+
+	table {
+		width: 100%;
+		border: 1px solid $clr-gray;
+		margin-bottom: 1.5em;
+		@extend .fs-small;
+		caption {
+			@extend .fs-small--xtra;
+			margin: 0 0 7px;
+			color: $clr-gray;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+		}
 	}
 
-	.single-title {}
+	tr {
+		border-bottom: 1px solid $clr-gray;
 
-	.page-title {}
+		&:nth-child(odd) {
+			background-color: $clr-gray--light;
+		}
+	}
 
-	.entry-title {}
+	td {
+		padding: 7px;
+		border-right: 1px solid $clr-gray;
 
-	.archive-title {}
+		&:last-child {
+			border-right: 0;
+		}
+	}
 
-	/* want to style individual post classes? Booya! */
-	.post-id {}         /* post by id (i.e. post-3) */
-	.post {}            /* general post style */
-	.page {}            /* general article on a page style */
-	.attachment {}      /* general style on an attatchment */
-	.sticky {}          /* sticky post style */
-	.hentry {}          /* hentry class */
-	.category-slug {}   /* style by category (i.e. category-videos) */
-	.tag-slug {}        /* style by tag (i.e. tag-news) */
+	th {
+		background-color: $clr-gray--light;
+		border-bottom: 1px solid $clr-gray;
+		border-right: 1px solid $clr-gray;
+		padding:15px 7px;
+		&:last-child {
+			border-right: 0;
+		}
+	}
 
-	/* post meta */
-	.byline {
-		@include small-font-size();
-		color: $meta-gray;
+	blockquote, q {
+		margin: 0 0 1.5em 0.75em;
+		padding: 0 0 0 0.75em;
+		border-left: 3px solid $clr-accent;
 		font-style: italic;
-		margin: 0;
+		color: $clr-gray;
+		cite {
+			@extend .fs-small--xtra;
+			margin-top:20px;
+		}
+		&:before {}
 
-		time {}
 	}
 
-	/* entry content */
-	.entry-content {
-		padding: 1.5em 0 0;
 
-		p {
+	img {
+		margin: 0 0 1.5em 0;
+		max-width: 100%;
+		height: auto;
+	}
 
-		}
+	/*
+	image alignment on a screen this size may be
+	a bit difficult. It's set to start aligning
+	and floating images at the next breakpoint,
+	but it's up to you. Feel free to change it up.
+	*/
+	.size-auto,
+	.size-full,
+	.size-large,
+	.size-medium,
+	.size-thumbnail {
+		max-width: 100%;
+		height: auto;
+	}
 
-
-		ul, ol, table, dl {}
-
-		ul, ol {
-
-			li {}
-
-		}
-
-		ul {
-
-			li {}
-
-		}
-
-		ol {
-
-			li {}
-
-		}
-
-		table {
-			width: 100%;
-			border: 1px solid $gray;
-			margin-bottom: 1.5em;
-			@include small-font-size();
-			caption {
-				@include xtra-small-font-size();
-				margin: 0 0 7px;
-				color: $meta-gray;
-				text-transform: uppercase;
-				letter-spacing: 1px;
-			}
-		}
-
-		tr {
-			border-bottom: 1px solid $gray;
-
-			&:nth-child(odd) {
-				background-color: $light-gray;
-			}
-		}
-
-		td {
-			padding: 7px;
-			border-right: 1px solid $gray;
-
-			&:last-child {
-				border-right: 0;
-			}
-		}
-
-		th {
-			background-color: $light-gray;
-			border-bottom: 1px solid $gray;
-			border-right: 1px solid $gray;
-			padding:15px 7px;
-			&:last-child {
-				border-right: 0;
-			}
-		}
-
-		blockquote, q {
-			margin: 0 0 1.5em 0.75em;
-			padding: 0 0 0 0.75em;
-			border-left: 3px solid $accent;
-			font-style: italic;
-			color: $meta-gray;
-			cite {
-				@include xtra-small-font-size();
-				margin-top:20px;
-			}
-			&:before {}
-
-		}
-
-		dl {}
-
-		dt {
-			font-style:italic;
-			color: lighten($base-font-color, 20%);
-		}
-
-		dd {
-			margin-left: 0;
-			font-size: 0.9em;
-			margin-bottom: 1.5em;
-		}
-
-		img {
-			margin: 0 0 1.5em 0;
-			max-width: 100%;
-			height: auto;
-		}
-
-		/*
-		image alignment on a screen this size may be
-		a bit difficult. It's set to start aligning
-		and floating images at the next breakpoint,
-		but it's up to you. Feel free to change it up.
-		*/
-		.alignleft, img.alignleft {}
-		.alignright, img.alignright {}
-		.aligncenter, img.aligncenter {}
-
-		.size-auto,
-		.size-full,
-		.size-large,
-		.size-medium,
-		.size-thumbnail {
-			max-width: 100%;
-			height: auto;
-		}
-
-	} /* end .entry-content */
+} /* end .entry-content */
 
 .wp-caption {
 	max-width: 100%;
 	background: transparent;
 	padding: 5px;
-	border:solid 1px $light-border-color;
+	border:solid 1px $clr-gray--light;
 
 	/* images inside wp-caption */
 	img {
@@ -174,7 +141,7 @@ POSTS & CONTENT STYLES
 	}
 
 	p.wp-caption-text {
-		@include xtra-small-font-size();
+		@extend .fs-small--xtra;
 		margin: 4px 0 7px;
 		text-align: center;
 	}
@@ -184,18 +151,28 @@ POSTS & CONTENT STYLES
 
 /* image gallery styles */
 .gallery {
-
-	dl {
-
-		a {}
-
-		img {}
-
+	@include clearfix();
+dl {
+	display:inline-block;
+	vertical-align:middle;
+	margin:0;
+	padding:0;
+	font-size:0;
+	a {
+		display:block;
+		padding:1%;
 	}
 
-	dt {}
+	img {
+		margin:0;
+		display:block;
+	}
 
-	dd {}
+}
+
+dt {}
+
+dd {}
 
 } /* end .gallery */
 

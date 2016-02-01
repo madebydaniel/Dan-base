@@ -2,11 +2,7 @@
   <script>
   //home page tabs and client carousel
   (function($){
-    $('.dan-logo-carousel').carousel({
-      animation: 'slide',
-      itemsToShow: 2,
-      duration: 1000,
-    });
+    
   })(jQuery);
   </script>
 <?php } ?>
@@ -35,9 +31,6 @@
 
             var isEntirelyVisible = (l + w + 140);
 
-            console.log(ulTest);
-            console.log("one"+isEntirelyVisible);
-            console.log("one"+docW);
 
             if (isEntirelyVisible < docW) {
             } else {
@@ -54,7 +47,7 @@
 })(jQuery);
 
 
-<?php if(is_page_template('page-templates/page-template-carousel.php')){ ?>
+<?php if(is_page_template('page-templates/page-template-example-carousel.php')){ ?>
 
   (function($){
      $('.carousel').find('ul').slick({

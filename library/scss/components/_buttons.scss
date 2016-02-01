@@ -5,118 +5,78 @@ Stylesheet: Button Styles
 
 ******************************************************************/
 
-%btn {
+button, .button {
   display: inline-block;
-  background-color: $button-bkgrd;
+  background-color: $clr-button--bkgrd;
+  color: $clr-button;
   position: relative;
-  font-family: $sans-serif;
   text-decoration: none;
-  color: $button-color;
-  @include small-font-size();
-  font-weight: normal;
   padding: 10px 40px;
   border-radius: 4px;
   border: 0;
   cursor: pointer;
-  text-decoration:none;
   @include transition();
-  // hovering on the btn
-  &:hover, &:focus {
-    color: $button-color-h;
-    text-decoration: none;
-    background-color: $button-bkgrd-h;
-  } // end hover
 
-  // clicking on the button
+  &:hover, &:focus {
+    color: $clr-button---hover;
+    background-color: $clr-button--bkgrd---hover;
+  } 
+
   &:active {
     top: 1px; // adds a tiny hop to the click
-    color: $button-color-a;
-    background-color: $button-bkgrd-a;
-  } // end active
+    color: $clr-button---active;
+    background-color: $clr-button--bkgrd---active;
+  } 
 
 } // end .button
 
-/*
-An example button.
-You can use this example if you want. Just replace all the variables
-and it will create a button dependant on those variables.
-*/
-a.button, .button {
-  @extend %btn; 
-    background-color:$button-bkgrd;
-    color:$button-color;
-  &:hover,
-  &:focus {
-    background:$button-bkgrd-h;
-    color:$button-color-h;
-  } // end hover
-
-  &:active {
-    background:$button-bkgrd-a;
-    color:$button-color-a;
-  } // end active
-} 
-
-a.button-alt, .button-alt {
-  @extend %btn; 
-    background-color:$button-alt-bkgrd;
-    color:$button-alt-color;
-  &:hover,
-  &:focus {
-    background:$button-alt-bkgrd-h;
-    color:$button-alt-color-h;
-  } // end hover
-
-  &:active {
-    background:$button-alt-bkgrd-a;
-    color:$button-alt-color-a;
-  } // end active
-} 
 
 .button-small {
-  @extend %btn;
-  @include xtra-small-font-size();
+  @extend .button;
+  @extend .fs-small;
   padding:3px 6px;
 }
 
-a.button.ghost, .button.ghost {
-  @extend %btn; 
+button.ghost, .button.ghost {
+  @extend .button;
   background-color: transparent;
-  color: $button-ghost;
-  border:solid 1px $button-ghost;
+  color: transparent;
+  border:solid 1px $clr-ghostbutton;
+  
   &:hover, &:focus {
-    color:$button-ghost-h;
-    border-color:$button-ghost-h;
     background-color: transparent;
+    color:$clr-ghostbutton---hover;
+    border-color:$clr-ghostbutton---hover;
   } // end hover
 
   &:active {
-    color:$button-ghost-a;
-    border-color:$button-ghost-a;
     background-color: transparent;
+    color:$clr-ghostbutton---active;
+    border-color:$clr-ghostbutton---active;
   } // end active
+  
   &:visited {
   }
 } 
 
-a.button.ghost-r, .button.ghost-r {
-  @extend %btn; 
+button.ghost-rev, .button.ghost-rev {
+  @extend .button;
   background-color: transparent;
-  color: $r-button-ghost;
-  border:solid 1px $r-button-ghost;
+  color: $clr-w-ghostbutton;
+  border:solid 1px $clr-w-ghostbutton;
+  
   &:hover, &:focus {
-    color:$r-button-ghost-h;
-    border-color:$r-button-ghost-h;
     background-color: transparent;
+    color:$clr-w-ghostbutton---hover;
+    border-color:$clr-w-ghostbutton---hover;
   } // end hover
 
   &:active {
-    color:$r-button-ghost-a;
-    border-color:$r-button-ghost-a;
     background-color: transparent;
+    color:$clr-w-ghostbutton---active;
+    border-color:$clr-w-ghostbutton---active;
   } // end active
+  
   &:visited {
   }
 } 
-
-

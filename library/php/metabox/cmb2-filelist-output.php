@@ -2,7 +2,7 @@
 /**
  * Output File List
  */
- function cmb2_output_file_list( $file_list_meta_key, $img_size = 'medium' ) {
+ function cmb2_output_file_list( $file_list_meta_key, $img_size = 'full' ) {
 
      // Get the list of files
      $files = get_post_meta( get_the_ID(), $file_list_meta_key, 1 );

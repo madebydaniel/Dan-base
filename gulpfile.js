@@ -1,58 +1,73 @@
 var gulp = require('gulp'),
-    concat = require('gulp-concat');
-    uglify = require('gulp-uglify');
-    browserSync = require('browser-sync'),
-    reload = browserSync.reload;
-    sass = require('gulp-ruby-sass'),
-    sourcemaps = require('gulp-sourcemaps'),
-    prefix = require('gulp-autoprefixer');
+    postcss = require('gulp-postcss'),
+    csswring = require('csswring'),
+    autoprefixer = require('autoprefixer'),
+    lost = require('lost'),
+    sass = require('gulp-sass'),
+    jshint = require('gulp-jshint'),
+    uglify = require('gulp-uglify'),
+    rename = require('gulp-rename'),
+    concat = require('gulp-concat'),
+    notify = require('gulp-notify'),
+    plumber = require('gulp-plumber'),
+    browserSync = require('browser-sync');
 
 
-function errorLog(error) {
-  console.error.bind(error);
-  this.emit('end');
-}
-
-//concat js
-gulp.task('concatJs', function() {
+//JS
+gulp.task('scripts', function() {
   return gulp.src('library/js/functions/*.js')
     .pipe(concat('scripts.js'))
-    .pipe(gulp.dest('library/js/'));
+    .pipe(rename({suffix: '.min'}))
+    //.pipe(uglify())
+    .pipe(gulp.dest('library/js/'))
+    .pipe(notify({ message: 'Scripts task complete' }));
 });
 
-//uglify js
-gulp.task('mainJs', function(){
-  gulp.src('library/js/functions/scripts.js')
-  .on('error', errorLog)
-  .pipe(uglify())
-  .pipe(gulp.dest('library/js/'))
-});
-
-
+//SCSS - POSTCSS - CSS
 gulp.task('mainStyles', function(){
-  sass('library/scss/style.scss', {
-    style: 'compressed',
-    sourcemap: true,
-    //container: 'gulp-ruby-sass-main'
-  })
-  .on('error', errorLog)
-  .pipe(prefix('last 2 versions'))
-  .pipe(sourcemaps.write())
-  .pipe(gulp.dest('library/css/'));
+  var processors = [
+        lost,
+        csswring,
+        autoprefixer({browsers:['last 2 versions']})
+    ];
+
+  return gulp.src('library/scss/style.scss')
+    .pipe(sass())
+    .pipe(postcss(processors))
+    .pipe(plumber())
+    .pipe(rename({suffix: '.min'}))
+    .pipe(gulp.dest('library/css/'))
+    .pipe(browserSync.reload({stream:true}))
+    .pipe(notify({ message: 'Styles task complete' }));
+
 });
 
 //login stylesheet
 gulp.task('loginStyles', function(){
-  sass('library/scss/wp-backend/login.scss', {
-    style: 'compressed',
-    container: 'gulp-ruby-sass-main'
-  })
-  .on('error', errorLog)
-  .pipe(prefix('last 2 versions'))
-  .pipe(gulp.dest('library/css/'));
+
+  var processors = [
+        lost,
+        csswring,
+        autoprefixer({browsers:['last 2 versions']})
+    ];
+
+  return gulp.src('library/scss/wp-backend/login.scss')
+    .pipe(sass())
+    .pipe(postcss(processors))
+    .pipe(plumber())
+    .pipe(rename({suffix: '.min'}))
+    .pipe(gulp.dest('library/css/'))
+    .pipe(browserSync.reload({stream:true}))
+    .pipe(notify({ message: 'Styles task complete' }));
 });
 
 
+
+gulp.task('browser-sync', function() {
+    browserSync.init({
+        proxy: "http://frame.dev"
+    });
+});
 
 //watch task
 gulp.task('watch', function(){
@@ -67,17 +82,14 @@ gulp.task('watch', function(){
 
    gulp.watch([
     'library/js/functions/*.js'
-  ], ['concatJs']);
+  ], ['scripts']);
 
-  gulp.watch([
-    'library/js/functions/scripts.js'
-  ], ['mainJs']);
 
   browserSync({
-      proxy: "http://starter.dev"
+      proxy: "http://frame.dev"
   });
 
-  gulp.watch('library/css/style.css').on('change', reload);
+  gulp.watch('library/css/style.min.css').on('change', browserSync.reload);
 
 });
 

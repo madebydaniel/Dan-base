@@ -1,4 +1,4 @@
-<div class="dan-banner">
+<div class="post-banner">
   <?php
   if(is_single()) :
      the_post_thumbnail();

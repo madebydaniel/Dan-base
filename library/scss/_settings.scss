@@ -1,91 +1,140 @@
-/*********************
-COLORS
-Need help w/ choosing your colors? Try this site out:
-http://0to255.com/
-*********************/
+// -- Colors -------------------------------------- //
+$clr-primary: 							#064272;
+$clr-primary--light: 					lighten($clr-primary, 10%);
+$clr-primary--dark: 					#011627;
 
-$alert-yellow:      	#ebe16f;
-$alert-red:         	#fbe3e4;
-$alert-green:       	#e6efc2;
-$alert-blue:        	#d5edf8;
+$clr-alternate: 						#2ec4b6;
+$clr-alternate--light: 					lighten($clr-alternate, 15%);
+$clr-alternate--dark: 					darken($clr-alternate, 15%);
 
-$black:             	#000;
-$white:             	#fff;
+$clr-accent: 							#e71d36;
+$clr-accent--light: 					#ff9f1c;
+$clr-accent--dark: 						darken($clr-accent, 15%);
 
-$light-gray:        	#f5f5f5;
-$gray:              	#e5e5e5;
-$meta-gray:         	#9fa6b4;
-$dark-gray:				#323944;
+$clr-white: 							#fdfffc;
 
-$primary:           	#194072;
-$primary-dark:      	darken($primary, 20%);
-$primary-light:     	#8AC3E4;
-$primary-medium:    	lighten($primary, 10%);
-
-$accent:            	#1CCACA;
-$accent-dark:       	darken($accent, 20%);
-$accent-light:      	lighten($accent, 10%);
-$accent-medium:     	lighten($accent, 10%);
-
-$link-color:        	$primary-dark;
-$link-hover:        	$accent-dark;
-$link-active:       	$accent;
-
-$r-link-color:      	$primary-light;
-$r-link-hover:      	$white;
-$r-link-active:     	darken($primary-light, 10%);
-
-$button-bkgrd:			$accent;
-$button-bkgrd-h:		$accent-dark;
-$button-bkgrd-a:		$accent-light;
-$button-color:			white;
-$button-color-h:		white;
-$button-color-a:		white;
-
-$button-alt-bkgrd:		$primary;
-$button-alt-bkgrd-h:	$primary-dark;
-$button-alt-bkgrd-a:	$primary-light;
-$button-alt-color:		white;
-$button-alt-color-h:	white;
-$button-alt-color-a:	white;
-
-$button-ghost:			$primary;
-$button-ghost-h:		$primary-light;
-$button-ghost-a:		$primary-medium;
-
-$r-button-ghost:		$primary-light;
-$r-button-ghost-h:		white;
-$r-button-ghost-a:		white;
+$clr-gray--light---xtra: 				#f8f8f8;
+$clr-gray--light: 						#e5e5e5;
+$clr-gray: 								#cccccc;
+$clr-gray--medium: 						#909090;
+$clr-gray--dark: 						#373737;
 
 
-$light-border-color:	#e5e5e5;
-$border-color:      	$meta-gray;
-$r-border-color:    	#21293d;
+$clr-bkgrd:								$clr-white;
 
-$disabled-gray:     	#cfcfcf;
-
-
-$space:          		80px;
-$space-half:     		$space/2;
-$space-third:     		$space/3;
-$space-fourth:     		$space/4;
+$clr-alert--red: 						red;
+$clr-alert--yellow: 					yellow;
+$clr-alert--green: 						green;
+$clr-alert--blue: 						blue;
 
 
-$dropdown-menu-width: 	200px;
+
+// -- Menu -------------------------------------- //
+$main-menu-height: 						50px;
+$main-menu-bkgrd: 						$clr-white;
+
+$main-menu-a-color: 					#373737;
+$main-menu-a-bkgrd-color: 				transparent;
+$main-menu-a-color-hover: 				$clr-alternate--dark;
+$main-menu-a-bkgrd-color-hover: 		$clr-alternate--light;
 
 
-$sans-serif:        "Roboto", Helvetica, Arial, sans-serif;
-$serif:             "Georgia", Cambria, Times New Roman, Times, serif;
-$mono:              "Lucida Console", Monaco, Courier, monospace;
-$heading:           "Oswald", Helvetica, Arial, sans-serif;
+$main-submenu-a-color: 					#373737;
+$main-submenu-a-bkgrd-color: 			$clr-white;
+$main-submenu-a-color-hover: 			$clr-alternate--dark;
+$main-submenu-a-bkgrd-color-hover: 		$clr-alternate--light;
 
-$base-font-family: $sans-serif;
-$base-font-weight: normal;
+$dropdown-menu-width: 					200px;
 
-$base-font-color: 		#5c6b80;;
-$heading-font-color:	$primary;
 
-/* "r" = reversed */
-$r-base-font-color:	white;
-$r-heading-font-color:	$primary-light;
 
+// -- HERO PANEL -------------------------------------- //
+$hero-bkgrd: 							$clr-primary--dark;
+$hero-h1: 								$clr-white;
+$hero-h2: 								$clr-primary--light;
+$hero-p--large: 						$clr-primary--light;
+$hero-p: 								$clr-primary--light;
+
+
+// -- OFFSCREEN Menu -------------------------------------- //
+$offscreen-menu-bkgrd-color: 			$clr-alternate--dark;
+$offscreen-menu-bkgrd-hover-color: 		lighten($clr-alternate--dark, 5%);
+$offscreen-menu-border-color: 			$clr-alternate;
+$offscreen-menu-color: 					$clr-white;
+$offscreen-menu-color-hover: 			$clr-white;
+
+$offscreen-menu-title-color: 			$clr-primary--dark;
+$offscreen-menu-title-bkgrd-color: 		white;
+$offscreen-menu-title-border-color: 	$clr-primary--dark;
+
+$offscreen-menu-width:					70vw;
+
+
+
+
+// -- Typography -------------------------------------- //
+$base-font-color: 						#373737;
+$base-font-family: 						sans-serif;
+$heading-font-family: 					serif;
+$heading-font-weight: 					700;
+$mono-font-family: 						mono;
+
+
+$sans-serif: 							sans-serif;
+$serif: 								serif;
+
+
+
+// -- Buttons -------------------------------------- //
+$clr-button: 							$clr-white;
+$clr-button---hover: 					$clr-white;
+$clr-button---active: 					$clr-white;
+
+$clr-button--bkgrd: 					$clr-alternate;
+$clr-button--bkgrd---hover: 			lighten($clr-alternate, 10%);
+$clr-button--bkgrd---active: 			darken($clr-alternate, 10%);
+
+$clr-button--border: 					$clr-alternate;
+$clr-button--border---hover: 			lighten($clr-alternate, 10%);
+$clr-button--border---active:			darken($clr-alternate, 10%);
+
+$clr-button--arrow: 					$clr-alternate;
+$clr-button--icon: 						$clr-alternate--dark;
+
+$clr-ghostbutton: 						$clr-alternate;
+$clr-ghostbutton---hover: 				lighten($clr-alternate, 10%);
+$clr-ghostbutton---active: 				darken($clr-alternate, 10%);
+
+$clr-w-ghostbutton: 						$clr-alternate;
+$clr-w-ghostbutton---hover: 				lighten($clr-alternate, 10%);
+$clr-w-ghostbutton---active: 				darken($clr-alternate, 10%);
+
+
+
+
+
+// -- Z-Index -------------------------------------- //
+$z-top-absolute: 						9999;
+$z-top: 								999;
+$z-mid: 								500;
+$z-low: 								1;
+$z-bottom: 								0;
+$z-negative: 							-1;
+
+
+
+
+// -- Z-Index -------------------------------------- //
+$space:									80px;
+$space-half: 							$space/2;
+$space-third: 							$space/3;
+$space-fourth: 							$space/4;
+
+
+
+
+
+// -- Misc -------------------------------------- //
+$main-boxshadow:						0 0 30px rgba(0,0,0,0.2);
+
+$border-color: 							$clr-gray--light;

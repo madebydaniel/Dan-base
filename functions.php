@@ -24,11 +24,7 @@ require_once( 'library/php/metabox/cmb2-filelist-output.php' );
 require_once( 'library/php/metabox/cmb2-fontawesome-cb.php' );
 require_once( 'library/php/metabox/theme-cmb2/theme-options.php' );
 require_once( 'library/php/metabox/theme-cmb2/front-page-cmb2.php' );
-require_once( 'library/php/metabox/theme-cmb2/title-group-cmb2.php' );
-require_once( 'library/php/metabox/theme-cmb2/boxes-cmb2.php' );
-require_once( 'library/php/metabox/theme-cmb2/slat-cmb2.php' );
-require_once( 'library/php/metabox/theme-cmb2/tabs-cmb2.php' );
-require_once( 'library/php/metabox/theme-cmb2/stalker-cmb2.php' );
+require_once( 'library/php/metabox/theme-cmb2/example-cmb2.php' );
 
 // ###### CUSTOM POST-TYPES ###### //
 require_once( 'library/php/functions/flush-rewrite-posttypes.php' );
@@ -41,10 +37,13 @@ require_once( 'library/php/functions/page-navi.php' ); // page navigation
 require_once( 'library/php/functions/comment-layout.php' ); //comments layout
 require_once( 'library/php/functions/fonts.php' ); // google fonts
 require_once( 'library/php/functions/dan-blogposts.php' ); // dan-blogposts blog teaser
+require_once( 'library/php/functions/wp-mediaplayer-addclass.php');
+
+// ###### CUSTOM MENU ###### //
 require_once( 'library/php/functions/custom-menu/custom-walker.php');
 require_once( 'library/php/functions/custom-menu/menu-field-function.php');
 require_once( 'library/php/functions/custom-menu/edit-custom-walker.php');
-require_once( 'library/php/functions/wp-mediaplayer-addclass.php');
+
 
 // ###### SHORTCODES ###### //
 require_once( 'library/php/shortcodes/shortcodes.php' ); //

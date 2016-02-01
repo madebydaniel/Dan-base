@@ -7,85 +7,45 @@
 /*********************
 GENERAL STYLES
 *********************/
-html {
-	font-size: 62.5%;
+html,body {
+	background: $clr-white;
+	margin:0;
+	padding:0;
 	height:100%;
 	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+  	-moz-osx-font-smoothing: grayscale;
 }
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
-
-body {
-	font-family: $sans-serif;
-	font-size: 100%;
-	line-height: 1.5;
-	color: $base-font-color;
-	background-color: $white;
-  	-webkit-font-smoothing: antialiased;
-  	-moz-osx-font-smoothing: grayscale;
-}
-
-.wrap {
-	@include clearfix();
-	width: 95%;
-	max-width:1240px;
-	margin: 0 auto;
-}
-
-img {
-	max-width:100%;
-}
-
-#body-container {
-}
-
-
-hr {
-	margin:80px auto;
-	border:0;
-	height:0;
-	border-bottom:solid 1px $border-color;
+[data-effeckt-page] {
+	visibility:visible;
 	display:block;
-	width:100%;
-	clear:both;
 }
 
 
-.divider {
-  margin:80px auto;
-  color:$meta-gray;
-  text-transform:uppercase;
-  @include medium-font-size();
-  font-family: $heading;
-}
-
-.bkgrd-light {
-	background-color:$light-gray;
-}
-
-.bkgrd-accent {
-	background-color:$accent;
-}
-
-.bkgrd-primary {
-	background-color:$primary;
-}
-
-.site-container {
+/*HOLY GRAIL PAGE LAYOUT*/
+.on-page-container {
 	display:flex;
 	flex-direction:column;
-	min-height:100vh;
-	header.header,
-	.dan-hero,
-	footer.site-footer {
-		flex:0;
+	min-height:100%;
+	.nav-main {
+		flex: 0 0 auto;
 	}
-	#body-container {
-		flex:1;
+	.hero {
+		flex: 0 0 auto;
+	}
+	.page-content {
+		flex: 1 1 auto;
+	}
+	.site-footer {
+		flex: 0 0 auto;
+	}
 }
 
 
-}
+img { max-width:100%; height:auto; }
+
 

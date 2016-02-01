@@ -1,12 +1,12 @@
 @import "../settings";
-@import "../base/mixins";
-@import "../base/functions";
+@import "../utilities/mixins";
+@import "../utilities/functions";
 @import "../base/typography";
 @import "../components/buttons";
 
 
 body.login {
-	@include radial-gradient($primary, $primary-dark);
+	@include radial-gradient($clr-primary, $clr-primary--dark);
 }
 
 
@@ -14,6 +14,7 @@ body.login {
 	width:50vw;
 	min-width:320px;
 } /* the form box */
+
 
 /*
 This is the Wordpress logo in the admin area.
@@ -51,7 +52,7 @@ with the width and height.
 body .login form .input {
 	font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",sans-serif;
 	font-weight: 200;
-	@include medium-font-size();
+	@extend .fs-medium;
 	width: 97%;
 	max-width:97%;
 	padding: 5px 3%;
@@ -78,8 +79,8 @@ but since we're referencing the id, it should be easy.
 		background:rgba(255,255,255,0.7);
 		margin-bottom:1px;
 		text-align:center;
-		border-left: 4px solid $accent;
-		border-right: 4px solid $accent;
+		border-left: 4px solid $clr-accent;
+		border-right: 4px solid $clr-accent;
 	}
 	p#nav, p#backtoblog {
 		width:100%;
