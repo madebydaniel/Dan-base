@@ -20,17 +20,14 @@ html,body {
   box-sizing: inherit;
 }
 
-[data-effeckt-page] {
-	visibility:visible;
-	display:block;
-}
-
 
 /*HOLY GRAIL PAGE LAYOUT*/
 .on-page-container {
 	display:flex;
 	flex-direction:column;
 	min-height:100%;
+	overflow-x:hidden;
+	
 	.nav-main {
 		flex: 0 0 auto;
 	}
@@ -47,5 +44,24 @@ html,body {
 
 
 img { max-width:100%; height:auto; }
+
+.mobileOnly-hide {
+	display:block;
+}
+
+.mobileOnly-show {
+	display:none;
+}
+
+@include breakpoint(mobileOnly){
+	.mobileOnly-hide {
+		display:none;
+	}
+
+	.mobileOnly-show {
+		display:block;
+	}
+}
+
 
 

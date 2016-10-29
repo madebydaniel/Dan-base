@@ -17,6 +17,7 @@ Stylesheet: Main Stylesheet
 
 @import "layout/header";
 @import "layout/navigation";
+@import "layout/navigation-sub";
 @import "layout/hero-panel";
 @import "layout/navigation-offscreen";
 @import "layout/sidebar";
@@ -49,20 +50,8 @@ Stylesheet: Main Stylesheet
 @import "vendor/animations/_animation-reveal";
 @import "vendor/animations/_animation-scale";
 
+@import "vendor/jquerymodal/jquerymodal";
 
-/*No editing of style should be needed for these files, make style changes in sheets above these imports*/
-@import "vendor/effeckt/_variables";
-@import "vendor/effeckt/_global";
-//@import "vendor/effeckt/modules/buttons";
-@import "vendor/effeckt/modules/captions";
-@import "vendor/effeckt/modules/modal";
-@import "vendor/effeckt/modules/off-screen-nav";
-@import "vendor/effeckt/modules/page-transitions";
-@import "vendor/effeckt/modules/tooltips";
-@import "vendor/effeckt/modules/form-elements";
-@import "vendor/effeckt/modules/tabs";
-@import "vendor/effeckt/modules/positional-modals";
-//@import "vendor/effeckt/modules/lazy-loading";
 
 @import "vendor/hover";
 

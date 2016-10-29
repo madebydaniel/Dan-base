@@ -5,9 +5,10 @@ NAVIGATION STYLES
 .top-level-nav {
 	@include clearfix();
 	display:block;
-	text-transform:uppercase;
+	text-transform:capitalize;
 	position:relative;
 	width:100%;
+	z-index:9996;
 	nav {
 
 	}
@@ -21,26 +22,41 @@ NAVIGATION STYLES
 			position:relative;
 			a {
 				display:block;
-				margin:5px auto;
-				padding:10px 5px;
 				position:relative;
 				text-decoration:none;
-				color:$clr-primary;
+				color:$clr-accent;
 				font-weight:600;
 				text-align:center;
-				@include transition(color);
-				@extend .fs-small;
+				transition:padding 0.4s ease;
+				padding:20px 20px;
+				font-family:$sans-serif;
+				text-align:center;
+				@include font(1.8, 2.4);
+				transition: color 0.4s, padding 0.4s;
 					&:hover, &:focus {
 					color: $clr-accent--dark;
 					}
 					.menu-item-description {
-						@extend .fs-small--xtra;
-						font-weight:normal;
+						display:none;
 					}
 				.fa {
 					padding:0px 5px 0px 15px;
 				}
 			}/*EO - a */
+			&:first-of-type {
+				a {
+					margin-left:0;
+				}
+			}
+			&:last-of-type {
+				a {
+					border-right:none;
+					margin-right:0;
+				}
+			}
+			&.current-menu-item a {
+				color:$clr-primary;
+			}
 			ul {
 				display:none;
 			}
@@ -63,35 +79,28 @@ NAVIGATION STYLES
 			}/*EO - :hover ul */
 		}/*EO - li */
 	}/*EO - .main-nav ul */
+
 	@include breakpoint(desktop) {
 		nav {
 			display:block;
-			float:right;
 			position:relative;
-			z-index:10;
+			z-index:999;
 		}
 		nav > ul.menu {
 			display:block;
 			margin:0;
 			padding:0;
-			vertical-align:top;
-			display:inline-block;
 			& > li {
-				float:left;
+				display:inline-block;
 				vertical-align:top;
 				position:relative;
 				a {
-					padding:25px 10px;
-					margin:0;
 					display:block;
-					text-align:left;
+					text-align:center;
 					position:relative;
-					@extend .fs-small;
+					
 				}/*EO - a */
 			}/*EO - li */
-			& > li:first-of-type > a {
-				padding-left:0px;
-			}
 		}/*EO - ul */
 
 
@@ -103,9 +112,10 @@ NAVIGATION STYLES
 		
 		/* SUBMENU #1 */
 		ul.menu > li > ul {
-			background:white;
+			background:$clr-white;
+			border-radius:5px;
 			/*border:solid 1px $border-color;*/
-			box-shadow:0px 3px 5px black(0.2);
+			box-shadow:0px 5px 7px rgba(0,0,0,0.2);
 			display:block;
 			top:300px;
 			min-width:$dropdown-menu-width;
@@ -113,15 +123,16 @@ NAVIGATION STYLES
 			position:absolute;
 			opacity:0;
 			@include transition();
+
 		}
 
 		ul.menu > li:hover > ul {
-			top:70px;
+			top:65px;
 			left:0;
 			opacity:1;
 			height:auto;
 			overflow:initial;
-			z-index:5;
+			z-index:999;
 		}
 		ul.menu > li:hover > a {
 			color:$clr-accent--dark;
@@ -138,395 +149,105 @@ NAVIGATION STYLES
 		}
 
 		ul.menu > li > ul li a {
-			padding: 10px;
+			padding: 10px 20px;
 			margin:0;
-		}
-		
-
-		/* SUBMENU #2 */
-		ul.menu > li > ul li ul {
-			background:white;
-			/*border:solid 1px $border-color;*/
-			box-shadow:0px 0px 6px black(0.2);
-			display:block;
-			left:0;
-			top:9999px;
-			min-width:$dropdown-menu-width;
-			position:absolute;
-			opacity:0;
-			@include transition();
-			z-index:10;
-		}
-
-		ul.menu > li > ul > li:hover > ul {
-			left:$dropdown-menu-width;
-			top:0px;
-			opacity:1;
-			height:auto;
-			overflow:initial;
-		}
-
-		ul.menu > li > ul> li:hover > a {
-			color:$clr-accent--dark;
-		}
-
-		ul.menu > li > ul > li.edge:hover > ul {
-			right:$dropdown-menu-width;
-			left:auto;
-			top:0px;
-			opacity:1;
-			height:auto;
-			overflow:initial;
+			text-align:left;
+			@include font(1.6, 2);
+			color:$clr-accent;
+			&:hover, &:active {
+				color:$clr-accent--dark;
+			}
 		}
 
 
-		
-		/* SUBMENU #3 */
-		ul.menu > li > ul > li > ul li:hover > ul {
-			left:$dropdown-menu-width;
-			top:0px;
-			opacity:1;
-			height:auto;
-			overflow:initial;
-			z-index:15;
-		}
-
-		ul.menu > li > ul > li > ul li.edge:hover > ul {
-			right:$dropdown-menu-width;
-			left:auto;
-			top:0px;
-			opacity:1;
-			height:auto;
-			overflow:initial;
-		}
-
-		ul.menu > li > ul> li > ul > li:hover > a {
-			color:$clr-accent--dark;
-		}
-
-		ul.menu > li > ul> li > ul > li > ul > li:hover > a {
-			color:$clr-accent--dark;
-		}
-
-		
-
-		
 
 	}/*EO - breakpoint desktop */
+
+
+
+
 }/*EO - top-levle-nav */
 
 
-
-/* toolkit offcanvas menu overrides */
-.mobile-menu-panel.is-visible {
-    transform: translate3d(0, 0, 0);
-    transition-delay: 0s;
-    box-shadow:-20px 0px 20px rgba(0,0,0,0.2);
-  }
-
-.mobile-menu-panel {
-	background:$clr-primary--dark;
-	box-shadow:0px 0px 0px rgba(0,0,0,0.0);
-	position: fixed;
-	width: 80%;
-	height: 100%;
-	top: 0;
-	right: 0;
-	overflow-y:scroll;
-	-webkit-overflow-scrolling:touch;
-	transition-property: transform, box-shadow;
-	transition-duration: 0.3s;
-	transition-delay: 0.3s;
-	transform: translate3d(100%, 0, 0);
-	z-index:8888;
-	.menu-title {
-		padding:20px;
-		margin:0 0 20px;
-		@extend .fs-large;
-		color:$clr-accent;
-		border-bottom:solid 1px $clr-accent;
-	}
-	ul {
-		margin:0;
-		padding:0;
-		li {
-			list-style:none;
-			display:block;
-			margin:0;
-			padding:0;
-			a {
-				@extend .h4;
-				text-decoration:none;
-				color:white;
-				text-transform:uppercase;
-				display:block;
-				transition: color 0.2s ease, background 0.2s ease, transform 0.4s ease;
-				transform: translate3d(100%, 0, 0);
-				padding:5px 0 5px 20px;
-				&:hover, &:active {
-					color:$clr-accent--light;
-					background:$clr-accent--dark;
-				}
-				.menu-item-description {
-					text-transform:none;
-					@extend .h6;
-					color:$clr-primary--light;
-					font-weight:300;
-					font-family:$sans-serif
-				}
-			}
-			.sub-menu > li a {
-				padding-left:30px;
-			}/*end of sub-menu*/
-			
-			.sub-menu > li > .sub-menu > li a {
-				padding-left:60px;
-			}/*end of sub-menu*/
-
-			.sub-menu > li > .sub-menu > li .sub-menu li a {
-				padding-left:90px;
-			}/*end of sub-menu*/
-
-
-		}/*end of li*/
-	}
-	&.is-visible {
-		ul {
-			li {
-				&:nth-child(1) a {
-					transform: translate3d(0, 0, 0);
-					transition-delay: 0.05s;
-				}
-				&:nth-child(2) a {
-					transform: translate3d(0, 0, 0);
-					transition-delay: 0.1s;
-				}
-				&:nth-child(3) a {
-					transform: translate3d(0, 0, 0);
-					transition-delay: 0.15s;
-				}
-				&:nth-child(4) a {
-					transform: translate3d(0, 0, 0);
-					transition-delay: 0.2s;
-				}
-				&:nth-child(5) a {
-					transform: translate3d(0, 0, 0);
-					transition-delay: 0.25s;
-				}
-				&:nth-child(6) a {
-					transform: translate3d(0, 0, 0);
-					transition-delay: 0.3s;
-				}
-				&:nth-child(7) a {
-					transform: translate3d(0, 0, 0);
-					transition-delay: 0.35s;
-				}
-				&:nth-child(8) a {
-					transform: translate3d(0, 0, 0);
-					transition-delay: 0.4s;
-				}
-				&:nth-child(9) a {
-					transform: translate3d(0, 0, 0);
-					transition-delay: 0.45s;
-				}
-				&:nth-child(10) a {
-					transform: translate3d(0, 0, 0);
-					transition-delay: 0.5s;
-				}
-				&:nth-child(11) a {
-					transform: translate3d(0, 0, 0);
-					transition-delay: 0.55s;
-				}
-				&:nth-child(12) a {
-					transform: translate3d(0, 0, 0);
-					transition-delay: 0.6s;
-				}
-				&:nth-child(13) a {
-					transform: translate3d(0, 0, 0);
-					transition-delay: 0.65s;
-				}
-				&:nth-child(14) a {
-					transform: translate3d(0, 0, 0);
-					transition-delay: 0.7s;
-				}
-				&:nth-child(15) a {
-					transform: translate3d(0, 0, 0);
-					transition-delay: 0.75s;
-				}
-				&:nth-child(16) a {
-					transform: translate3d(0, 0, 0);
-					transition-delay: 0.8s;
-				}
-				&:nth-child(17) a {
-					transform: translate3d(0, 0, 0);
-					transition-delay: 0.85s;
-				}
-				&:nth-child(18) a {
-					transform: translate3d(0, 0, 0);
-					transition-delay: 0.9s;
-				}
-				&:nth-child(19) a {
-					transform: translate3d(0, 0, 0);
-					transition-delay: 0.95s;
-				}
-				&:nth-child(20) a {
-					transform: translate3d(0, 0, 0);
-					transition-delay: 1s;
-				}
-			}/*end of li*/
-		}/*end of ul */
-	}/*end is-visible*/
-}
-
-
-
-
-
-
-/*******************************
-* MENU ICON
-********************************/
-
-.mobile-menu-icon {
+.stick {
 	position:absolute;
-	top:10px;
-	padding:0;
-	margin:0;
-	right:40px;
-	z-index:8889;
+	top:0;
+	width:100%;
+	z-index:9999;
+	box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
 	@include breakpoint(desktop){
-		display:none !important;
+		position:fixed;
+		ul.menu > li:hover > ul {
+			top:35px;
+		}
+	}
+}
+
+.main-site-logo {
+	position:absolute;
+	text-align:center;
+	width:50%;
+	left:25%;
+	height:auto;
+	margin:0;
+	padding:0;
+	z-index:9997;
+	top:20px;
+	transition: all 0.3s ease;
+	a {
+		display:block;
+	}
+	img {
+		width:100px;
+	}
+	@include breakpoint(desktop){
+		position:absolute;
+		top:10px;
+		left:0;
+		text-align:left;
+		width:150px;
+		img {
+			width:150px;
+			height:auto;
+			margin-left:20px;
+		}
+	}
+	@include breakpoint(large){
+		width:170px;
+		img {
+			width:170px;
+			height:auto;
+		}
+	}
+}
+
+header.shrink .main-site-logo {
+		width:90px;
+		top:5px;
+}
+
+.page-template-page-template-landing-page header.shrink {
+	.main-site-logo {
+		top:15px;
 	}
 }
 
 
-$tcon-size: 40px !default;
-$tcon-transition: .3s !default;
-$tcon-jstransform: 'tcon-transform' !default;
-$tcon-menu-radius: ($tcon-size / 14) !default;
-$tcon-menu-color: $clr-accent;
-$tcon-menu-arrowleft-transformation: (
-  transform: scale3d(.8, .8, .8) rotate3d(0, 0, 1, 90deg)
-) !default;
-$tcon-menu-arrow360left-transformation: (
-  transform: scale3d(.8, .8, .8) rotate3d(0, 0, 1, 360deg)
-) !default;
+.shrink {
 
-
-.tcon {
-  appearance: none;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: $tcon-size;
-  transition: $tcon-transition;
-  user-select: none;
-  width: $tcon-size;
-  background: transparent;
-  outline: none;
-
-  > * {
-    display: block;
-  }
-
-  &:hover,
-  &:focus {
-    outline: none; // see issue #36 https://github.com/grayghostvisuals/transformicons/issues/36
-  }
-  &::-moz-focus-inner {
-    border: 0;
-  }
+	li a {
+		padding:5px 20px !important;
+	}
+	li ul li a {
+		padding:10px 20px !important;
+	}
+	.landing-page a.button {
+		margin:10px;
+		@extend .fs-small--xtra;
+		padding:5px 10px;
+	}
 }
 
-@mixin tcon-menu-lines {
-  display: inline-block;
-  height: ($tcon-size / 7);
-  width: $tcon-size;
-  border-radius: $tcon-menu-radius;
-  transition: $tcon-transition;
-  background: $tcon-menu-color;
-}
 
-.tcon-menu__lines {
-  @include tcon-menu-lines;
-  position: relative;
 
-  &::before,
-  &::after {
-    @include tcon-menu-lines;
-    content: '';
-    position: absolute;
-    left: 0;
-    transform-origin: ($tcon-size / 14) center;
-    width: 100%;
-  }
-
-  &::before {
-    top: ($tcon-size / 4);
-  }
-
-  &::after {
-    top: -($tcon-size / 4);
-  }
-
-  .#{$tcon-jstransform} & {
-    transform: scale3d(.8, .8, .8);
-  }
-}
-.tcon-menu--xbutterfly {
-  width: auto;
-
-  .tcon-menu__lines {
-    &::before,
-    &::after {
-      transform-origin: 50% 50%;
-      transition: top .3s .6s ease, transform .3s ease;
-    }
-  }
-
-  &.#{$tcon-jstransform} {
-    .tcon-menu__lines {
-      background: transparent;
-
-      &::before,
-      &::after {
-        top: 0;
-        transition: top .3s ease, transform .3s .5s ease;
-        width: $tcon-size;
-      }
-
-      &::before {
-        transform: rotate3d(0, 0, 1, 45deg);
-      }
-
-      &::after {
-        transform: rotate3d(0, 0, 1, -45deg);
-      }
-    }
-  }
-}
-
-// see issue #7 https://github.com/grayghostvisuals/transformicons/issues/7#issuecomment-59813596
-.tcon-visuallyhidden {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-
-  &:active,
-  &:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
-  }
-}
 

@@ -6,7 +6,6 @@
 				<?php wp_footer(); ?>
 
 			</div><!--\on-page-container-->
-		</div><!--\data-effeckt-page-->
 
 	<?php get_template_part('partials/globals/footer', 'scripts'); ?>
 

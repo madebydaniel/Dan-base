@@ -35,17 +35,13 @@ function dan_scripts_and_styles() {
 		//adding slick.js carousel file in the footer
 		wp_register_script( 'slick-js', get_stylesheet_directory_uri() . '/library/js/libs/slick-slider/slick.min.js', array( 'jquery' ), '', true );
 
+		//adding slick.js carousel file in the footer
+		wp_register_script( 'modal-js', get_stylesheet_directory_uri() . '/library/js/libs/jquerymodal.min.js/jquerymodal.min.js', array( 'jquery' ), '', true );
+
 
 		//adding scripts file in the footer
 		wp_register_script( 'dan-js', get_stylesheet_directory_uri() . '/library/js/scripts.min.js', array( 'jquery' ), '', true );
 
-		wp_register_script( 'effeckt-core', get_stylesheet_directory_uri() . '/library/js/libs/effeckt/core.js', array( 'jquery' ), '', true );
-		wp_register_script( 'effeckt-captions', get_stylesheet_directory_uri() . '/library/js/libs/effeckt/captions.js', array( 'jquery' ), '', true );
-		wp_register_script( 'effeckt-modal', get_stylesheet_directory_uri() . '/library/js/libs/effeckt/modal.js', array( 'jquery' ), '', true );
-		wp_register_script( 'effeckt-off-screen-nav', get_stylesheet_directory_uri() . '/library/js/libs/effeckt/off-screen-nav.js', array( 'jquery' ), '', true );
-		wp_register_script( 'effeckt-page-transitions', get_stylesheet_directory_uri() . '/library/js/libs/effeckt/page-transitions.js', array( 'jquery' ), '', true );
-		wp_register_script( 'effeckt-positional-modals', get_stylesheet_directory_uri() . '/library/js/libs/effeckt/positional-modals.js', array( 'jquery' ), '', true );
-		wp_register_script( 'effeckt-tabs', get_stylesheet_directory_uri() . '/library/js/libs/effeckt/tabs.js', array( 'jquery' ), '', true );
 
 		// enqueue styles and scripts
 		wp_enqueue_style( 'dan-normalize' );
@@ -62,14 +58,8 @@ function dan_scripts_and_styles() {
 		*/
 		wp_enqueue_script( 'jquery' );
 		wp_enqueue_script( 'slick-js' );
+		wp_enqueue_script( 'modal-js' );
 		wp_enqueue_script( 'dan-js' );
-		wp_enqueue_script( 'effeckt-core' );
-		wp_enqueue_script( 'effeckt-captions' );
-		wp_enqueue_script( 'effeckt-modal' );
-		wp_enqueue_script( 'effeckt-off-screen-nav' );
-		wp_enqueue_script( 'effeckt-page-transitions' );
-		wp_enqueue_script( 'effeckt-positional-modals' );
-		wp_enqueue_script( 'effeckt-tabs' );
 
 	}
 }

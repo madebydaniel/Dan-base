@@ -1,5 +1,5 @@
 
-.effeckt-modal {
+.modal-container {
   background: white;
   h3 {
     padding: 1rem;
@@ -9,22 +9,15 @@
 }
 
 
-.effeckt-modal-content {
+.modal-content {
   padding: 1rem;
 }
 
-.effeckt-modal-overlay {
+.modal-overlay {
   z-index: 1000;
   background: rgba(black, 0.5);
 }
 
-// Pisitional Modal
-.effeckt-positional-modal-wrap {
-  .effeckt-modal {
-    padding: 10px;
-    background: #ccc;
-  }
-  .effeckt-modal-content {
-    background: white;
-  }
+.jquery-modal {
+  z-index:9999 !important
 }

@@ -124,12 +124,15 @@ function sanitize_title_slug( $title ) {
 
 
 //Remove the Version Parameter from Scripts being loaded (allows files to be cached)
-function script_loader_src( $src ) {
-    return remove_query_arg( 'ver', $src );
-}
+if(!is_admin()){
+	function script_loader_src( $src ) {
+	    return remove_query_arg( 'ver', $src );
+	}
 
-add_filter( 'script_loader_src', 'script_loader_src' );
-add_filter( 'style_loader_src', 'script_loader_src' );
+
+	add_filter( 'script_loader_src', 'script_loader_src' );
+	add_filter( 'style_loader_src', 'script_loader_src' );
+}
 
 // Example source: http://www.wpmayor.com/15-practical-ways-boost-wordpress-speed/
 

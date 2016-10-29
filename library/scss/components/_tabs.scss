@@ -1,18 +1,18 @@
 .etabs { 
-   margin: 0;
-    padding: 0;
-    list-style: none;
-    width:100%;
-    display:block;
-    vertical-align:top;
+	 margin: 0;
+	  padding: 0;
+	  list-style: none;
+	  width:100%;
+	  display:block;
+	  vertical-align:top;
 }
 
 li.tab { 
-   display:block;
+	 display:block;
     margin-right:0;
 
-  a {
-    @extend .fs-small;
+	a {
+		@extend .fs-small;
       font-weight:bold;
       font-style:italic;
       display: block;
@@ -24,35 +24,35 @@ li.tab {
       position:relative;
 
 
-    &:hover, &.active { 
-      background-color: transparent;
-          color: $clr-primary;
-          border-color:$clr-primary;
-    }
+		&:hover, &.active { 
+			background-color: transparent;
+	        color: $clr-primary;
+	        border-color:$clr-primary;
+		}
 
-    &.active:before {
-          font-family: FontAwesome;
-          content:"\f054";
-          font-style:normal;
-          font-size:14px;
-          display:block;
-          position:absolute;
-          right:0;
-          top:15px;
-        }
-  }
+		&.active:before {
+	        font-family: FontAwesome;
+	        content:"\f054";
+	        font-style:normal;
+	        font-size:14px;
+	        display:block;
+	        position:absolute;
+	        right:0;
+	        top:15px;
+	      }
+	}
 
-  &:last-of-type a {
+	&:last-of-type a {
       border-bottom:none;
     }
 
-  &.active {
-    background: #fff;
-    padding-top: 6px;
-    position: relative;
-    top: 1px;
-    border-color: #666;
-  }
+	&.active {
+		background: #fff;
+		padding-top: 6px;
+		position: relative;
+		top: 1px;
+		border-color: #666;
+	}
 }
 
 
@@ -80,12 +80,12 @@ li.tab {
 
 
 .panel-container { 
-  padding:0px;
-    margin-bottom: 20px;
-    border:none;
-    width:100%;
-    display:block;
-    vertical-align:top;
+	padding:0px;
+	  margin-bottom: 20px;
+	  border:none;
+	  width:100%;
+	  display:block;
+	  vertical-align:top;
 }
 
 

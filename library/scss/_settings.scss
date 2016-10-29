@@ -1,19 +1,23 @@
 // -- Colors -------------------------------------- //
-$clr-primary: 							#064272;
-$clr-primary--light: 					lighten($clr-primary, 10%);
-$clr-primary--dark: 					#011627;
+$clr-primary: 							#003e67;
+$clr-primary--light: 					#6299bc;
+$clr-primary--light---xtra: 			#e0f1fb;
+$clr-primary--dark: 					#031a29;
+$clr-primary--gradient:					#021153;
 
 $clr-alternate: 						#2ec4b6;
 $clr-alternate--light: 					lighten($clr-alternate, 15%);
 $clr-alternate--dark: 					darken($clr-alternate, 15%);
 
-$clr-accent: 							#e71d36;
-$clr-accent--light: 					#ff9f1c;
+$clr-accent: 							#0cdd42;
+$clr-accent--light: 					#3AFF69;
+$clr-accent--light---xtra: 				#d9fee2;
 $clr-accent--dark: 						darken($clr-accent, 15%);
+$clr-accent--gradient:					#00ccbc;
 
 $clr-white: 							#fdfffc;
 
-$clr-gray--light---xtra: 				#f8f8f8;
+$clr-gray--light---xtra: 				#f5f5f5;
 $clr-gray--light: 						#e5e5e5;
 $clr-gray: 								#cccccc;
 $clr-gray--medium: 						#909090;
@@ -49,23 +53,23 @@ $dropdown-menu-width: 					200px;
 
 
 // -- HERO PANEL -------------------------------------- //
-$hero-bkgrd: 							$clr-primary--dark;
-$hero-h1: 								$clr-white;
-$hero-h2: 								$clr-primary--light;
-$hero-p--large: 						$clr-primary--light;
-$hero-p: 								$clr-primary--light;
+$hero-bkgrd: 							$clr-primary--light;
+$hero-h1: 								$clr-primary--dark;
+$hero-h2: 								$clr-primary--dark;
+$hero-p--large: 						$clr-primary--dark;
+$hero-p: 								$clr-primary--dark;
 
 
 // -- OFFSCREEN Menu -------------------------------------- //
-$offscreen-menu-bkgrd-color: 			$clr-alternate--dark;
-$offscreen-menu-bkgrd-hover-color: 		lighten($clr-alternate--dark, 5%);
-$offscreen-menu-border-color: 			$clr-alternate;
+$offscreen-menu-bkgrd-color: 			$clr-primary--dark;
+$offscreen-menu-bkgrd-hover-color: 		lighten($clr-primary--dark, 5%);
+$offscreen-menu-border-color: 			$clr-primary;
 $offscreen-menu-color: 					$clr-white;
 $offscreen-menu-color-hover: 			$clr-white;
 
-$offscreen-menu-title-color: 			$clr-primary--dark;
+$offscreen-menu-title-color: 			$clr-accent--dark;
 $offscreen-menu-title-bkgrd-color: 		white;
-$offscreen-menu-title-border-color: 	$clr-primary--dark;
+$offscreen-menu-title-border-color: 	$clr-accent--dark;
 
 $offscreen-menu-width:					70vw;
 
@@ -74,14 +78,14 @@ $offscreen-menu-width:					70vw;
 
 // -- Typography -------------------------------------- //
 $base-font-color: 						#373737;
-$base-font-family: 						sans-serif;
-$heading-font-family: 					serif;
+$base-font-family: 						'Ubuntu', sans-serif;
+$heading-font-family: 					'Ubuntu', sans-serif;
 $heading-font-weight: 					700;
 $mono-font-family: 						mono;
 
 
-$sans-serif: 							sans-serif;
-$serif: 								serif;
+$sans-serif: 							'Ubunut', sans-serif;
+$serif: 								'Lora', serif;
 
 
 
@@ -90,24 +94,24 @@ $clr-button: 							$clr-white;
 $clr-button---hover: 					$clr-white;
 $clr-button---active: 					$clr-white;
 
-$clr-button--bkgrd: 					$clr-alternate;
-$clr-button--bkgrd---hover: 			lighten($clr-alternate, 10%);
-$clr-button--bkgrd---active: 			darken($clr-alternate, 10%);
+$clr-button--bkgrd: 					$clr-accent;
+$clr-button--bkgrd---hover: 			$clr-primary;
+$clr-button--bkgrd---active: 			$clr-primary--dark;
 
-$clr-button--border: 					$clr-alternate;
-$clr-button--border---hover: 			lighten($clr-alternate, 10%);
-$clr-button--border---active:			darken($clr-alternate, 10%);
+$clr-button--border: 					$clr-primary--dark;
+$clr-button--border---hover: 			lighten($clr-primary--dark, 10%);
+$clr-button--border---active:			darken($clr-primary--dark, 10%);
 
-$clr-button--arrow: 					$clr-alternate;
-$clr-button--icon: 						$clr-alternate--dark;
+$clr-button--arrow: 					$clr-primary--dark;
+$clr-button--icon: 						$clr-primary--dark;
 
-$clr-ghostbutton: 						$clr-alternate;
-$clr-ghostbutton---hover: 				lighten($clr-alternate, 10%);
-$clr-ghostbutton---active: 				darken($clr-alternate, 10%);
+$clr-ghostbutton: 						$clr-primary--dark;
+$clr-ghostbutton---hover: 				$clr-accent;
+$clr-ghostbutton---active: 				$clr-accent;
 
-$clr-w-ghostbutton: 						$clr-alternate;
-$clr-w-ghostbutton---hover: 				lighten($clr-alternate, 10%);
-$clr-w-ghostbutton---active: 				darken($clr-alternate, 10%);
+$clr-w-ghostbutton: 						$clr-white;
+$clr-w-ghostbutton---hover: 				$clr-accent--light;
+$clr-w-ghostbutton---active: 				$clr-accent--light;
 
 
 
@@ -138,3 +142,4 @@ $space-fourth: 							$space/4;
 $main-boxshadow:						0 0 30px rgba(0,0,0,0.2);
 
 $border-color: 							$clr-gray--light;
+$border-color--dark: 					$clr-gray;

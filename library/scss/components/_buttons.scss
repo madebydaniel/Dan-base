@@ -5,7 +5,7 @@ Stylesheet: Button Styles
 
 ******************************************************************/
 
-button, .button {
+button, .button , a.button {
   display: inline-block;
   background-color: $clr-button--bkgrd;
   color: $clr-button;

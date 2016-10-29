@@ -24,12 +24,10 @@ require_once( 'library/php/metabox/cmb2-filelist-output.php' );
 require_once( 'library/php/metabox/cmb2-fontawesome-cb.php' );
 require_once( 'library/php/metabox/theme-cmb2/theme-options.php' );
 require_once( 'library/php/metabox/theme-cmb2/front-page-cmb2.php' );
-require_once( 'library/php/metabox/theme-cmb2/example-cmb2.php' );
 
 // ###### CUSTOM POST-TYPES ###### //
 require_once( 'library/php/functions/flush-rewrite-posttypes.php' );
 require_once( 'library/php/posttypes/custom-post-type.php' );
-require_once( 'library/php/posttypes/cpt-announcement.php' );
 
 // ###### CUSTOM FUNCTIONS ###### //
 require_once( 'library/php/functions/related-posts.php' ); // related posts

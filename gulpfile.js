@@ -65,7 +65,7 @@ gulp.task('loginStyles', function(){
 
 gulp.task('browser-sync', function() {
     browserSync.init({
-        proxy: "http://frame.dev"
+        proxy: "http://starter.dev"
     });
 });
 
@@ -86,7 +86,7 @@ gulp.task('watch', function(){
 
 
   browserSync({
-      proxy: "http://frame.dev"
+      proxy: "http://starter.dev"
   });
 
   gulp.watch('library/css/style.min.css').on('change', browserSync.reload);

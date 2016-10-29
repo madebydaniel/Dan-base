@@ -57,11 +57,11 @@ USAGE: @include transition(all 0.2s ease-in-out);
 */
 
 @mixin transition($transition: all) {
-  transition: $transition 0.3s ease;
+  transition: $transition 0.4s ease;
 }
 
 @mixin transitionMultiple($transition...) {
-  transition: $transition 0.3s ease;
+  transition: $transition 0.4s ease;
 }
 
 
@@ -71,21 +71,12 @@ CSS3 GRADIENTS
 *********************/
 
 /* @include css-gradient(#dfdfdf,#f8f8f8); */
-@mixin css-gradient($from: #dfdfdf, $to: #f8f8f8) {
-	background-color: $to;
-	background-image: -webkit-gradient(linear, left top, left bottom, from($from), to($to));
-	background-image: -webkit-linear-gradient(top, $from, $to);
-	background-image: -moz-linear-gradient(top, $from, $to);
-	background-image: -o-linear-gradient(top, $from, $to);
-	background-image: linear-gradient(to bottom, $from, $to);
+@mixin css-gradient($deg: 250deg, $from: #dfdfdf, $to: #f8f8f8) {
+  background-color: $to;
+  background-image: linear-gradient($deg, $from, $to);
 }
 
 @mixin radial-gradient($from, $to) {
-  background: -moz-radial-gradient(center, circle cover, $from 0%, $to 100%);
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, $from), color-stop(100%, $to));
-  background: -webkit-radial-gradient(center, circle cover, $from 0%, $to 100%);
-  background: -o-radial-gradient(center, circle cover, $from 0%, $to 100%);
-  background: -ms-radial-gradient(center, circle cover, $from 0%, $to 100%);
   background: radial-gradient(center, circle cover, $from 0%, $to 100%);
   background-color: $from;
 }
@@ -109,7 +100,7 @@ CSS3 GRADIENTS
 /*********************
 ANGLED SECTIONS
 *********************/
-@mixin angle($pseudo, $flip: false, $angle: 1.5deg) {
+@mixin angle($pseudo, $flip: false, $angle: 2deg) {
   // Possible values for $pseudo are: before, after, both
   @if $pseudo == 'before' or $pseudo == 'after' or $pseudo == 'both' {
     position: relative;
@@ -195,16 +186,11 @@ UTILITIES
 @mixin vertical-align {
     position: relative;
     top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
     transform: translateY(-50%);
 }
 
 @mixin box-sizing($type: border-box) {
-	-webkit-box-sizing: $type;
-	-moz-box-sizing:    $type;
-	-ms-box-sizing:     $type;
-	box-sizing:         $type;
+  box-sizing:         $type;
 }
 
 

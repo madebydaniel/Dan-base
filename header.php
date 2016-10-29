@@ -6,14 +6,16 @@
 
 <?php get_template_part('partials/parts/modal', 'default'); ?>
 
+<?php get_template_part('partials/parts/nav', 'offScreenTrigger'); ?>
 <?php get_template_part('partials/parts/nav', 'offScreen'); ?>
 
-<div data-effeckt-page>
-	<div class="on-page-container" >
-		
-	<?php get_template_part('partials/parts/nav', 'offScreenTrigger'); ?>
+
+	
+	<div id="sticky-anchor"></div>
 	<?php get_template_part('partials/parts/nav', 'main'); ?>
 
 	<?php get_template_part('partials/parts/hero', 'default'); ?>
+
+	<div class="on-page-container" >
 
 		<div class="page-content" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/WebPageElement">

@@ -7,11 +7,19 @@
 }
 
 .bkgrd-primary {
-	background-color: $clr-primary
+	background-color: $clr-primary--dark
+}
+
+.bkgrd-primary--gradient {
+	@include css-gradient(-40deg, $clr-primary--dark, $clr-primary--gradient );
 }
 
 .bkgrd-accent {
-	background-color: $clr-accent
+	background-color: $clr-accent;
+}
+
+.bkgrd-accent--gradient {
+	@include css-gradient(250deg, $clr-accent--gradient, $clr-accent );
 }
 
 .bkgrd-alternate {
@@ -21,7 +29,6 @@
 .bkgrd-dark {
 	background-color: $clr-gray--dark
 }
-
 
 /* slanted edges here */
 .edge--bottom {
