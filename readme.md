@@ -1,9 +1,4 @@
 # Dan Starter Theme
-A Lightweight Wordpress Development Theme that was originally based off the bones starter theme.
-http://themble.com/bones
-
-It has undergone major changes and adjustments.
-
 The framework can be viewed at http://framework.bydan.us
 
 ### Intended Use
