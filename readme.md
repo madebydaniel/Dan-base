@@ -1,24 +1,17 @@
 # Dan Starter Theme
-The framework can be viewed at http://framework.bydan.us
+A quick starting point that focuses on security and speed. It's not squeezed to death, but easily faster than most WP installs.
 
 ### Intended Use
-This framework is intended to be used for quick site development. There are many items that need to be removed to eliminate unnecessary bloat before moving to production. 
-
-Such as, once the few hover styles have been selected, delete all the unused options. These files are all very modular and built with scss so management shouldn't be too bad.
-
+This framework is intended to be used for quick site development. 
 
 #### CMB2 for easy Custom Metabox creation
-Created by WebDevStudios - https://github.com/WebDevStudios/CMB2
+Primarily used for a custom theme options page since the addition of Gutenberg. To use, the plugin needs to be installed. Created by WebDevStudios - https://github.com/WebDevStudios/CMB2
 
 #### Gulp
 Check out the package.json file for all the included plugins and the gulpfile.js to see what the do. 
 
 #### The Lost Grid
-Created by Corey Simmons - https://github.com/corysimmons/lost-grid.js
-
+Hard to strip out, but is no longer necessary with the adoption of css4 and css grids - other than the node module, next to no weight is added to the procution file. Created by Corey Simmons - https://github.com/corysimmons/lost-grid.js
 
 #### Hover.css
-No since in rebuilding the wheel - http://ianlunn.github.io/Hover/
-
-#### Slick Slider
-For the rare occassion when a slider still makes sense - http://kenwheeler.github.io/slick/
+No since in rebuilding the wheel. Use what is needed, strip out the rest before sending to production - http://ianlunn.github.io/Hover/
