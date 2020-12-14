@@ -63,6 +63,7 @@ function dan_theme_support() {
 
 	// to add header image support go here: http://themble.com/support/adding-header-background-image-support/
 
+	/*
 	// adding post format support
 	add_theme_support( 'post-formats',
 		array(
@@ -77,6 +78,7 @@ function dan_theme_support() {
 			'chat'               // chat transcript
 		)
 	);
+	*/
 
 	// wp menus
 	add_theme_support( 'menus' );

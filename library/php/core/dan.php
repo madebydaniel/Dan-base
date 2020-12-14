@@ -112,6 +112,12 @@ function dan_excerpt_more($more) {
 	return '...  <a class="excerpt-read-more" href="'. get_permalink( $post->ID ) . '" title="'. __( 'Read ', 'dantheme' ) . esc_attr( get_the_title( $post->ID ) ).'">'. __( 'Read more &raquo;', 'dantheme' ) .'</a>';
 }
 
+function custom_excerpt_length( $length ) {
+	return 20;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+
 
 // Remove the "the" word from slugs
 add_filter( 'sanitize_title', 'sanitize_title_slug' );
@@ -124,15 +130,38 @@ function sanitize_title_slug( $title ) {
 
 
 //Remove the Version Parameter from Scripts being loaded (allows files to be cached)
-if(!is_admin()){
-	function script_loader_src( $src ) {
-	    return remove_query_arg( 'ver', $src );
-	}
+function script_loader_src( $src ) {
+    return remove_query_arg( 'ver', $src );
+}
 
-
+if (!is_admin()) {
 	add_filter( 'script_loader_src', 'script_loader_src' );
 	add_filter( 'style_loader_src', 'script_loader_src' );
 }
+
+
+//Disable dashicons on the front-end - the will stop loading dashicons.min.css on the front-end
+
+add_action( 'wp_enqueue_scripts', 'go_dequeue_dashicons' );
+function go_dequeue_dashicons() {
+    if ( ! is_user_logged_in() ) {
+        wp_deregister_style( 'dashicons' );
+    }
+}
+
+
+//Remove JQuery migrate
+ function remove_jquery_migrate( $scripts ) {
+	 if ( ! is_admin() && isset( $scripts->registered['jquery'] ) ) {
+		 $script = $scripts->registered['jquery'];
+		 
+		 if ( $script->deps ) { // Check whether the script has any dependencies
+		 $script->deps = array_diff( $script->deps, array( 'jquery-migrate' ) );
+		 }
+	 }
+ }
+
+ add_action( 'wp_default_scripts', 'remove_jquery_migrate' );
 
 // Example source: http://www.wpmayor.com/15-practical-ways-boost-wordpress-speed/
 

@@ -4,6 +4,7 @@ var gulp = require('gulp'),
     autoprefixer = require('autoprefixer'),
     lost = require('lost'),
     sass = require('gulp-sass'),
+    sourcemaps = require('gulp-sourcemaps'),
     jshint = require('gulp-jshint'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
@@ -32,10 +33,12 @@ gulp.task('mainStyles', function(){
     ];
 
   return gulp.src('library/scss/style.scss')
+    .pipe(sourcemaps.init())
     .pipe(sass())
     .pipe(postcss(processors))
     .pipe(plumber())
     .pipe(rename({suffix: '.min'}))
+    .pipe(sourcemaps.write('./maps'))
     .pipe(gulp.dest('library/css/'))
     .pipe(browserSync.reload({stream:true}))
     .pipe(notify({ message: 'Styles task complete' }));
@@ -65,33 +68,16 @@ gulp.task('loginStyles', function(){
 
 gulp.task('browser-sync', function() {
     browserSync.init({
-        proxy: "http://starter.dev"
+        proxy: "http://herringlocal.local"
     });
 });
 
-//watch task
 gulp.task('watch', function(){
-  gulp.watch([
-    'library/scss/style.scss',
-    'library/scss/**/**/*.scss'
-  ], ['mainStyles']);
-
-  gulp.watch([
-    'library/scss/login.scss'
-  ], ['loginStyles']);
-
-   gulp.watch([
-    'library/js/functions/*.js'
-  ], ['scripts']);
-
-
-  browserSync({
-      proxy: "http://starter.dev"
-  });
-
-  gulp.watch('library/css/style.min.css').on('change', browserSync.reload);
-
+    gulp.watch(['library/scss/style.scss','library/scss/**/**/*.scss'], gulp.series('mainStyles'));
+    gulp.watch('library/scss/login.scss', gulp.series('loginStyles'));
+    gulp.watch('library/js/functions/*.js', gulp.series('scripts'));
+    browserSync({proxy: "http://herringlocal.local"});
+    gulp.watch('library/css/style.min.css').on('change', browserSync.reload);
 });
 
-
-gulp.task('default', ['mainStyles', 'loginStyles', 'watch']);
+gulp.task('default', gulp.series('mainStyles', 'loginStyles', 'watch'));

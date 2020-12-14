@@ -36,9 +36,9 @@ function dan_register_sidebars() {
 	));
 
 	register_sidebar(array(
-		'id' => 'page-tkpin-example-sidebar',
-		'name' => __( 'TK Pin Sidebar Widgets', 'dantheme' ),
-		'description' => __( 'Widget Area for the general pages.', 'dantheme' ),
+		'id' => 'mobilemenu',
+		'name' => __( 'Mobile Menu Widgets', 'dantheme' ),
+		'description' => __( 'Widget Area for the blog and archive pages.', 'dantheme' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<p class="widgettitle h4">',
